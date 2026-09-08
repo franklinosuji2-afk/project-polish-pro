@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" data-theme="dark">
       <head>
-        <meta name="google-site-verification" content="Ny0Zc5CBbuxdAjUwq9YZWrnXRcXKeJDAO6bAbmGdtho" />
+        <meta name="google-site-verification" content="PY7i0NfY3Y5zZB636hDYIyfVifSF-OZUh2-csBRYCiM" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
