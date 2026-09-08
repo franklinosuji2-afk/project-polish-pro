@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fc-sparkle-studio.lovable.app/sitemap.xml

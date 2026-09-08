@@ -8,7 +8,7 @@ This portfolio is not just a personal website it is a technical artifact designe
 
 ## 🚀 Live Demo
 
-👉 [Franklin Portfolio Live Demo](https://fc-dev.netlify.app/?utm_source=chatgpt.com)
+👉 [Franklin Portfolio Live Demo](https://fc-sparkle-studio.lovable.app/?utm_source=chatgpt.com)
 
 ---
 
