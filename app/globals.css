@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,71 +51,6 @@ body {
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
 }
-
-/* LIGHT MODE GLOBAL OVERRIDES - covers hardcoded inline colors */
-[data-theme="light"] section,
-[data-theme="light"] footer,
-[data-theme="light"] nav {
-  background-color: unset;
-}
-
-[data-theme="light"] section[id="home"] { background: linear-gradient(180deg,#f0f6ff 0%,#ffffff 100%) !important; }
-[data-theme="light"] section[id="experience"] { background: #f6f8fa !important; }
-[data-theme="light"] section[id="projects"] { background: #ffffff !important; }
-[data-theme="light"] section[id="certifications"] { background: #f6f8fa !important; }
-[data-theme="light"] section[id="skills"] { background: #ffffff !important; }
-[data-theme="light"] section[id="overview"] { background: #f6f8fa !important; }
-[data-theme="light"] section[id="observability"] { background: #ffffff !important; }
-[data-theme="light"] section[id="security"] { background: #f6f8fa !important; }
-[data-theme="light"] section[id="contact"] { background: #ffffff !important; }
-[data-theme="light"] footer { background: #f6f8fa !important; border-color: #d0d7de !important; }
-
-/* Cards in light mode */
-[data-theme="light"] div[style*="background:#0d1117"],
-[data-theme="light"] div[style*="background: #0d1117"] {
-  background: #ffffff !important;
-  border-color: #d0d7de !important;
-}
-[data-theme="light"] div[style*="background:#070a0f"],
-[data-theme="light"] div[style*="background: #070a0f"] {
-  background: #f6f8fa !important;
-}
-[data-theme="light"] div[style*="background:rgba(255,255,255,0.01)"],
-[data-theme="light"] div[style*='background:"rgba(255,255,255,0.01)"'] {
-  background: #ffffff !important;
-  border-color: #d0d7de !important;
-}
-
-/* Text colors in light mode */
-[data-theme="light"] h1,
-[data-theme="light"] h2,
-[data-theme="light"] h3 { color: #1f2328 !important; }
-[data-theme="light"] p,
-[data-theme="light"] li { color: #656d76 !important; }
-[data-theme="light"] span[style*="color:#8b949e"],
-[data-theme="light"] div[style*="color:#8b949e"] { color: #656d76 !important; }
-[data-theme="light"] span[style*="color:#484f58"],
-[data-theme="light"] div[style*="color:#484f58"],
-[data-theme="light"] a[style*="color:#484f58"] { color: #9198a1 !important; }
-[data-theme="light"] span[style*="color:#fff"],
-[data-theme="light"] div[style*="color:#fff"] { color: #1f2328 !important; }
-
-/* Borders in light mode */
-[data-theme="light"] div[style*="border:1px solid #1e2d40"],
-[data-theme="light"] div[style*="border: 1px solid #1e2d40"] { border-color: #d0d7de !important; }
-[data-theme="light"] div[style*="borderBottom:1px solid #1e2d40"] { border-color: #d0d7de !important; }
-[data-theme="light"] div[style*="borderTop:1px solid #1e2d40"] { border-color: #d0d7de !important; }
-
-/* Terminal in light mode */
-[data-theme="light"] .term-body { background: #f6f8fa !important; }
-[data-theme="light"] .term-bar-el { background: #eaeef2 !important; border-color: #d0d7de !important; }
-
-/* Nav in light mode */
-[data-theme="light"] nav a[style*="color:#8b949e"] { color: #656d76 !important; }
-[data-theme="light"] nav a[style*="color:#fff"] { color: #1f2328 !important; }
-
-/* Metric cards */
-[data-theme="light"] div[style*="background:rgba(0,0,0,0.2)"] { background: rgba(0,0,0,0.04) !important; }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
