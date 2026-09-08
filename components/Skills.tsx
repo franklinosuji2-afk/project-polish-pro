@@ -1,12 +1,12 @@
 ﻿"use client"
 const cats = [
-  { title:"Cloud Platforms", color:"#3b82f6", skills:["AWS EC2","ECS","Fargate","S3","IAM","VPC","Route 53","Lambda","RDS","CloudWatch","CloudFormation"] },
+  { title:"Cloud Platforms", color:"#3b82f6", skills:["AWS EC2","ECS","Fargate","S3","IAM","VPC","Route 53","Lambda","RDS","CloudWatch","CloudFormation","Azure"] },
   { title:"Infrastructure as Code", color:"#8b5cf6", skills:["Terraform","AWS CloudFormation"] },
-  { title:"Containers & Orchestration", color:"#06b6d4", skills:["Docker","Amazon ECS","AWS Fargate"] },
-  { title:"CI/CD & Automation", color:"#f97316", skills:["GitHub Actions","Jenkins","CI/CD Pipelines"] },
-  { title:"Operating Systems & Monitoring", color:"#22c55e", skills:["Linux Administration","AWS CloudWatch","Incident Response","System Monitoring"] },
-  { title:"Programming & Scripting", color:"#eab308", skills:["Python","Bash","SQL"] },
-  { title:"Databases", color:"#ec4899", skills:["PostgreSQL (AWS RDS)","DynamoDB"] },
+  { title:"Containers & Orchestration", color:"#06b6d4", skills:["Docker","Kubernetes","Helm","Amazon ECS","AWS Fargate","Kustomize"] },
+  { title:"CI/CD & Automation", color:"#f97316", skills:["GitHub Actions","Jenkins","Ansible","CI/CD Pipelines","PowerShell","Bash"] },
+  { title:"Observability & Reliability", color:"#22c55e", skills:["Prometheus","Grafana","Loki","AWS CloudWatch","Incident Response","SRE","Chaos Engineering","SLOs","MTTR"] },
+  { title:"Programming & Scripting", color:"#eab308", skills:["Python","FastAPI","Node.js","JavaScript","Bash","PowerShell","SQL","Linux"] },
+  { title:"Databases", color:"#ec4899", skills:["PostgreSQL","AWS RDS","DynamoDB","JSON Persistence"] },
 ]
 export default function Skills() {
   return (
@@ -16,7 +16,7 @@ export default function Skills() {
           <div style={{fontFamily:"monospace",fontSize:"11px",color:"#3b82f6",letterSpacing:"4px",marginBottom:"12px"}}>// CORE_TECHNOLOGIES</div>
           <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"#fff",marginBottom:"12px"}}>Technical Skills</h2>
           <div style={{width:"40px",height:"2px",background:"#3b82f6"}} />
-          <p style={{marginTop:"16px",color:"#8b949e",fontSize:"13px",fontFamily:"monospace"}}>Production-tested technologies across real infrastructure deployments</p>
+          <p style={{marginTop:"16px",color:"#8b949e",fontSize:"13px",fontFamily:"monospace"}}>Cloud, platform engineering, automation, and observability technologies</p>
         </div>
         <div className="grid-3col">
           {cats.map(c=>(
