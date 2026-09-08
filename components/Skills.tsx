@@ -14,9 +14,9 @@ export default function Skills() {
       <div style={{maxWidth:"1200px",margin:"0 auto"}}>
         <div style={{marginBottom:"40px"}}>
           <div style={{fontFamily:"monospace",fontSize:"11px",color:"#3b82f6",letterSpacing:"4px",marginBottom:"12px"}}>// CORE_TECHNOLOGIES</div>
-          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"#fff",marginBottom:"12px"}}>Technical Skills</h2>
+          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"var(--text-primary)",marginBottom:"12px"}}>Technical Skills</h2>
           <div style={{width:"40px",height:"2px",background:"#3b82f6"}} />
-          <p style={{marginTop:"16px",color:"#8b949e",fontSize:"13px",fontFamily:"monospace"}}>Cloud, platform engineering, automation, and observability technologies</p>
+          <p style={{marginTop:"16px",color:"var(--text-secondary)",fontSize:"13px",fontFamily:"monospace"}}>Cloud, platform engineering, automation, and observability technologies</p>
         </div>
         <div className="grid-3col">
           {cats.map(c=>(

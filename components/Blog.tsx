@@ -7,27 +7,27 @@ const posts = [
 ]
 export default function Blog() {
   return (
-    <section id="blog" className="section-pad" style={{background:"#080c12",borderTop:"1px solid #1e2d40"}}>
+    <section id="blog" className="section-pad" style={{background:"var(--bg-section)",borderTop:"1px solid var(--border)"}}>
       <div style={{maxWidth:"1200px",margin:"0 auto"}}>
         <div style={{marginBottom:"48px"}}>
           <div style={{fontFamily:"monospace",fontSize:"11px",color:"#eab308",letterSpacing:"4px",marginBottom:"12px"}}>// TECHNICAL_WRITING</div>
-          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"#fff",marginBottom:"12px"}}>Engineering Blog</h2>
+          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"var(--text-primary)",marginBottom:"12px"}}>Engineering Blog</h2>
           <div style={{width:"40px",height:"2px",background:"#eab308",marginBottom:"16px"}} />
-          <p style={{color:"#8b949e",fontSize:"14px"}}>Deep dives into cloud infrastructure, DevOps practices, and real-world production engineering challenges.</p>
+          <p style={{color:"var(--text-secondary)",fontSize:"14px"}}>Deep dives into cloud infrastructure, DevOps practices, and real-world production engineering challenges.</p>
         </div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:"20px"}}>
           {posts.map(p=>(
-            <div key={p.title} style={{padding:"24px",borderRadius:"10px",border:"1px solid #1e2d40",background:"rgba(255,255,255,0.01)",display:"flex",flexDirection:"column",gap:"12px",position:"relative",overflow:"hidden"}}>
+            <div key={p.title} style={{padding:"24px",borderRadius:"10px",border:"1px solid var(--border)",background:"var(--bg-card2)",display:"flex",flexDirection:"column",gap:"12px",position:"relative",overflow:"hidden"}}>
               <div style={{position:"absolute",top:0,left:0,right:0,height:"2px",background:p.color,opacity:0.7}} />
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
                 <span style={{fontFamily:"monospace",fontSize:"10px",color:p.color,padding:"2px 8px",borderRadius:"4px",border:`1px solid ${p.color}33`,background:`${p.color}10`}}>{p.tag}</span>
-                <span style={{fontFamily:"monospace",fontSize:"10px",color:"#484f58"}}>{p.mins}</span>
+                <span style={{fontFamily:"monospace",fontSize:"10px",color:"var(--text-muted)"}}>{p.mins}</span>
               </div>
-              <h3 style={{fontSize:"15px",fontWeight:600,color:"#fff",lineHeight:1.4}}>{p.title}</h3>
-              <p style={{fontSize:"13px",color:"#8b949e",lineHeight:1.6,flex:1}}>{p.desc}</p>
+              <h3 style={{fontSize:"15px",fontWeight:600,color:"var(--text-primary)",lineHeight:1.4}}>{p.title}</h3>
+              <p style={{fontSize:"13px",color:"var(--text-secondary)",lineHeight:1.6,flex:1}}>{p.desc}</p>
               <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-                <span style={{fontFamily:"monospace",fontSize:"11px",color:"#484f58"}}>{p.date}</span>
-                <span style={{fontFamily:"monospace",fontSize:"11px",color:"#484f58",padding:"4px 10px",borderRadius:"4px",border:"1px solid #1e2d40"}}>Coming Soon</span>
+                <span style={{fontFamily:"monospace",fontSize:"11px",color:"var(--text-muted)"}}>{p.date}</span>
+                <span style={{fontFamily:"monospace",fontSize:"11px",color:"var(--text-muted)",padding:"4px 10px",borderRadius:"4px",border:"1px solid var(--border)"}}>Coming Soon</span>
               </div>
             </div>
           ))}

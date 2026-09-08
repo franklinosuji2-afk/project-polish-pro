@@ -21,7 +21,7 @@ export default function Experience() {
           <div style={{width:"40px",height:"2px",background:"#3b82f6"}} />
         </div>
         <div style={{position:"relative",paddingLeft:"32px"}}>
-          <div style={{position:"absolute",left:0,top:0,bottom:0,width:"1px",background:"linear-gradient(to bottom,#3b82f6,#1e2d40)"}} />
+          <div style={{position:"absolute",left:0,top:0,bottom:0,width:"1px",background:"linear-gradient(to bottom,#3b82f6,var(--border))"}} />
           <div style={{display:"flex",flexDirection:"column",gap:"24px"}}>
             {exps.map((exp,i)=>{
               const tc = typeColor[exp.type]

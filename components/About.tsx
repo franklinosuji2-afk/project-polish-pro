@@ -21,7 +21,7 @@ export default function About() {
     <section
       id="about"
       className="section-pad"
-      style={{ background: "#070a0f" }}
+      style={{ background: "var(--bg-section)" }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{ marginBottom: "48px" }}>
@@ -41,7 +41,7 @@ export default function About() {
             style={{
               fontSize: "clamp(24px,4vw,38px)",
               fontWeight: 700,
-              color: "#fff",
+              color: "var(--text-primary)",
               marginBottom: "12px",
             }}
           >
@@ -60,19 +60,19 @@ export default function About() {
         <div style={{ maxWidth: "1000px" }}>
           <p
             style={{
-              color: "#8b949e",
+              color: "var(--text-secondary)",
               fontSize: "clamp(14px,2vw,17px)",
               lineHeight: 1.8,
               marginBottom: "20px",
             }}
           >
-            <strong style={{ color: "#fff" }}>
+            <strong style={{ color: "var(--text-primary)" }}>
               Cloud Infrastructure & DevOps Engineer
             </strong>{" "}
             specializing in AWS-based infrastructure automation, containerized
             workloads, and CI/CD systems. Experienced in designing scalable
             cloud environments using{" "}
-            <strong style={{ color: "#fff" }}>
+            <strong style={{ color: "var(--text-primary)" }}>
               Terraform, Docker, Kubernetes, Amazon ECS, and GitHub Actions
             </strong>{" "}
             with a strong focus on operational reliability, deployment
@@ -81,13 +81,13 @@ export default function About() {
 
           <p
             style={{
-              color: "#8b949e",
+              color: "var(--text-secondary)",
               lineHeight: 1.8,
               marginBottom: "32px",
             }}
           >
             Combines engineering discipline with business awareness to deliver{" "}
-            <strong style={{ color: "#fff" }}>
+            <strong style={{ color: "var(--text-primary)" }}>
               secure, high-availability, and cost-efficient cloud solutions
             </strong>
             . Proven ability to automate infrastructure provisioning, improve
@@ -99,8 +99,8 @@ export default function About() {
             style={{
               padding: "18px 20px",
               borderRadius: "12px",
-              border: "1px solid #1e2d40",
-              background: "#0d1117",
+              border: "1px solid var(--border)",
+              background: "var(--bg-card)",
             }}
           >
             <div
