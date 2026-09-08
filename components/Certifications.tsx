@@ -9,23 +9,23 @@ const certs = [
 ]
 export default function Certifications() {
   return (
-    <section id="certifications" className="section-pad" style={{background:"#070a0f"}}>
+    <section id="certifications" className="section-pad" style={{background:"var(--bg-section)"}}>
       <div style={{maxWidth:"1200px",margin:"0 auto"}}>
         <div style={{marginBottom:"40px"}}>
           <div style={{fontFamily:"monospace",fontSize:"11px",color:"#3b82f6",letterSpacing:"4px",marginBottom:"12px"}}>// EDUCATION_AND_CERTIFICATIONS</div>
-          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"#fff",marginBottom:"12px"}}>Education & Credentials</h2>
+          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"var(--text-primary)",marginBottom:"12px"}}>Education & Credentials</h2>
           <div style={{width:"40px",height:"2px",background:"#3b82f6"}} />
         </div>
         <div className="grid-3col">
           {certs.map((cert,i)=>(
-            <div key={i} style={{padding:"18px",borderRadius:"12px",border:`1px solid ${cert.color}22`,background:"#0d1117"}}>
+            <div key={i} style={{padding:"18px",borderRadius:"12px",border:`1px solid ${cert.color}22`,background:"var(--bg-card)"}}>
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"10px",gap:"6px"}}>
-                <span style={{fontFamily:"monospace",fontSize:"9px",color:"#484f58",letterSpacing:"1px",lineHeight:1.4}}>{cert.issuer}</span>
+                <span style={{fontFamily:"monospace",fontSize:"9px",color:"var(--text-muted)",letterSpacing:"1px",lineHeight:1.4}}>{cert.issuer}</span>
                 <span style={{fontFamily:"monospace",fontSize:"9px",color:cert.color,border:`1px solid ${cert.color}44`,padding:"2px 6px",borderRadius:"4px",flexShrink:0,whiteSpace:"nowrap"}}>{cert.status}</span>
               </div>
-              <h3 style={{fontWeight:600,color:"#fff",marginBottom:"6px",fontSize:"13px",lineHeight:1.4}}>{cert.name}</h3>
-              <div style={{fontFamily:"monospace",fontSize:"10px",color:"#484f58",marginBottom:"6px"}}>{cert.period}</div>
-              {cert.note&&<p style={{fontSize:"11px",color:"#8b949e",lineHeight:1.5,marginBottom:"6px"}}>{cert.note}</p>}
+              <h3 style={{fontWeight:600,color:"var(--text-primary)",marginBottom:"6px",fontSize:"13px",lineHeight:1.4}}>{cert.name}</h3>
+              <div style={{fontFamily:"monospace",fontSize:"10px",color:"var(--text-muted)",marginBottom:"6px"}}>{cert.period}</div>
+              {cert.note&&<p style={{fontSize:"11px",color:"var(--text-secondary)",lineHeight:1.5,marginBottom:"6px"}}>{cert.note}</p>}
               {cert.verify&&<a href={cert.verify} target="_blank" rel="noreferrer" style={{fontSize:"11px",color:"#22c55e",textDecoration:"none",fontFamily:"monospace"}}>Verify on Credly</a>}
             </div>
           ))}

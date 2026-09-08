@@ -134,13 +134,13 @@ export default function Projects() {
   const p = projects[active]
 
   return (
-    <section id="projects" className="section-pad" style={{ background: "#080c12" }}>
+    <section id="projects" className="section-pad" style={{ background: "var(--bg-section)" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{ marginBottom: "40px" }}>
           <div style={{ fontFamily: "monospace", fontSize: "11px", color: "#3b82f6", letterSpacing: "4px", marginBottom: "12px" }}>// FEATURED_PROJECTS</div>
-          <h2 style={{ fontSize: "clamp(24px,4vw,38px)", fontWeight: 700, color: "#fff", marginBottom: "12px" }}>Platform, Cloud & SRE Projects</h2>
+          <h2 style={{ fontSize: "clamp(24px,4vw,38px)", fontWeight: 700, color: "var(--text-primary)", marginBottom: "12px" }}>Platform, Cloud & SRE Projects</h2>
           <div style={{ width: "40px", height: "2px", background: "#3b82f6", marginBottom: "16px" }} />
-          <p style={{ color: "#8b949e", fontSize: "14px", maxWidth: "760px", lineHeight: 1.7 }}>
+          <p style={{ color: "var(--text-secondary)", fontSize: "14px", maxWidth: "760px", lineHeight: 1.7 }}>
             Selected projects demonstrating platform engineering, Kubernetes, cloud infrastructure, automation, observability, and reliability with concise architecture and operational value.
           </p>
         </div>
@@ -148,64 +148,64 @@ export default function Projects() {
         <div style={{ display: "flex", gap: "8px", marginBottom: "28px", flexWrap: "wrap" }}>
           {projects.map((proj, i) => (
             <button key={proj.id} onClick={() => setActive(i)}
-              style={{ padding: "8px 16px", borderRadius: "6px", border: `1px solid ${active === i ? proj.color + "66" : "#1e2d40"}`, background: active === i ? `${proj.color}12` : "transparent", color: active === i ? proj.color : "#8b949e", fontFamily: "monospace", fontSize: "12px", cursor: "pointer", transition: "all 0.2s" }}>
+              style={{ padding: "8px 16px", borderRadius: "6px", border: `1px solid ${active === i ? proj.color + "66" : "var(--border)"}`, background: active === i ? `${proj.color}12` : "transparent", color: active === i ? proj.color : "var(--text-secondary)", fontFamily: "monospace", fontSize: "12px", cursor: "pointer", transition: "all 0.2s" }}>
               {proj.title}
             </button>
           ))}
         </div>
 
-        <div style={{ borderRadius: "12px", border: `1px solid ${p.color}22`, background: "rgba(255,255,255,0.01)", overflow: "hidden" }}>
-          <div style={{ padding: "24px 28px", borderBottom: "1px solid #1e2d40", display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
+        <div style={{ borderRadius: "12px", border: `1px solid ${p.color}22`, background: "var(--bg-card2)", overflow: "hidden" }}>
+          <div style={{ padding: "24px 28px", borderBottom: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
             <div>
               <div style={{ fontFamily: "monospace", fontSize: "11px", color: p.color, letterSpacing: "2px", marginBottom: "6px" }}>{p.tag}</div>
-              <h3 style={{ fontSize: "clamp(18px,3vw,24px)", fontWeight: 700, color: "#fff" }}>{p.title}</h3>
+              <h3 style={{ fontSize: "clamp(18px,3vw,24px)", fontWeight: 700, color: "var(--text-primary)" }}>{p.title}</h3>
             </div>
             <a href={p.github} target="_blank" rel="noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "8px 16px", border: "1px solid #1e2d40", borderRadius: "6px", color: "#8b949e", textDecoration: "none", fontSize: "12px", fontFamily: "monospace" }}>
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "8px 16px", border: "1px solid var(--border)", borderRadius: "6px", color: "var(--text-secondary)", textDecoration: "none", fontSize: "12px", fontFamily: "monospace" }}>
               GitHub Repo
             </a>
           </div>
 
           <div style={{ padding: "28px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
-            <div style={{ gridColumn: "1/-1", padding: "16px 20px", borderRadius: "8px", border: "1px solid #1e2d40", background: "rgba(239,68,68,0.04)", borderLeft: "3px solid #ef4444" }}>
+            <div style={{ gridColumn: "1/-1", padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(239,68,68,0.04)", borderLeft: "3px solid #ef4444" }}>
               <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#ef4444", letterSpacing: "2px", marginBottom: "8px" }}>PROBLEM STATEMENT</div>
-              <p style={{ fontSize: "14px", color: "#8b949e", lineHeight: 1.7 }}>{p.problem}</p>
+              <p style={{ fontSize: "14px", color: "var(--text-secondary)", lineHeight: 1.7 }}>{p.problem}</p>
             </div>
 
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid #1e2d40", background: "rgba(59,130,246,0.04)", borderLeft: "3px solid #3b82f6" }}>
+            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(59,130,246,0.04)", borderLeft: "3px solid #3b82f6" }}>
               <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#3b82f6", letterSpacing: "2px", marginBottom: "8px" }}>ARCHITECTURE OVERVIEW</div>
-              <p style={{ fontSize: "13px", color: "#8b949e", lineHeight: 1.7 }}>{p.architecture}</p>
+              <p style={{ fontSize: "13px", color: "var(--text-secondary)", lineHeight: 1.7 }}>{p.architecture}</p>
             </div>
 
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid #1e2d40", background: "rgba(139,92,246,0.04)", borderLeft: "3px solid #8b5cf6" }}>
+            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(139,92,246,0.04)", borderLeft: "3px solid #8b5cf6" }}>
               <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#8b5cf6", letterSpacing: "2px", marginBottom: "12px" }}>ENGINEERING WORKFLOW</div>
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "4px" }}>
                 {p.pipeline.map((s, i) => (
                   <span key={s} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                     <span style={{ padding: "3px 8px", fontSize: "10px", borderRadius: "4px", background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.2)", color: "#a78bfa", fontFamily: "monospace" }}>{s}</span>
-                    {i < p.pipeline.length - 1 && <span style={{ color: "#484f58", fontSize: "10px" }}>{">"}</span>}
+                    {i < p.pipeline.length - 1 && <span style={{ color: "var(--text-muted)", fontSize: "10px" }}>{">"}</span>}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid #1e2d40", background: "rgba(249,115,22,0.04)", borderLeft: "3px solid #f97316" }}>
+            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(249,115,22,0.04)", borderLeft: "3px solid #f97316" }}>
               <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#f97316", letterSpacing: "2px", marginBottom: "10px" }}>SECURITY CONSIDERATIONS</div>
-              {p.security.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "#8b949e", marginBottom: "6px" }}><span style={{ color: "#f97316", flexShrink: 0 }}>*</span>{s}</div>)}
+              {p.security.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "var(--text-secondary)", marginBottom: "6px" }}><span style={{ color: "#f97316", flexShrink: 0 }}>*</span>{s}</div>)}
             </div>
 
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid #1e2d40", background: "rgba(6,182,212,0.04)", borderLeft: "3px solid #06b6d4" }}>
+            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(6,182,212,0.04)", borderLeft: "3px solid #06b6d4" }}>
               <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#06b6d4", letterSpacing: "2px", marginBottom: "10px" }}>MONITORING SETUP</div>
-              {p.monitoring.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "#8b949e", marginBottom: "6px" }}><span style={{ color: "#06b6d4", flexShrink: 0 }}>~</span>{s}</div>)}
+              {p.monitoring.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "var(--text-secondary)", marginBottom: "6px" }}><span style={{ color: "#06b6d4", flexShrink: 0 }}>~</span>{s}</div>)}
             </div>
 
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid #1e2d40", background: "rgba(34,197,94,0.04)", borderLeft: "3px solid #22c55e" }}>
+            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(34,197,94,0.04)", borderLeft: "3px solid #22c55e" }}>
               <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#22c55e", letterSpacing: "2px", marginBottom: "10px" }}>BUSINESS & ENGINEERING VALUE</div>
-              {p.results.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "#8b949e", marginBottom: "6px" }}><span style={{ color: "#22c55e", flexShrink: 0 }}>+</span>{s}</div>)}
+              {p.results.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "var(--text-secondary)", marginBottom: "6px" }}><span style={{ color: "#22c55e", flexShrink: 0 }}>+</span>{s}</div>)}
             </div>
 
             <div style={{ gridColumn: "1/-1" }}>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#484f58", letterSpacing: "2px", marginBottom: "10px" }}>TECH STACK</div>
+              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "var(--text-muted)", letterSpacing: "2px", marginBottom: "10px" }}>TECH STACK</div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {p.tags.map(t => <span key={t} style={{ padding: "4px 10px", fontSize: "11px", borderRadius: "4px", border: `1px solid ${p.color}30`, color: p.color, background: `${p.color}10`, fontFamily: "monospace" }}>{t}</span>)}
               </div>

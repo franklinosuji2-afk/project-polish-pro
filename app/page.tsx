@@ -17,7 +17,7 @@ import Footer from "../components/Footer"
 
 export default function Home() {
   return (
-    <main id="home" style={{minHeight:"100vh",background:"#060a0f"}}>
+    <main id="home" style={{minHeight:"100vh",background:"var(--bg-primary)"}}>
       <Nav />
       <Hero />
       <CertBadge />

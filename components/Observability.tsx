@@ -16,15 +16,15 @@ const cards = [
 ]
 export default function Observability() {
   return (
-    <section id="observability" className="section-pad" style={{background:"#080c12",borderTop:"1px solid #1e2d40"}}>
+    <section id="observability" className="section-pad" style={{background:"var(--bg-section)",borderTop:"1px solid var(--border)"}}>
       <div style={{maxWidth:"1200px",margin:"0 auto"}}>
         <div style={{marginBottom:"48px"}}>
           <div style={{fontFamily:"monospace",fontSize:"11px",color:"#06b6d4",letterSpacing:"4px",marginBottom:"12px"}}>// OBSERVABILITY_AND_RELIABILITY</div>
-          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"#fff",marginBottom:"12px"}}>Monitoring & Reliability Engineering</h2>
+          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:700,color:"var(--text-primary)",marginBottom:"12px"}}>Monitoring & Reliability Engineering</h2>
           <div style={{width:"40px",height:"2px",background:"#06b6d4",marginBottom:"16px"}} />
-          <p style={{color:"#8b949e",fontSize:"14px"}}>Production systems require full visibility. These are the observability practices and tools I implement.</p>
+          <p style={{color:"var(--text-secondary)",fontSize:"14px"}}>Production systems require full visibility. These are the observability practices and tools I implement.</p>
         </div>
-        <div style={{padding:"24px",borderRadius:"10px",border:"1px solid #1e2d40",background:"rgba(6,182,212,0.03)",marginBottom:"28px"}}>
+        <div style={{padding:"24px",borderRadius:"10px",border:"1px solid var(--border)",background:"rgba(6,182,212,0.03)",marginBottom:"28px"}}>
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:"20px",flexWrap:"wrap",gap:"8px"}}>
             <div style={{fontFamily:"monospace",fontSize:"11px",color:"#06b6d4",letterSpacing:"2px"}}>EXAMPLE SLO DASHBOARD — TARGET METRICS</div>
             <div style={{display:"flex",alignItems:"center",gap:"6px"}}>
@@ -34,20 +34,20 @@ export default function Observability() {
           </div>
           <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))",gap:"12px"}}>
             {metrics.map(m=>(
-              <div key={m.label} style={{padding:"14px",borderRadius:"8px",border:"1px solid #1e2d40",background:"rgba(0,0,0,0.2)"}}>
-                <div style={{fontSize:"10px",color:"#484f58",fontFamily:"monospace",marginBottom:"6px"}}>{m.label}</div>
+              <div key={m.label} style={{padding:"14px",borderRadius:"8px",border:"1px solid var(--border)",background:"var(--metric-bg)"}}>
+                <div style={{fontSize:"10px",color:"var(--text-muted)",fontFamily:"monospace",marginBottom:"6px"}}>{m.label}</div>
                 <div style={{fontSize:"22px",fontWeight:700,color:statusColor[m.status],fontFamily:"monospace",marginBottom:"4px"}}>{m.value}</div>
-                <div style={{fontSize:"10px",color:"#8b949e",fontFamily:"monospace"}}>{m.trend}</div>
+                <div style={{fontSize:"10px",color:"var(--text-secondary)",fontFamily:"monospace"}}>{m.trend}</div>
               </div>
             ))}
           </div>
         </div>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"20px"}}>
           {cards.map(card=>(
-            <div key={card.title} style={{padding:"20px",borderRadius:"10px",border:"1px solid #1e2d40",background:"rgba(255,255,255,0.01)"}}>
+            <div key={card.title} style={{padding:"20px",borderRadius:"10px",border:"1px solid var(--border)",background:"var(--bg-card2)"}}>
               <div style={{fontFamily:"monospace",fontSize:"10px",color:card.color,letterSpacing:"2px",marginBottom:"12px"}}>{card.title.toUpperCase()}</div>
               {card.items.map(item=>(
-                <div key={item} style={{display:"flex",gap:"10px",fontSize:"13px",color:"#8b949e",marginBottom:"8px",lineHeight:1.5}}>
+                <div key={item} style={{display:"flex",gap:"10px",fontSize:"13px",color:"var(--text-secondary)",marginBottom:"8px",lineHeight:1.5}}>
                   <span style={{color:card.color,flexShrink:0,fontSize:"10px",marginTop:"3px"}}>{">"}</span>
                   <span>{item}</span>
                 </div>

@@ -50,7 +50,7 @@ export default function Hero() {
         flexDirection: "column",
         justifyContent: "center",
         padding: "80px 24px 48px",
-        background: "#060a0f",
+        background: "var(--bg-primary)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -178,14 +178,14 @@ export default function Hero() {
               gap: "8px",
               padding: "5px 12px",
               borderRadius: "6px",
-              border: "1px solid #1e2d40",
+              border: "1px solid var(--border)",
               background: "rgba(255,255,255,0.02)",
             }}
           >
             <span
               style={{
                 fontSize: "12px",
-                color: "#8b949e",
+                color: "var(--text-secondary)",
                 fontFamily: "monospace",
               }}
             >
@@ -201,7 +201,7 @@ export default function Hero() {
               style={{
                 fontSize: "clamp(28px,4.5vw,54px)",
                 fontWeight: 800,
-                color: "#fff",
+                color: "var(--text-primary)",
                 lineHeight: 1.1,
                 marginBottom: "20px",
                 letterSpacing: "-0.5px",
@@ -212,7 +212,7 @@ export default function Hero() {
             </h1>
             <p
               style={{
-                color: "#8b949e",
+                color: "var(--text-secondary)",
                 fontSize: "clamp(14px,2vw,17px)",
                 lineHeight: 1.8,
                 marginBottom: "32px",
@@ -239,7 +239,7 @@ export default function Hero() {
                   style={{
                     padding: "14px",
                     borderRadius: "8px",
-                    border: "1px solid #1e2d40",
+                    border: "1px solid var(--border)",
                     background: "rgba(255,255,255,0.02)",
                     textAlign: "center",
                   }}
@@ -257,7 +257,7 @@ export default function Hero() {
                   <div
                     style={{
                       fontSize: "10px",
-                      color: "#484f58",
+                      color: "var(--text-muted)",
                       fontFamily: "monospace",
                       lineHeight: 1.3,
                     }}
@@ -312,8 +312,8 @@ export default function Hero() {
                   href="#contact"
                   style={{
                     padding: "11px 22px",
-                    border: "1px solid #1e2d40",
-                    color: "#8b949e",
+                    border: "1px solid var(--border)",
+                    color: "var(--text-secondary)",
                     borderRadius: "7px",
                     textDecoration: "none",
                     fontSize: "14px",
@@ -327,7 +327,7 @@ export default function Hero() {
                 style={{
                   fontFamily: "monospace",
                   fontSize: "12px",
-                  color: "#484f58",
+                  color: "var(--text-muted)",
                   textDecoration: "none",
                 }}
               >
@@ -355,16 +355,16 @@ export default function Hero() {
                   style={{
                     padding: "6px 14px",
                     fontSize: "12px",
-                    color: "#484f58",
-                    border: "1px solid #1e2d40",
+                    color: "var(--text-muted)",
+                    border: "1px solid var(--border)",
                     borderRadius: "6px",
                     textDecoration: "none",
                     fontFamily: "monospace",
                     transition: "color 0.2s",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#484f58")
+                    (e.currentTarget.style.color = "var(--text-muted)")
                   }
                 >
                   {s.label}
@@ -377,7 +377,7 @@ export default function Hero() {
           <div
             style={{
               borderRadius: "10px",
-              border: "1px solid #1e2d40",
+              border: "1px solid var(--border)",
               overflow: "hidden",
               boxShadow: "0 0 60px rgba(59,130,246,0.08)",
             }}
@@ -388,8 +388,8 @@ export default function Hero() {
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "10px 16px",
-                background: "#0d1117",
-                borderBottom: "1px solid #1e2d40",
+                background: "var(--bg-card)",
+                borderBottom: "1px solid var(--border)",
               }}
             >
               <div style={{ display: "flex", gap: "6px" }}>
@@ -422,7 +422,7 @@ export default function Hero() {
                 style={{
                   fontFamily: "monospace",
                   fontSize: "11px",
-                  color: "#484f58",
+                  color: "var(--text-muted)",
                 }}
               >
                 franklin@prod-cluster:~
@@ -451,7 +451,7 @@ export default function Hero() {
             </div>
             <div
               style={{
-                background: "#060a0f",
+                background: "var(--bg-primary)",
                 padding: "20px",
                 fontFamily: "monospace",
                 fontSize: "12px",
@@ -467,7 +467,7 @@ export default function Hero() {
                       ? "#60a5fa"
                       : line.startsWith(">")
                         ? "#4ade80"
-                        : "#8b949e",
+                        : "var(--text-secondary)",
                     marginBottom: "2px",
                   }}
                 >
@@ -485,7 +485,7 @@ export default function Hero() {
                   {current}
                   <span
                     style={{
-                      color: "#fff",
+                      color: "var(--text-primary)",
                       animation: "blink 1s step-end infinite",
                     }}
                   >
@@ -497,7 +497,7 @@ export default function Hero() {
                 <div style={{ marginTop: "16px" }}>
                   <div
                     style={{
-                      color: "#484f58",
+                      color: "var(--text-muted)",
                       fontSize: "11px",
                       marginBottom: "8px",
                     }}
@@ -515,7 +515,7 @@ export default function Hero() {
                       style={{
                         display: "flex",
                         justifyContent: "space-between",
-                        color: "#8b949e",
+                        color: "var(--text-secondary)",
                         marginBottom: "4px",
                       }}
                     >
@@ -528,7 +528,7 @@ export default function Hero() {
                     <span
                       style={{
                         animation: "blink 1s step-end infinite",
-                        color: "#fff",
+                        color: "var(--text-primary)",
                       }}
                     >
                       _
