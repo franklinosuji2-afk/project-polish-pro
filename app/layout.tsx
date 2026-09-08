@@ -1,9 +1,9 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "../components/ThemeContext"
 
 export const metadata: Metadata = {
-  title: "Franklin Chinonso Osuji | AWS Cloud & DevOps Engineer",
+  title: "DEPLOY TEST | Franklin Chinonso Osuji",
   description: "AWS-Certified Cloud Infrastructure & DevOps Engineer based in Berlin, Germany. Specializing in Terraform, Docker/ECS, CI/CD automation, and cloud-native infrastructure.",
   keywords: ["Franklin Osuji","AWS Cloud Engineer","DevOps Engineer","Berlin","Terraform","Docker","CI/CD"],
   authors: [{ name: "Franklin Chinonso Osuji" }],
