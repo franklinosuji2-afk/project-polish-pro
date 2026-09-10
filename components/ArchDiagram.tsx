@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 export default function ArchDiagram() {
   return (
     <section id="architecture" className="section-pad" style={{background:"var(--bg-primary)",borderTop:"1px solid var(--border)"}}>

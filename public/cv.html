@@ -1,284 +1,151 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Franklin Chinonso Osuji - CV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Franklin Osuji - Cloud Infrastructure & DevOps Engineer</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:Inter,sans-serif;background:#070a0f;color:#f0f6fc;min-height:100vh;}
-  .toolbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:52px;background:rgba(7,10,15,0.98);border-bottom:1px solid #1e2d40;}
-  .toolbar-title{font-family:monospace;font-size:13px;color:#8b949e;letter-spacing:2px;}
-  .toolbar-title span{color:#3b82f6;}
-  .toolbar-btns{display:flex;gap:10px;}
-  .btn-back{font-family:monospace;font-size:12px;color:#8b949e;background:transparent;border:1px solid #1e2d40;padding:7px 14px;cursor:pointer;text-decoration:none;border-radius:6px;}
-  .btn-back:hover{color:#fff;border-color:#3b82f6;}
-  .btn-pdf{font-family:monospace;font-size:12px;color:#fff;background:#2563eb;border:none;padding:7px 18px;cursor:pointer;border-radius:6px;letter-spacing:1px;}
-  .btn-pdf:hover{background:#3b82f6;}
-  .cv{max-width:860px;margin:0 auto;padding:40px 40px 60px;}
-  .cv-header{border-bottom:1px solid #1e2d40;padding-bottom:24px;margin-bottom:28px;}
-  .cv-name{font-size:30px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:4px;}
-  .cv-role{font-size:15px;color:#60a5fa;font-weight:600;margin-bottom:12px;}
-  .cv-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;}
-  .cv-meta-item{font-family:monospace;font-size:11px;color:#8b949e;}
-  .cv-meta-item a{color:#8b949e;text-decoration:none;}
-  .cv-meta-item a:hover{color:#60a5fa;}
-  .cv-cert{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:6px;border:1px solid rgba(249,115,22,0.4);background:rgba(249,115,22,0.08);}
-  .cv-cert-aws{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#f97316,#ea580c);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:900;color:#fff;font-family:monospace;}
-  .cv-cert span{font-size:12px;color:#f97316;font-family:monospace;font-weight:600;}
-  .cv-cert .dot{width:5px;height:5px;border-radius:50%;background:#4ade80;display:inline-block;}
-  .section{margin-bottom:28px;}
-  .section-title{font-family:monospace;font-size:10px;color:#3b82f6;letter-spacing:4px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #1e2d40;}
-  .summary{font-size:13px;color:#8b949e;line-height:1.8;font-family:sans-serif;}
-  .exp-block{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid #1e2d40;}
-  .exp-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
-  .exp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:3px;flex-wrap:wrap;}
-  .exp-title{font-size:14px;font-weight:700;color:#fff;}
-  .exp-date{font-family:monospace;font-size:11px;color:#3b82f6;white-space:nowrap;flex-shrink:0;}
-  .exp-company{font-family:monospace;font-size:11px;color:#484f58;margin-bottom:10px;}
-  .exp-type{font-family:monospace;font-size:9px;padding:1px 7px;border-radius:4px;margin-left:8px;vertical-align:middle;}
-  .exp-list{list-style:none;}
-  .exp-list li{font-size:12px;color:#8b949e;padding-left:14px;position:relative;margin-bottom:5px;line-height:1.6;font-family:sans-serif;}
-  .exp-list li::before{content:"▸";position:absolute;left:0;color:#3b82f6;font-size:9px;top:3px;}
-  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .skill-group{background:#0d1117;border:1px solid #1e2d40;border-radius:8px;padding:14px;}
-  .skill-label{font-family:monospace;font-size:9px;color:#3b82f6;letter-spacing:2px;margin-bottom:8px;}
-  .skill-tags{display:flex;flex-wrap:wrap;gap:5px;}
-  .skill-tag{font-family:monospace;font-size:10px;color:#60a5fa;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);padding:2px 7px;border-radius:3px;}
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-  .edu-block{margin-bottom:14px;}
-  .edu-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;}
-  .edu-sub{font-family:monospace;font-size:10px;color:#484f58;margin-bottom:2px;}
-  .edu-focus{font-size:11px;color:#8b949e;margin-top:4px;line-height:1.5;}
-  .cert-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#8b949e;margin-bottom:8px;font-family:sans-serif;}
-  .cert-star{color:#f97316;font-size:13px;flex-shrink:0;}
-  .cert-active{font-family:monospace;font-size:9px;color:#4ade80;border:1px solid rgba(74,222,128,0.3);padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;}
-  .proj-block{margin-bottom:16px;padding:14px;background:#0d1117;border:1px solid #1e2d40;border-radius:8px;}
-  .proj-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;}
-  .proj-desc{font-size:11px;color:#8b949e;line-height:1.6;margin-bottom:6px;font-family:sans-serif;}
-  .proj-stack{font-family:monospace;font-size:10px;color:#484f58;}
-  .proj-link{font-family:monospace;font-size:10px;color:#3b82f6;text-decoration:none;float:right;}
-  .lang-row{display:flex;gap:20px;flex-wrap:wrap;}
-  .lang-item{font-size:13px;color:#8b949e;font-family:sans-serif;}
-  .lang-item strong{color:#fff;}
-  @media print{
-    body{background:#fff;color:#000;}
-    .toolbar{display:none;}
-    .cv{padding:20px;}
-    .cv-name{color:#000;}
-    .cv-role{color:#1d4ed8;}
-    .section-title{color:#1d4ed8;border-color:#ddd;}
-    .exp-title,.edu-title,.proj-title{color:#000;}
-    .exp-list li,.summary,.proj-desc,.cert-item,.edu-focus,.lang-item{color:#333;}
-    .exp-date{color:#1d4ed8;}
-    .exp-company,.edu-sub,.proj-stack{color:#666;}
-    .exp-list li::before{color:#1d4ed8;}
-    .skill-group{background:#f8f9fa;border-color:#ddd;}
-    .skill-tag{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8;}
-    .skill-label{color:#1d4ed8;}
-    .cert-star{color:#ea580c;}
-    .cert-active{color:#16a34a;border-color:#16a34a;}
-    .proj-block{background:#f8f9fa;border-color:#ddd;}
-    .cv-meta-item,.cv-meta-item a{color:#555;}
-    .cv-cert{border-color:rgba(234,88,12,0.4);background:rgba(234,88,12,0.05);}
-    .cv-cert span{color:#ea580c;}
-    .exp-block{border-color:#eee;}
-    @page{margin:1.5cm;}
-  }
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#172033;font-family:Arial,Helvetica,sans-serif;font-size:9.2px;line-height:1.35}
+.cv{max-width:800px;margin:0 auto}
+.header{border-bottom:2px solid #172033;padding-bottom:9px;margin-bottom:10px}
+.name{font-size:25px;font-weight:700;letter-spacing:-.5px;margin:0 0 2px}
+.title{font-size:12px;font-weight:600;margin-bottom:6px}
+.contact{font-size:8.5px;color:#46536a;line-height:1.5}
+.contact a{color:#46536a;text-decoration:none}
+h2{font-size:10.5px;text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid #ccd3dd;padding-bottom:3px;margin:9px 0 5px}
+.summary{margin:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.item{margin-bottom:6px}
+.top{display:flex;justify-content:space-between;gap:10px}
+.role{font-weight:700;font-size:9.6px}
+.date{font-size:8.2px;color:#637087;white-space:nowrap}
+.company{font-size:8.6px;color:#4d5a70;margin:1px 0 2px}
+ul{margin:2px 0 0 14px;padding:0}
+li{margin:1px 0}
+.skills{display:grid;grid-template-columns:115px 1fr;gap:2px 8px}
+.label{font-weight:700}
+.project{margin-bottom:4px}
+.project strong{font-size:9.3px}
+.small{font-size:8.4px}
+footer{margin-top:7px;padding-top:5px;border-top:1px solid #ccd3dd;font-size:7.8px;color:#69758a}
+@media print{
+body{font-size:9.2px}
+.cv{max-width:none}
+a{color:inherit;text-decoration:none}
+}
 </style>
 </head>
 <body>
-<div class="toolbar">
-  <div class="toolbar-title">FO / <span>CURRICULUM VITAE</span></div>
-  <div class="toolbar-btns">
-    <a href="/" class="btn-back">← Back</a>
-    <button class="btn-pdf" onclick="window.print()">⬇ Download PDF</button>
-  </div>
+<main class="cv">
+
+<header class="header">
+<h1 class="name">Franklin Osuji</h1>
+<div class="title">Cloud Infrastructure &amp; DevOps Engineer</div>
+<div class="contact">
+Berlin, Germany &nbsp;|&nbsp; +49 152 59380812 &nbsp;|&nbsp; franklin.osuji2@gmail.com<br>
+linkedin.com/in/franklin-osuji-a96003321 &nbsp;|&nbsp; github.com/franklinosuji2-afk &nbsp;|&nbsp; fc-dev.netlify.app
 </div>
-<div class="cv">
+</header>
 
-  <!-- HEADER -->
-  <div class="cv-header">
-    <div class="cv-name">Franklin Chinonso Osuji</div>
-    <div class="cv-role">Cloud Infrastructure & DevOps Engineer</div>
-    <div class="cv-meta">
-      <span class="cv-meta-item">Berlin, Germany 12051</span>
-      <span class="cv-meta-item">Permanent Work Authorization (Niederlassungserlaubnis)</span>
-      <span class="cv-meta-item"><a href="mailto:franklin.osuji2@gmail.com">franklin.osuji2@gmail.com</a></span>
-      <span class="cv-meta-item"><a href="tel:+4915259380812">+49 152 59380812</a></span>
-    </div>
-    <div class="cv-meta" style="margin-bottom:12px;">
-      <span class="cv-meta-item"><a href="https://linkedin.com/in/franklin-osuji-a96003321" target="_blank">LinkedIn</a></span>
-      <span class="cv-meta-item"><a href="https://github.com/franklinosuji2-afk" target="_blank">GitHub</a></span>
-      <span class="cv-meta-item"><a href="https://fc-sparkle-studio.lovable.app/" target="_blank">Portfolio</a></span>
-    </div>
-    <div class="cv-cert">
-      <div class="cv-cert-aws">AWS</div>
-      <span>AWS Certified Cloud Practitioner</span>
-      <span class="dot"></span>
-      <span style="font-size:11px;color:#4ade80;font-family:monospace;">Active</span>
-    </div>
-  </div>
+<section>
+<h2>Professional Summary</h2>
+<p class="summary">
+Cloud Infrastructure &amp; DevOps Engineer with 4+ years of combined engineering, consulting, and digital operations experience. Hands-on with AWS infrastructure, Terraform, Docker, Kubernetes, ECS/Fargate, Linux, and CI/CD automation. Builds repeatable infrastructure and deployment workflows with a focus on reliability, security, performance, and cost efficiency.
+</p>
+</section>
 
-  <!-- SUMMARY -->
-  <div class="section">
-    <div class="section-title">// PROFESSIONAL SUMMARY</div>
-    <p class="summary">Cloud Infrastructure & DevOps Engineer specializing in AWS-based infrastructure automation, containerized workloads, and CI/CD systems. Experienced in designing scalable cloud environments using Terraform, Docker, Amazon ECS, and GitHub Actions with a strong focus on operational reliability, deployment efficiency, and infrastructure optimization. Combines engineering discipline with business awareness to deliver secure, high-availability, and cost-efficient cloud solutions. Proven ability to optimize deployment workflows, automate infrastructure provisioning, and improve system performance across production-oriented environments.</p>
-  </div>
+<section>
+<h2>Professional Experience</h2>
 
-  <!-- EXPERIENCE -->
-  <div class="section">
-    <div class="section-title">// PROFESSIONAL EXPERIENCE</div>
-
-    <div class="exp-block">
-      <div class="exp-top">
-        <div class="exp-title">Cloud Engineer <span class="exp-type" style="color:#4ade80;border:1px solid rgba(74,222,128,0.3);background:rgba(74,222,128,0.05);">Contract</span></div>
-        <div class="exp-date">Apr 2026 — Present</div>
-      </div>
-      <div class="exp-company">MacVoltex System Limited | Remote</div>
-      <ul class="exp-list">
-        <li>Designed and deployed scalable AWS and Azure cloud infrastructure, improving deployment efficiency and enhancing platform reliability across production environments.</li>
-        <li>Automated infrastructure provisioning and deployment workflows using Terraform and CI/CD pipelines, reducing manual configuration overhead and improving operational consistency.</li>
-        <li>Implemented containerized deployment strategies using Docker and cloud-native services, improving scalability and deployment speed.</li>
-        <li>Optimized cloud resource utilization and infrastructure architecture, contributing to reduced operational costs and improved system performance.</li>
-        <li>Collaborated with development teams to support secure, reliable, and highly available cloud-based applications.</li>
-      </ul>
-    </div>
-
-    <div class="exp-block">
-      <div class="exp-top">
-        <div class="exp-title">DevOps Engineer Trainee / Internship <span class="exp-type" style="color:#60a5fa;border:1px solid rgba(96,165,250,0.3);background:rgba(96,165,250,0.05);">Work Study</span></div>
-        <div class="exp-date">Nov 2024 — Mar 2026</div>
-      </div>
-      <div class="exp-company">Digital Career Institute (DCI) | Berlin, Germany</div>
-      <ul class="exp-list">
-        <li>Designed automated CI/CD pipelines using Jenkins and GitHub Actions.</li>
-        <li>Built Infrastructure as Code solutions with Terraform for repeatable deployments.</li>
-        <li>Managed EC2, S3, IAM, VPC, Lambda, and RDS in team cloud projects.</li>
-        <li>Deployed scalable ECS Fargate workloads with Blue/Green deployment strategies.</li>
-      </ul>
-    </div>
-
-    <div class="exp-block">
-      <div class="exp-top">
-        <div class="exp-title">Consultant / Freelancer | Cloud & DevOps Engineer <span class="exp-type" style="color:#c084fc;border:1px solid rgba(192,132,252,0.3);background:rgba(192,132,252,0.05);">Freelance</span></div>
-        <div class="exp-date">Jul 2023 — Aug 2024</div>
-      </div>
-      <div class="exp-company">Basecamp: Outdoor Jobs, Freelance Gigs, Networking | Remote</div>
-      <ul class="exp-list">
-        <li>Automated cloud infrastructure provisioning and deployment processes, accelerating onboarding and reducing deployment time for client environments.</li>
-        <li>Designed and deployed cloud-based infrastructure solutions using AWS services, Docker, and infrastructure automation practices.</li>
-        <li>Diagnosed and resolved infrastructure, Linux server, and deployment-related issues to maintain platform reliability and operational continuity.</li>
-        <li>Supported CI/CD workflow implementation and automated deployment pipelines for improved software delivery efficiency.</li>
-        <li>Contributed to Oracle E-Business Suite deployment and operational support initiatives, driving successful internal adoption across business units.</li>
-      </ul>
-    </div>
-
-    <div class="exp-block">
-      <div class="exp-top">
-        <div class="exp-title">E-commerce & Digital Marketing Specialist <span class="exp-type" style="color:#34d399;border:1px solid rgba(52,211,153,0.3);background:rgba(52,211,153,0.05);">Full-time</span></div>
-        <div class="exp-date">Mar 2020 — Apr 2023</div>
-      </div>
-      <div class="exp-company">PAPER & TEA | Berlin, Germany</div>
-      <ul class="exp-list">
-        <li>Automated operational and reporting workflows using Bash and Python scripting, improving internal efficiency and reducing repetitive manual tasks.</li>
-        <li>Managed technical website optimization initiatives that improved website performance, SEO visibility, and digital conversion metrics.</li>
-        <li>Increased organic web traffic by 25% through data-driven optimization strategies and improved conversion rates by 15% using A/B testing.</li>
-        <li>Collaborated with cross-functional teams to improve digital operations, reporting accuracy, and customer engagement performance.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="section">
-    <div class="section-title">// FEATURED INFRASTRUCTURE PROJECTS</div>
-    <div class="proj-block">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">
-        <div class="proj-title">AWS ECS CI/CD Infrastructure</div>
-        <a href="https://github.com/franklinosuji2-afk/AWS-ECS-CI-CD-infrastructure-" target="_blank" class="proj-link">GitHub →</a>
-      </div>
-      <div class="proj-desc">Built a Terraform-based AWS infrastructure deployment pipeline using ECS, Docker, IAM, and GitHub Actions. Automated containerized application deployment workflows with CI/CD integration and infrastructure provisioning. Implemented scalable cloud architecture practices using AWS-native services and container orchestration.</div>
-      <div class="proj-stack">Terraform • AWS ECS • Docker • GitHub Actions • IAM • CloudWatch</div>
-    </div>
-    <div class="proj-block">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">
-        <div class="proj-title">Cloud Resume Infrastructure</div>
-        <a href="https://github.com/franklinosuji2-afk/cloud-resume-tracker" target="_blank" class="proj-link">GitHub →</a>
-      </div>
-      <div class="proj-desc">Developed a serverless cloud-hosted portfolio platform using AWS services and automated deployment workflows. Implemented infrastructure automation and cloud-native deployment practices for scalable hosting and operational efficiency.</div>
-      <div class="proj-stack">AWS • Lambda • S3 • Route 53 • CI/CD • CloudFront</div>
-    </div>
-    <div class="proj-block">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">
-        <div class="proj-title">Serverless Free-Tier API Project</div>
-        <a href="https://github.com/franklinosuji2-afk/serverless-free-tier-api" target="_blank" class="proj-link">GitHub →</a>
-      </div>
-      <div class="proj-desc">Designed and deployed a lightweight serverless API architecture using AWS cloud-native services. Focused on cost-efficient infrastructure deployment and automation within AWS Free Tier constraints.</div>
-      <div class="proj-stack">AWS Lambda • API Gateway • DynamoDB • IAM</div>
-    </div>
-  </div>
-
-  <!-- SKILLS -->
-  <div class="section">
-    <div class="section-title">// CORE SKILLS</div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <div class="skill-label">CLOUD PLATFORMS</div>
-        <div class="skill-tags"><span class="skill-tag">EC2</span><span class="skill-tag">ECS</span><span class="skill-tag">Fargate</span><span class="skill-tag">S3</span><span class="skill-tag">IAM</span><span class="skill-tag">VPC</span><span class="skill-tag">Route 53</span><span class="skill-tag">Lambda</span><span class="skill-tag">RDS</span><span class="skill-tag">CloudWatch</span><span class="skill-tag">CloudFormation</span></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">INFRASTRUCTURE AS CODE</div>
-        <div class="skill-tags"><span class="skill-tag">Terraform</span><span class="skill-tag">AWS CloudFormation</span></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">CONTAINERS & ORCHESTRATION</div>
-        <div class="skill-tags"><span class="skill-tag">Docker</span><span class="skill-tag">Amazon ECS</span><span class="skill-tag">AWS Fargate</span></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">CI/CD & AUTOMATION</div>
-        <div class="skill-tags"><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Jenkins</span><span class="skill-tag">CI/CD Pipelines</span></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">OPERATING SYSTEMS & MONITORING</div>
-        <div class="skill-tags"><span class="skill-tag">Linux Admin</span><span class="skill-tag">CloudWatch</span><span class="skill-tag">Incident Response</span><span class="skill-tag">System Monitoring</span></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">PROGRAMMING & DATABASES</div>
-        <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">Bash</span><span class="skill-tag">SQL</span><span class="skill-tag">PostgreSQL (RDS)</span><span class="skill-tag">DynamoDB</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- EDUCATION & CERTS -->
-  <div class="two-col">
-    <div class="section">
-      <div class="section-title">// EDUCATION</div>
-      <div class="edu-block">
-        <div class="edu-title">DevOps & Cloud Engineering Program</div>
-        <div class="edu-sub">Digital Career Institute (DCI) | Berlin, Germany</div>
-        <div class="edu-sub">Nov 2024 — Mar 2026</div>
-        <div class="edu-focus">Focus: Cloud Infrastructure · Infrastructure Automation · CI/CD Engineering · Linux Administration · Containerization & Deployment Workflows</div>
-      </div>
-      <div class="edu-block">
-        <div class="edu-title">B.Eng. Petroleum Engineering</div>
-        <div class="edu-sub">Federal University of Technology, Owerri (FUTO)</div>
-        <div class="edu-sub">Jan 2012 — Sep 2016</div>
-        <div class="edu-sub" style="color:#22c55e;margin-top:4px;">Second Class Honours (Upper Division)</div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="section-title">// CERTIFICATIONS</div>
-      <div class="cert-item"><span class="cert-star">★</span><span>AWS Certified Cloud Practitioner<span class="cert-active">ACTIVE</span><br/><span style="font-family:monospace;font-size:10px;color:#484f58;">Aug 2025 — Aug 2028</span></span></div>
-      <div class="cert-item"><span class="cert-star" style="color:#60a5fa;">★</span><span>DCI Professional Training Certificates / DevOps & Cloud Engineering Program<br/><span style="font-family:monospace;font-size:10px;color:#484f58;">Nov 2024 — Mar 2026</span></span></div>
-      <div class="section-title" style="margin-top:20px;">// LANGUAGES</div>
-      <div class="lang-row">
-        <div class="lang-item"><strong>English</strong> — Native</div>
-        <div class="lang-item"><strong>German</strong> — B2 Professional Working Proficiency</div>
-      </div>
-    </div>
-  </div>
-
+<div class="item">
+<div class="top"><div class="role">Cloud Engineer</div><div class="date">Apr 2026 - Present</div></div>
+<div class="company">Macview | Contract | Remote</div>
+<ul>
+<li>Design and deploy cloud infrastructure and automation workflows focused on reliability, scalability, and operational efficiency.</li>
+<li>Work with AWS, Azure, Terraform, Docker, CI/CD pipelines, and cloud-native deployment practices.</li>
+<li>Automate infrastructure provisioning and deployment workflows while optimizing performance and cost.</li>
+</ul>
 </div>
+
+<div class="item">
+<div class="top"><div class="role">Cloud Infrastructure &amp; DevOps Engineering Trainee</div><div class="date">Nov 2024 - Mar 2026</div></div>
+<div class="company">Digital Career Institute (DCI) | Berlin, Germany</div>
+<ul>
+<li>Built CI/CD pipelines using Jenkins and GitHub Actions for repeatable software delivery.</li>
+<li>Developed infrastructure as code with Terraform and worked hands-on with EC2, S3, IAM, VPC, Lambda, and RDS.</li>
+<li>Deployed containerized workloads using Docker, ECS/Fargate, Kubernetes, and related cloud-native tooling.</li>
+</ul>
+</div>
+
+<div class="item">
+<div class="top"><div class="role">Cloud &amp; DevOps Consultant / Freelancer</div><div class="date">Jul 2023 - Aug 2024</div></div>
+<div class="company">Independent | Remote</div>
+<ul>
+<li>Automated cloud provisioning and deployment processes using AWS, Docker, scripting, and infrastructure automation.</li>
+<li>Diagnosed Linux, infrastructure, and deployment issues and supported reliable operational environments.</li>
+<li>Supported CI/CD implementation and infrastructure-focused technical delivery.</li>
+</ul>
+</div>
+
+<div class="item">
+<div class="top"><div class="role">E-Commerce &amp; Digital Marketing Specialist</div><div class="date">Mar 2020 - Apr 2023</div></div>
+<div class="company">Paper &amp; Tea | Berlin, Germany</div>
+<ul>
+<li>Improved digital operations, reporting workflows, website performance, and process automation using technical and analytical tools.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Technical Skills</h2>
+<div class="skills">
+<div class="label">Cloud</div><div>AWS, Azure, EC2, S3, VPC, IAM, Lambda, ECS/Fargate, RDS, CloudFormation, Route 53</div>
+<div class="label">Infrastructure</div><div>Terraform, Ansible, Infrastructure as Code, Linux Administration</div>
+<div class="label">Containers</div><div>Docker, Kubernetes, Helm, Kustomize, ECS/Fargate, GitOps concepts</div>
+<div class="label">CI/CD</div><div>GitHub Actions, Jenkins, GitLab CI, PowerShell, Bash, deployment automation</div>
+<div class="label">Observability</div><div>CloudWatch, Prometheus, Grafana, Loki, incident response, SRE, chaos engineering, SLOs, MTTR</div>
+<div class="label">Development</div><div>Python, FastAPI, Node.js, JavaScript, Bash, SQL</div>
+<div class="label">Data &amp; Tools</div><div>PostgreSQL, DynamoDB, JSON persistence, Git, GitHub</div>
+</div>
+</section>
+
+<div class="grid">
+<div>
+<section>
+<h2>Certifications</h2>
+<div class="item"><strong>AWS Certified Cloud Practitioner</strong><br><span class="small">Active | Aug 2025 - Aug 2028</span></div>
+<div class="item"><strong>HashiCorp Certified: Terraform Associate</strong><br><span class="small">In Progress | Exam Scheduled</span></div>
+<div class="item"><strong>AWS Certified Solutions Architect - Associate</strong><br><span class="small">In Progress | Expected 2026</span></div>
+</section>
+</div>
+
+<div>
+<section>
+<h2>Education</h2>
+<div class="item"><strong>DevOps &amp; Cloud Engineering Program</strong><br><span class="small">Digital Career Institute (DCI), Berlin | Nov 2024 - Mar 2026</span></div>
+<div class="item"><strong>B.Eng. Petroleum Engineering</strong><br><span class="small">Federal University of Technology, Owerri (FUTO), Nigeria | 2012 - 2016</span></div>
+</section>
+</div>
+</div>
+
+<section>
+<h2>Selected Projects</h2>
+<div class="project"><strong>PlatformOps-Lab</strong> - Local Kubernetes platform using Terraform, Kind, Kustomize, Docker Compose, Prometheus, Grafana, and Loki.</div>
+<div class="project"><strong>LocalCloud Control Plane</strong> - Local-first platform engineering simulation using React/Vite, Node.js/Express, Docker Compose, and infrastructure workflows.</div>
+<div class="project"><strong>Cloud Infrastructure &amp; CI/CD</strong> - Terraform-based AWS deployment patterns using ECS, Docker, IAM, GitHub Actions, and CloudWatch.</div>
+</section>
+
+<section>
+<h2>Additional Information</h2>
+<div class="small"><strong>Work Authorization:</strong> Niederlassungserlaubnis (Permanent) &nbsp;|&nbsp; <strong>Availability:</strong> Immediately &nbsp;|&nbsp; <strong>Languages:</strong> English (Fluent), German (B2)</div>
+</section>
+
+<footer>
+Franklin Osuji | Cloud Infrastructure &amp; DevOps Engineer | Berlin, Germany
+</footer>
+
+</main>
 </body>
 </html>

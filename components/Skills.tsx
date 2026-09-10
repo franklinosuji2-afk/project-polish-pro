@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 const cats = [
   { title: "Cloud Platforms", color: "#3b82f6", skills: ["AWS", "Azure", "EC2", "S3", "VPC", "IAM", "Lambda", "ECS/Fargate", "RDS", "CloudFormation", "Route 53", "CloudWatch"] },

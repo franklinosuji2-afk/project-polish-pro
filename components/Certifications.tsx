@@ -7,7 +7,15 @@ const certs = [
     period: "Aug 2025 - Aug 2028",
     status: "ACTIVE",
     color: "#22c55e",
-    verify: "https://www.credly.com/badges/914031f2-e5b2-4e4b-b408-2d512d91566d/public_url",
+    verify: "https://www.credly.com/users/franklin-chinonso-osuji.4b5356de",
+  },
+  {
+    issuer: "AMAZON WEB SERVICES TRAINING AND CERTIFICATION",
+    name: "AWS re/Start Graduate",
+    period: "Completed",
+    status: "COMPLETED",
+    color: "#22c55e",
+    verify: "https://www.credly.com/badges/9405ef7c-91a8-466b-b970-a917de42a180",
   },
   {
     issuer: "HASHICORP",
@@ -18,7 +26,7 @@ const certs = [
   },
   {
     issuer: "AMAZON WEB SERVICES",
-    name: "AWS Certified Solutions Architect â€“ Associate",
+    name: "AWS Certified Solutions Architect - Associate",
     period: "Expected 2026",
     status: "IN PROGRESS",
     color: "#f97316",
@@ -60,7 +68,7 @@ export default function Certifications() {
               <h3 style={{ fontWeight: 600, color: "var(--text-primary)", marginBottom: "6px", fontSize: "13px", lineHeight: 1.4 }}>{cert.name}</h3>
               <div style={{ fontFamily: "monospace", fontSize: "10px", color: "var(--text-muted)", marginBottom: "6px" }}>{cert.period}</div>
               {cert.note && <p style={{ fontSize: "11px", color: "var(--text-secondary)", lineHeight: 1.5 }}>{cert.note}</p>}
-              {cert.verify && <a href={cert.verify} target="_blank" rel="noreferrer" style={{ fontSize: "11px", color: "#22c55e", textDecoration: "none", fontFamily: "monospace" }}>Verify on Credly</a>}
+              {cert.verify && <a href={cert.verify} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", color: "#22c55e", textDecoration: "none", fontFamily: "monospace" }}>Verify on Credly</a>}
             </div>
           ))}
         </div>
@@ -68,3 +76,6 @@ export default function Certifications() {
     </section>
   )
 }
+
+
+

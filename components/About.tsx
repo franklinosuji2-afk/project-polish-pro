@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 const roleFocus = [
   "Cloud Infrastructure Engineer",
@@ -43,8 +43,8 @@ export default function About() {
             <span className="about-badge">Berlin, Germany</span>
             <span className="about-badge">Niederlassungserlaubnis (Permanent)</span>
             <span className="about-badge">Available Immediately</span>
-            <span className="about-badge">English â€” Fluent</span>
-            <span className="about-badge">German â€” B2</span>
+            <span className="about-badge">English - Fluent</span>
+            <span className="about-badge">German - B2</span>
           </div>
 
           <div style={{ padding: "18px 20px", borderRadius: "12px", border: "1px solid var(--border)", background: "var(--bg-card)" }}>
@@ -52,7 +52,7 @@ export default function About() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(190px,1fr))", gap: "8px" }}>
               {roleFocus.map((role) => (
                 <div key={role} style={{ display: "flex", alignItems: "center", gap: "8px", padding: "8px 10px", borderRadius: "7px", background: "#111820", border: "1px solid #182535", color: "#c9d1d9", fontSize: "11px", lineHeight: 1.4 }}>
-                  <span style={{ color: "#3b82f6", fontSize: "10px" }}>â—†</span>{role}
+                  <span style={{ color: "#3b82f6", fontSize: "10px" }}></span>{role}
                 </div>
               ))}
             </div>

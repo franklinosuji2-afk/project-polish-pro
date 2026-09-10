@@ -9,7 +9,6 @@ import Experience from "../components/Experience"
 import Certifications from "../components/Certifications"
 import Skills from "../components/Skills"
 import TechStack from "../components/TechStack"
-import Blog from "../components/Blog"
 import Observability from "../components/Observability"
 import Security from "../components/Security"
 import Contact from "../components/Contact"
@@ -29,7 +28,6 @@ export default function Home() {
       <Certifications />
       <Skills />
       <TechStack />
-      <Blog />
       <Observability />
       <Security />
       <Contact />
@@ -37,3 +35,5 @@ export default function Home() {
     </main>
   )
 }
+
+

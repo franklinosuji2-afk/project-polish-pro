@@ -1,9 +1,9 @@
-﻿"use client"
+"use client"
 
 const exps = [
   {
     title: "Cloud Engineer",
-    company: "Macview Â· Contract",
+    company: "Macview - Contract",
     location: "Remote",
     period: "APR 2026 - PRESENT",
     type: "Contract",
