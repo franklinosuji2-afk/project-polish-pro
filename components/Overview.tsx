@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 const principles = [
   {icon:"[IaC]",title:"Infrastructure as Code First",desc:"Every cloud resource is version-controlled, peer-reviewed, and reproducible. Terraform modules ensure consistent, auditable infrastructure across all environments.",color:"#3b82f6"},
   {icon:"[AUTO]",title:"Automation-Driven Operations",desc:"Manual processes are failure points. CI/CD pipelines, auto-scaling policies, and runbooks eliminate toil and reduce human error in production operations.",color:"#8b5cf6"},

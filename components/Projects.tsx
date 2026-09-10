@@ -1,219 +1,429 @@
-﻿"use client"
-import { useState } from "react"
+"use client"
 
 const projects = [
   {
-    id: 0,
-    title: "LocalCloud Control Plane",
-    tag: "PLATFORM ENGINEERING",
-    problem:
-      "Cloud platforms abstract complex orchestration behind control planes. This project recreates those concepts locally to demonstrate service lifecycle management, orchestration, persistence, and platform engineering without cloud spend.",
-    architecture:
-      "React + Vite dashboard communicates with a Node.js/Express control-plane API. Service management, orchestration, logging, metrics simulation, and local state persistence are separated into clear platform components.",
-    pipeline: ["React Dashboard", "REST API", "Service Manager", "Orchestrator", "Lifecycle Events", "State Persistence"],
-    security: [
-      "API-driven infrastructure control",
-      "Environment configuration separated from source",
-      "Dependency vulnerability auditing",
-      "CI validation with GitHub Actions",
-    ],
-    monitoring: [
-      "Service lifecycle events",
-      "Deployment state tracking",
-      "Operational event logging",
-      "Metrics simulation",
-    ],
-    results: [
-      "Local-first platform engineering environment",
-      "Demonstrates control-plane and data-plane concepts",
-      "No external cloud dependency for development",
-      "Foundation for Kubernetes-style platform extensions",
-    ],
-    tags: ["React", "Vite", "Node.js", "Express", "Docker", "GitHub Actions", "Platform Engineering"],
-    github: "https://github.com/franklinosuji2-afk/LocalCloud-Control-Plane",
-    color: "#3b82f6",
-  },
-  {
-    id: 1,
+    number: "01",
     title: "PlatformOps-Lab",
-    tag: "KUBERNETES & PLATFORM ENGINEERING",
-    problem:
-      "Production platforms require repeatable deployment, service orchestration, and observability. PlatformOps-Lab provides a local Kubernetes environment for practising those workflows without relying on a paid cloud environment.",
+    category: "KUBERNETES & PLATFORM ENGINEERING",
+    description:
+      "A production-inspired local Kubernetes platform demonstrating infrastructure automation, container orchestration, GitOps-style workflows, and observability without requiring a paid cloud environment.",
     architecture:
-      "A containerized application stack runs on Kubernetes with Terraform and Kind for infrastructure, Kustomize for environment configuration, and Helm for application packaging. Prometheus, Grafana, and Loki provide metrics, dashboards, and logs.",
-    pipeline: ["Terraform", "Kind", "Kubernetes", "Helm", "Kustomize", "GitHub Actions", "Observability"],
-    security: [
-      "Infrastructure as Code",
-      "Containerized workloads",
-      "Repeatable environment configuration",
-      "CI validation and controlled deployments",
+      "Terraform provisions the platform foundation while Kind runs the Kubernetes cluster. Kustomize manages environment configuration, Helm packages workloads, and GitHub Actions validates the delivery workflow.",
+    pipeline: ["Terraform", "Kind", "Kubernetes", "Helm", "Kustomize", "GitHub Actions"],
+    monitoring: ["Prometheus metrics", "Grafana dashboards", "Loki log aggregation", "Application visibility"],
+    value: [
+      "Reusable Kubernetes deployment patterns",
+      "Infrastructure-as-Code workflow",
+      "Integrated observability stack",
+      "Local platform engineering laboratory",
     ],
-    monitoring: [
-      "Prometheus metrics",
-      "Grafana dashboards",
-      "Loki log aggregation",
-      "Application and infrastructure visibility",
-    ],
-    results: [
-      "Production-inspired Kubernetes platform lab",
-      "Reusable deployment and configuration patterns",
-      "Integrated metrics, dashboards, and logs",
-      "Practical platform engineering workflow from infrastructure to observability",
-    ],
-    tags: ["Kubernetes", "Terraform", "Kind", "Helm", "Kustomize", "Docker", "GitHub Actions", "Prometheus", "Grafana", "Loki"],
+    tags: ["Kubernetes", "Terraform", "Docker", "Kind", "Helm", "Kustomize", "Prometheus", "Grafana"],
     github: "https://github.com/franklinosuji2-afk/PlatformOps-Lab",
     color: "#8b5cf6",
   },
   {
-    id: 2,
-    title: "ChaosForge",
-    tag: "SRE & CHAOS ENGINEERING",
-    problem:
-      "Monitoring alone does not prove resilience. ChaosForge introduces controlled failures and measures detection, recovery, MTTR, SLO compliance, and error-budget impact.",
+    number: "02",
+    title: "LocalCloud Control Plane",
+    category: "PLATFORM ENGINEERING",
+    description:
+      "A local-first cloud control-plane simulation demonstrating service lifecycle management, orchestration, persistence, operational events, and platform engineering concepts without cloud spend.",
     architecture:
-      "PowerShell orchestrates controlled failure experiments across Docker workloads. FastAPI provides the workload/API layer, while Prometheus collects reliability metrics and Grafana visualizes incidents and recovery performance.",
+      "A React + Vite dashboard communicates with a Node.js/Express control-plane API. Service management, orchestration, lifecycle events, logging, metrics simulation, and state persistence are separated into clear platform components.",
+    pipeline: ["React Dashboard", "REST API", "Service Manager", "Orchestrator", "Lifecycle Events", "State Persistence"],
+    monitoring: ["Service lifecycle events", "Deployment state tracking", "Operational event logging", "Metrics simulation"],
+    value: [
+      "Demonstrates control-plane architecture",
+      "Separates platform and application concerns",
+      "Runs completely locally",
+      "Foundation for Kubernetes-style extensions",
+    ],
+    tags: ["React", "Vite", "Node.js", "Express", "Docker", "GitHub Actions"],
+    github: "https://github.com/franklinosuji2-afk/LocalCloud-Control-Plane",
+    color: "#3b82f6",
+  },
+  {
+    number: "03",
+    title: "ChaosForge",
+    category: "SRE & CHAOS ENGINEERING",
+    description:
+      "A controlled reliability engineering laboratory that introduces failures into containerized workloads and measures detection, recovery, MTTR, SLO compliance, and error-budget impact.",
+    architecture:
+      "PowerShell orchestrates controlled failure experiments across Docker workloads. FastAPI provides the workload/API layer while Prometheus and Grafana capture and visualize reliability behaviour.",
     pipeline: ["Chaos Injection", "Failure Detection", "Incident Creation", "Recovery", "MTTR Measurement", "SLO Evaluation"],
-    security: [
-      "Controlled local failure experiments",
-      "Reproducible Docker environment",
-      "Explicit operational workflows",
-      "Failure isolation through containers",
-    ],
-    monitoring: [
-      "Prometheus metrics",
-      "Grafana dashboards",
-      "Incident history",
-      "MTTR and recovery success rate",
-      "SLO and error-budget tracking",
-    ],
-    results: [
-      "Turns reliability assumptions into measurable experiments",
-      "Provides evidence for recovery performance and MTTR",
+    monitoring: ["Prometheus metrics", "Grafana dashboards", "Incident history", "MTTR tracking"],
+    value: [
+      "Turns reliability assumptions into experiments",
+      "Measures recovery performance",
       "Supports SLO and error-budget analysis",
-      "Local SRE laboratory for resilience testing",
+      "Provides a local SRE laboratory",
     ],
-    tags: ["Python", "FastAPI", "Docker", "Docker Compose", "PowerShell", "Prometheus", "Grafana", "SRE", "Chaos Engineering"],
+    tags: ["Python", "FastAPI", "Docker", "PowerShell", "Prometheus", "Grafana", "SRE"],
     github: "https://github.com/franklinosuji2-afk/chaosforge",
     color: "#ef4444",
   },
   {
-    id: 3,
+    number: "04",
     title: "CloudPulse",
-    tag: "CLOUD OBSERVABILITY",
-    problem:
-      "Cloud operations teams need actionable visibility rather than raw metrics. CloudPulse explores metric ingestion, anomaly detection, health insights, and operational APIs in a portable local environment.",
+    category: "CLOUD OBSERVABILITY",
+    description:
+      "A portable cloud-operations observability platform focused on metric ingestion, anomaly detection, health insights, operational APIs, and actionable infrastructure visibility.",
     architecture:
-      "Containerized FastAPI services ingest and process cloud metrics, persist operational data in PostgreSQL, and expose REST APIs for dashboards and alerting integrations.",
+      "Containerized FastAPI services ingest and process operational metrics, persist data in PostgreSQL, and expose REST APIs for dashboards and alerting integrations.",
     pipeline: ["Metric Ingestion", "Processing", "Anomaly Detection", "Health Insights", "PostgreSQL", "REST API"],
-    security: [
-      "Containerized service boundaries",
-      "Environment-based configuration",
-      "API authentication and rate-limiting patterns",
-      "Reproducible local deployment",
+    monitoring: ["Metric ingestion", "Health signals", "Anomaly detection", "Operational API visibility"],
+    value: [
+      "Portable cloud operations platform",
+      "Actionable health signals",
+      "Reusable REST API",
+      "Demonstrates observability thinking",
     ],
-    monitoring: [
-      "Metric ingestion and health signals",
-      "Anomaly detection",
-      "Operational API visibility",
-      "PostgreSQL-backed history",
-    ],
-    results: [
-      "Portable observability platform for cloud operations",
-      "Actionable health and anomaly signals",
-      "Reusable REST API for dashboards and integrations",
-      "Demonstrates cloud operations, monitoring, and reliability thinking",
-    ],
-    tags: ["Python", "FastAPI", "PostgreSQL", "Docker", "REST APIs", "Observability", "Monitoring"],
+    tags: ["Python", "FastAPI", "PostgreSQL", "Docker", "REST API", "Observability"],
     github: "https://github.com/franklinosuji2-afk/cloudpulse",
     color: "#22c55e",
   },
 ]
 
 export default function Projects() {
-  const [active, setActive] = useState(0)
-  const p = projects[active]
-
   return (
-    <section id="projects" className="section-pad" style={{ background: "var(--bg-section)" }}>
+    <section
+      id="projects"
+      className="section-pad"
+      style={{
+        background: "var(--bg-section)",
+        borderTop: "1px solid var(--border)",
+      }}
+    >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <div style={{ marginBottom: "40px" }}>
-          <div style={{ fontFamily: "monospace", fontSize: "11px", color: "#3b82f6", letterSpacing: "4px", marginBottom: "12px" }}>// FEATURED_PROJECTS</div>
-          <h2 style={{ fontSize: "clamp(24px,4vw,38px)", fontWeight: 700, color: "var(--text-primary)", marginBottom: "12px" }}>Platform, Cloud & SRE Projects</h2>
-          <div style={{ width: "40px", height: "2px", background: "#3b82f6", marginBottom: "16px" }} />
-          <p style={{ color: "var(--text-secondary)", fontSize: "14px", maxWidth: "760px", lineHeight: 1.7 }}>
-            Selected projects demonstrating platform engineering, Kubernetes, cloud infrastructure, automation, observability, and reliability with concise architecture and operational value.
+
+        <div style={{ marginBottom: "48px" }}>
+          <div
+            style={{
+              fontFamily: "monospace",
+              fontSize: "11px",
+              color: "#3b82f6",
+              letterSpacing: "4px",
+              marginBottom: "12px",
+            }}
+          >
+            // PROJECTS
+          </div>
+
+          <h2
+            style={{
+              fontSize: "clamp(28px, 4vw, 42px)",
+              fontWeight: 700,
+              color: "var(--text-primary)",
+              marginBottom: "12px",
+            }}
+          >
+            Engineering Projects
+          </h2>
+
+          <div
+            style={{
+              width: "42px",
+              height: "2px",
+              background: "#3b82f6",
+              marginBottom: "18px",
+            }}
+          />
+
+          <p
+            style={{
+              color: "var(--text-secondary)",
+              fontSize: "15px",
+              maxWidth: "720px",
+              lineHeight: 1.8,
+            }}
+          >
+            Selected platform engineering, Kubernetes, SRE, cloud infrastructure,
+            automation, and observability projects built to demonstrate
+            production-oriented engineering practices.
           </p>
         </div>
 
-        <div style={{ display: "flex", gap: "8px", marginBottom: "28px", flexWrap: "wrap" }}>
-          {projects.map((proj, i) => (
-            <button key={proj.id} onClick={() => setActive(i)}
-              style={{ padding: "8px 16px", borderRadius: "6px", border: `1px solid ${active === i ? proj.color + "66" : "var(--border)"}`, background: active === i ? `${proj.color}12` : "transparent", color: active === i ? proj.color : "var(--text-secondary)", fontFamily: "monospace", fontSize: "12px", cursor: "pointer", transition: "all 0.2s" }}>
-              {proj.title}
-            </button>
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article
+              key={project.number}
+              className="project-card"
+              style={{
+                borderColor: `${project.color}55`,
+              }}
+            >
+              <div
+                className="project-header"
+                style={{
+                  borderBottom: `1px solid ${project.color}30`,
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontFamily: "monospace",
+                      fontSize: "10px",
+                      color: project.color,
+                      letterSpacing: "2px",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    PROJECT {project.number}
+                  </div>
+
+                  <div
+                    style={{
+                      fontFamily: "monospace",
+                      fontSize: "10px",
+                      color: "var(--text-muted)",
+                      letterSpacing: "1.5px",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    {project.category}
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: "clamp(22px, 3vw, 30px)",
+                      fontWeight: 700,
+                      color: "var(--text-primary)",
+                      margin: 0,
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+                </div>
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="github-button"
+                  style={{
+                    color: project.color,
+                    borderColor: `${project.color}66`,
+                  }}
+                >
+                  GitHub ↗
+                </a>
+              </div>
+
+              <div className="project-body">
+
+                <div className="project-overview">
+                  <Label color={project.color}>PROJECT OVERVIEW</Label>
+                  <p>{project.description}</p>
+                </div>
+
+                <div className="project-columns">
+
+                  <div className="project-info">
+                    <Label color="#60a5fa">ARCHITECTURE</Label>
+                    <p>{project.architecture}</p>
+                  </div>
+
+                  <div className="project-info">
+                    <Label color="#a78bfa">ENGINEERING WORKFLOW</Label>
+
+                    <div className="tags">
+                      {project.pipeline.map((step, index) => (
+                        <span key={step} className="workflow-tag">
+                          {step}
+                          {index < project.pipeline.length - 1 && " →"}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="project-info">
+                    <Label color="#06b6d4">OBSERVABILITY</Label>
+
+                    {project.monitoring.map((item) => (
+                      <div key={item} className="list-item">
+                        <span style={{ color: "#06b6d4" }}>●</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="project-info">
+                    <Label color="#22c55e">ENGINEERING VALUE</Label>
+
+                    {project.value.map((item) => (
+                      <div key={item} className="list-item">
+                        <span style={{ color: "#22c55e" }}>+</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+
+                <div className="technology">
+                  <Label color="var(--text-muted)">TECHNOLOGY STACK</Label>
+
+                  <div className="tags">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="tech-tag"
+                        style={{
+                          color: project.color,
+                          borderColor: `${project.color}35`,
+                          background: `${project.color}0c`,
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </article>
           ))}
         </div>
 
-        <div style={{ borderRadius: "12px", border: `1px solid ${p.color}22`, background: "var(--bg-card2)", overflow: "hidden" }}>
-          <div style={{ padding: "24px 28px", borderBottom: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
-            <div>
-              <div style={{ fontFamily: "monospace", fontSize: "11px", color: p.color, letterSpacing: "2px", marginBottom: "6px" }}>{p.tag}</div>
-              <h3 style={{ fontSize: "clamp(18px,3vw,24px)", fontWeight: 700, color: "var(--text-primary)" }}>{p.title}</h3>
-            </div>
-            <a href={p.github} target="_blank" rel="noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "8px 16px", border: "1px solid var(--border)", borderRadius: "6px", color: "var(--text-secondary)", textDecoration: "none", fontSize: "12px", fontFamily: "monospace" }}>
-              GitHub Repo
-            </a>
-          </div>
-
-          <div style={{ padding: "28px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
-            <div style={{ gridColumn: "1/-1", padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(239,68,68,0.04)", borderLeft: "3px solid #ef4444" }}>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#ef4444", letterSpacing: "2px", marginBottom: "8px" }}>PROBLEM STATEMENT</div>
-              <p style={{ fontSize: "14px", color: "var(--text-secondary)", lineHeight: 1.7 }}>{p.problem}</p>
-            </div>
-
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(59,130,246,0.04)", borderLeft: "3px solid #3b82f6" }}>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#3b82f6", letterSpacing: "2px", marginBottom: "8px" }}>ARCHITECTURE OVERVIEW</div>
-              <p style={{ fontSize: "13px", color: "var(--text-secondary)", lineHeight: 1.7 }}>{p.architecture}</p>
-            </div>
-
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(139,92,246,0.04)", borderLeft: "3px solid #8b5cf6" }}>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#8b5cf6", letterSpacing: "2px", marginBottom: "12px" }}>ENGINEERING WORKFLOW</div>
-              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "4px" }}>
-                {p.pipeline.map((s, i) => (
-                  <span key={s} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                    <span style={{ padding: "3px 8px", fontSize: "10px", borderRadius: "4px", background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.2)", color: "#a78bfa", fontFamily: "monospace" }}>{s}</span>
-                    {i < p.pipeline.length - 1 && <span style={{ color: "var(--text-muted)", fontSize: "10px" }}>{">"}</span>}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(249,115,22,0.04)", borderLeft: "3px solid #f97316" }}>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#f97316", letterSpacing: "2px", marginBottom: "10px" }}>SECURITY CONSIDERATIONS</div>
-              {p.security.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "var(--text-secondary)", marginBottom: "6px" }}><span style={{ color: "#f97316", flexShrink: 0 }}>*</span>{s}</div>)}
-            </div>
-
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(6,182,212,0.04)", borderLeft: "3px solid #06b6d4" }}>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#06b6d4", letterSpacing: "2px", marginBottom: "10px" }}>MONITORING SETUP</div>
-              {p.monitoring.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "var(--text-secondary)", marginBottom: "6px" }}><span style={{ color: "#06b6d4", flexShrink: 0 }}>~</span>{s}</div>)}
-            </div>
-
-            <div style={{ padding: "16px 20px", borderRadius: "8px", border: "1px solid var(--border)", background: "rgba(34,197,94,0.04)", borderLeft: "3px solid #22c55e" }}>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#22c55e", letterSpacing: "2px", marginBottom: "10px" }}>BUSINESS & ENGINEERING VALUE</div>
-              {p.results.map(s => <div key={s} style={{ display: "flex", gap: "8px", fontSize: "12px", color: "var(--text-secondary)", marginBottom: "6px" }}><span style={{ color: "#22c55e", flexShrink: 0 }}>+</span>{s}</div>)}
-            </div>
-
-            <div style={{ gridColumn: "1/-1" }}>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "var(--text-muted)", letterSpacing: "2px", marginBottom: "10px" }}>TECH STACK</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                {p.tags.map(t => <span key={t} style={{ padding: "4px 10px", fontSize: "11px", borderRadius: "4px", border: `1px solid ${p.color}30`, color: p.color, background: `${p.color}10`, fontFamily: "monospace" }}>{t}</span>)}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
+      <style jsx>{`
+
+        .projects-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .project-card {
+          border: 1px solid;
+          border-radius: 16px;
+          background: var(--bg-card2);
+          overflow: hidden;
+          transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .project-card:hover {
+          transform: translateY(-3px);
+        }
+
+        .project-header {
+          padding: 26px 28px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .github-button {
+          display: inline-flex;
+          align-items: center;
+          padding: 9px 15px;
+          border: 1px solid;
+          border-radius: 8px;
+          text-decoration: none;
+          font-family: monospace;
+          font-size: 11px;
+          white-space: nowrap;
+        }
+
+        .project-body {
+          padding: 28px;
+        }
+
+        .project-overview {
+          padding: 22px;
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          margin-bottom: 16px;
+        }
+
+        .project-overview p,
+        .project-info p {
+          color: var(--text-secondary);
+          font-size: 13px;
+          line-height: 1.8;
+          margin: 0;
+        }
+
+        .project-columns {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+
+        .project-info {
+          padding: 22px;
+          border: 1px solid var(--border);
+          border-radius: 12px;
+        }
+
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 7px;
+        }
+
+        .workflow-tag,
+        .tech-tag {
+          padding: 6px 9px;
+          border-radius: 6px;
+          border: 1px solid var(--border);
+          font-family: monospace;
+          font-size: 10px;
+        }
+
+        .list-item {
+          display: flex;
+          gap: 9px;
+          margin-bottom: 8px;
+          color: var(--text-secondary);
+          font-size: 12px;
+        }
+
+        .technology {
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 700px) {
+          .project-header {
+            align-items: flex-start;
+            flex-direction: column;
+          }
+
+          .project-body {
+            padding: 20px;
+          }
+
+          .project-columns {
+            grid-template-columns: 1fr;
+          }
+        }
+
+      `}</style>
     </section>
   )
 }
 
+function Label({
+  children,
+  color,
+}: {
+  children: React.ReactNode
+  color: string
+}) {
+  return (
+    <div
+      style={{
+        fontFamily: "monospace",
+        fontSize: "10px",
+        color,
+        letterSpacing: "2px",
+        marginBottom: "12px",
+      }}
+    >
+      {children}
+    </div>
+  )
+}

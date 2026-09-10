@@ -5,13 +5,13 @@ const tools = [
   {name:"Docker",category:"Containerization",level:"Advanced",desc:"Multi-stage builds, image optimization, security scanning, registry management",color:"#06b6d4",short:"DO"},
   {name:"ECS/Fargate",category:"Container Orchestration",level:"Advanced",desc:"Task definitions, service scaling, load balancing, Blue/Green deployments",color:"#f97316",short:"ECS"},
   {name:"GitHub Actions",category:"CI/CD",level:"Advanced",desc:"Pipeline design, secrets management, matrix builds, deployment workflows",color:"var(--text-primary)",short:"GHA"},
-  {name:"Jenkins",category:"CI/CD",level:"Intermediate",desc:"Pipeline as code, multi-branch builds, plugin management",color:"#ef4444",short:"JK"},
-  {name:"Python",category:"Programming",level:"Intermediate",desc:"Automation scripts, Lambda functions, infrastructure tooling, data processing",color:"#eab308",short:"PY"},
+  {name:"Jenkins",category:"CI/CD",level:"Advanced",desc:"Pipeline as code, multi-branch builds, plugin management",color:"#ef4444",short:"JK"},
+  {name:"Python",category:"Programming",level:"Advanced",desc:"Automation scripts, Lambda functions, infrastructure tooling, data processing",color:"#eab308",short:"PY"},
   {name:"Linux",category:"Systems",level:"Advanced",desc:"System administration, shell scripting, process management, networking",color:"#22c55e",short:"LX"},
   {name:"CloudWatch",category:"Monitoring",level:"Advanced",desc:"Metrics, alarms, log groups, dashboards, custom metrics, alerting",color:"#f97316",short:"CW"},
-  {name:"PostgreSQL",category:"Database",level:"Intermediate",desc:"RDS setup, query optimization, backup strategies, security configuration",color:"#60a5fa",short:"PG"},
-  {name:"DynamoDB",category:"Database",level:"Intermediate",desc:"Table design, capacity planning, GSI/LSI, streams, DAX caching",color:"#f97316",short:"DDB"},
-  {name:"Azure",category:"Cloud Platform",level:"Beginner",desc:"VM provisioning, resource groups, networking, identity management",color:"#60a5fa",short:"AZ"},
+  {name:"PostgreSQL",category:"Database",level:"Advanced",desc:"RDS setup, query optimization, backup strategies, security configuration",color:"#60a5fa",short:"PG"},
+  {name:"DynamoDB",category:"Database",level:"Advanced",desc:"Table design, capacity planning, GSI/LSI, streams, DAX caching",color:"#f97316",short:"DDB"},
+  {name:"Azure",category:"Cloud Platform",level:"Intermediate",desc:"VM provisioning, resource groups, networking, identity management",color:"#60a5fa",short:"AZ"},
 ]
 const levelColor: Record<string,string> = {Expert:"#4ade80",Advanced:"#60a5fa",Intermediate:"#f97316",Beginner:"var(--text-secondary)"}
 export default function TechStack() {
@@ -45,3 +45,4 @@ export default function TechStack() {
     </section>
   )
 }
+

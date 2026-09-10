@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 const practices = [
   {title:"IAM Least Privilege",desc:"Every Lambda, ECS task, and CI/CD pipeline gets a dedicated IAM role with only the permissions it needs. No wildcard actions, no shared credentials.",icon:"[IAM]",color:"#f97316"},
   {title:"Secrets Management",desc:"Sensitive values stored in AWS Secrets Manager and SSM Parameter Store. Never hardcoded. Auto-rotated where supported. Referenced by ARN in Terraform.",icon:"[SEC]",color:"#ef4444"},

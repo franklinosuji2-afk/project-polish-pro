@@ -103,17 +103,7 @@ export default function Nav() {
               gap:"3px"
             }}
           >
-            <a
-              href="tel:+4915259380812"
-              style={{
-                fontFamily:"monospace",
-                fontSize:"11px",
-                color:"var(--text-muted)",
-                textDecoration:"none"
-              }}
-            >
-              +49 152 59380812
-            </a>
+            
           </div>
         </div>
 
@@ -140,7 +130,7 @@ export default function Nav() {
           <a
             href="https://linkedin.com/in/franklin-osuji-a96003321"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             style={{
               marginLeft:"8px",
               padding:"5px 12px",
@@ -171,47 +161,33 @@ export default function Nav() {
           >
             Resume
           </a>
-
-          <button
-            onClick={toggle}
-            title="Toggle dark/light mode"
-            style={{
-              marginLeft:"8px",
-              width:"34px",
-              height:"34px",
-              borderRadius:"6px",
-              border:"1px solid var(--border)",
-              background:"transparent",
-              cursor:"pointer",
-              fontSize:"16px",
-              display:"flex",
-              alignItems:"center",
-              justifyContent:"center",
-              color:"var(--text-secondary)"
-            }}
-          >
-            {dark ? "☀" : "☾"}
-          </button>
         </div>
 
         <div style={{display:"flex",gap:"8px",alignItems:"center"}}>
           <button
             onClick={toggle}
+            title={dark ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
             style={{
-              width:"32px",
+              minWidth:"68px",
               height:"32px",
+              padding:"0 10px",
               borderRadius:"6px",
               border:"1px solid var(--border)",
-              background:"transparent",
+              background:"var(--bg-card2)",
               cursor:"pointer",
-              fontSize:"15px",
+              fontSize:"10px",
+              fontFamily:"monospace",
+              fontWeight:600,
+              letterSpacing:"0.5px",
               display:"flex",
               alignItems:"center",
               justifyContent:"center",
-              color:"var(--text-secondary)"
+              color:"var(--text-secondary)",
+              transition:"all 0.2s ease"
             }}
           >
-            {dark ? "☀" : "☾"}
+            {dark ? "LIGHT" : "DARK"}
           </button>
 
           <button
@@ -263,7 +239,7 @@ export default function Nav() {
         <a
           href="https://linkedin.com/in/franklin-osuji-a96003321"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           style={{
             padding:"12px 8px",
             fontSize:"15px",
@@ -277,20 +253,7 @@ export default function Nav() {
           LinkedIn
         </a>
 
-        <a
-          href="tel:+4915259380812"
-          style={{
-            padding:"12px 8px",
-            fontSize:"13px",
-            color:"var(--text-muted)",
-            textDecoration:"none",
-            borderBottom:"1px solid var(--border)",
-            display:"block",
-            fontFamily:"monospace"
-          }}
-        >
-          +49 152 59380812
-        </a>
+        
 
         <a
           href="/cv.html"
@@ -315,3 +278,4 @@ export default function Nav() {
     </nav>
   )
 }
+

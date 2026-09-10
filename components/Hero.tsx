@@ -1,19 +1,21 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from "react";
 const lines = [
-  "$ terraform init",
-  "> Initializing cloud infrastructure...",
-  "$ docker build --platform linux/amd64 .",
-  "> Building production container...",
-  "$ aws ecs update-service --force-new-deployment",
-  "> Deploying to ECS Fargate... Done",
-  "$ echo $STATUS",
-  "> All systems operational",
+  "$ whoami",
+  "> Franklin Osuji",
+  "$ role --current",
+  "> Cloud Infrastructure & DevOps Engineer",
+  "$ experience --years",
+  "> 4+ years",
+  "$ cloud --platforms",
+  "> AWS | Azure",
+  "$ status",
+  "> Available immediately",
 ];
 const metrics = [
-  { value: "40%", label: "Faster Deployments", icon: "rocket" },
-  { value: "35%", label: "Reliability Improvement", icon: "shield" },
-  { value: "99.9%", label: "Uptime Target", icon: "activity" },
+  { value: "4+", label: "Years Experience", icon: "briefcase" },
+  { value: "AWS", label: "Certified", icon: "shield" },
+  { value: "B2", label: "German", icon: "language" },
 ];
 export default function Hero() {
   const [displayed, setDisplayed] = useState<string[]>([]);
@@ -125,7 +127,7 @@ export default function Hero() {
                 fontFamily: "monospace",
               }}
             >
-              Available for roles
+              Available immediately
             </span>
           </div>
           <div
@@ -543,3 +545,4 @@ export default function Hero() {
     </section>
   );
 }
+

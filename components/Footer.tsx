@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 export default function Footer() {
   const links = [
     {label:"GitHub",href:"https://github.com/franklinosuji2-afk"},

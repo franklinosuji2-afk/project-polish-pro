@@ -4,8 +4,8 @@ import { ThemeProvider } from "../components/ThemeContext"
 
 export const metadata: Metadata = {
   title: "Franklin Chinonso Osuji | AWS Cloud & DevOps Engineer",
-  description: "AWS-Certified Cloud Infrastructure & DevOps Engineer based in Berlin, Germany. Specializing in Terraform, Docker/ECS, CI/CD automation, and cloud-native infrastructure.",
-  keywords: ["Franklin Osuji","AWS Cloud Engineer","DevOps Engineer","Berlin","Terraform","Docker","CI/CD"],
+  description: "Cloud Infrastructure & DevOps Engineer with 4+ years of combined engineering, consulting, and digital operations experience. Based in Berlin, Germany. Hands-on with AWS, Azure, Terraform, Docker, Kubernetes, ECS/Fargate, Linux, and CI/CD automation.",
+  keywords: ["Franklin Osuji","Cloud Infrastructure Engineer","DevOps Engineer","Cloud Engineer","Platform Engineer","SRE","AWS","Azure","Terraform","Kubernetes","Berlin"],
   authors: [{ name: "Franklin Chinonso Osuji" }],
 }
 
@@ -24,3 +24,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
+

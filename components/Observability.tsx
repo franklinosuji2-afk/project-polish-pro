@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 const metrics = [
   {label:"Avg Response Time",value:"87ms",status:"good",trend:"-12%"},
   {label:"Error Rate",value:"0.02%",status:"good",trend:"-0.3%"},
