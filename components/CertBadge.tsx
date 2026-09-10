@@ -9,7 +9,7 @@ export default function CertBadge() {
     return () => window.removeEventListener("scroll", fn)
   }, [])
   return (
-    <a href="https://www.credly.com/badges/914031f2-e5b2-4e4b-b408-2d512d91566d/public_url" target="_blank" rel="noopener noreferrer"
+    <a href="https://www.credly.com/users/franklin-chinonso-osuji.4b5356de" target="_blank" rel="noopener noreferrer"
       style={{position:"fixed",bottom:"20px",right:"20px",zIndex:999,display:visible?"flex":"none",alignItems:"center",gap:"8px",padding:"7px 12px",background:"rgba(6,10,15,0.95)",border:"1px solid rgba(34,197,94,0.4)",borderRadius:"8px",textDecoration:"none",boxShadow:"0 0 20px rgba(34,197,94,0.1)",backdropFilter:"blur(12px)",transition:"all 0.3s"}}
       onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 0 30px rgba(34,197,94,0.25)";e.currentTarget.style.transform="translateY(-2px)"}}
       onMouseLeave={e=>{e.currentTarget.style.boxShadow="0 0 20px rgba(34,197,94,0.1)";e.currentTarget.style.transform="translateY(0)"}}>
@@ -26,4 +26,5 @@ export default function CertBadge() {
     </a>
   )
 }
+
 
