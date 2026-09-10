@@ -1,490 +1,81 @@
 ﻿"use client"
 
 export default function Contact() {
+  const contacts = [
+    { label: "Email", value: "franklin.osuji2@gmail.com", href: "mailto:franklin.osuji2@gmail.com", icon: "@" },
+    { label: "Phone", value: "+49 152 59380812", href: "tel:+4915259380812", icon: "â˜Ž" },
+    { label: "GitHub", value: "github.com/franklinosuji2-afk", href: "https://github.com/franklinosuji2-afk", icon: "â—‰" },
+    { label: "LinkedIn", value: "linkedin.com/in/franklin-osuji-a96003321", href: "https://linkedin.com/in/franklin-osuji-a96003321", icon: "in" },
+  ]
+
   return (
-    <section
-      id="contact"
-      className="section-pad"
-      style={{
-        background: "var(--bg-section)",
-        borderTop: "1px solid var(--border)",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}
-      >
-        {/* HEADER */}
+    <section id="contact" className="section-pad" style={{ background: "var(--bg-section)", borderTop: "1px solid var(--border)" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{ marginBottom: "42px" }}>
-          <div
-            style={{
-              fontFamily: "monospace",
-              fontSize: "11px",
-              color: "#3b82f6",
-              letterSpacing: "4px",
-              marginBottom: "12px",
-            }}
-          >
-            // CONTACT
-          </div>
-
-          <h2
-            style={{
-              fontSize: "clamp(30px, 4vw, 44px)",
-              fontWeight: 700,
-              color: "var(--text-primary)",
-              marginBottom: "12px",
-            }}
-          >
-            Get in touch
-          </h2>
-
-          <div
-            style={{
-              width: "42px",
-              height: "2px",
-              background: "#3b82f6",
-              marginBottom: "16px",
-            }}
-          />
-
-          <p
-            style={{
-              color: "var(--text-secondary)",
-              fontSize: "15px",
-              maxWidth: "680px",
-              lineHeight: 1.8,
-            }}
-          >
-            I&apos;m currently open to Cloud Infrastructure, DevOps, Platform,
-            and SRE opportunities in Berlin or remote across Europe.
+          <div style={{ fontFamily: "monospace", fontSize: "11px", color: "#3b82f6", letterSpacing: "4px", marginBottom: "12px" }}>// CONTACT</div>
+          <h2 style={{ fontSize: "clamp(30px,4vw,44px)", fontWeight: 700, color: "var(--text-primary)", marginBottom: "12px" }}>Get in touch</h2>
+          <div style={{ width: "40px", height: "2px", background: "#3b82f6", marginBottom: "16px" }} />
+          <p style={{ color: "var(--text-secondary)", fontSize: "15px", maxWidth: "680px", lineHeight: 1.8 }}>
+            I&apos;m currently open to Cloud Infrastructure, DevOps, Platform, and SRE opportunities in Berlin or remote across Europe.
           </p>
         </div>
 
-        {/* CONTACT GRID */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "28px",
-          }}
-          className="contact-grid"
-        >
-          {/* LEFT */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "14px",
-            }}
-          >
-            {/* EMAIL */}
-            <a
-              href="mailto:franklin.osuji2@gmail.com"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-                padding: "20px 22px",
-                borderRadius: "12px",
-                border: "1px solid var(--border)",
-                background: "var(--bg-card2)",
-                textDecoration: "none",
-              }}
-            >
-              <div
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "9px",
-                  background: "rgba(59,130,246,0.1)",
-                  color: "#60a5fa",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "20px",
-                  flexShrink: 0,
-                }}
-              >
-                @
-              </div>
-
-              <div>
-                <div
-                  style={{
-                    fontSize: "12px",
-                    color: "#60a5fa",
-                    marginBottom: "5px",
-                  }}
-                >
-                  Email
-                </div>
-
-                <div
-                  style={{
-                    color: "var(--text-primary)",
-                    fontSize: "15px",
-                    fontWeight: 600,
-                  }}
-                >
-                  franklin.osuji2@gmail.com
-                </div>
-              </div>
-            </a>
-
-            {/* PHONE */}
-            <a
-              href="tel:+4915259380812"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-                padding: "20px 22px",
-                borderRadius: "12px",
-                border: "1px solid var(--border)",
-                background: "var(--bg-card2)",
-                textDecoration: "none",
-              }}
-            >
-              <div
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "9px",
-                  background: "rgba(59,130,246,0.1)",
-                  color: "#60a5fa",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "19px",
-                  flexShrink: 0,
-                }}
-              >
-                ☎
-              </div>
-
-              <div>
-                <div
-                  style={{
-                    fontSize: "12px",
-                    color: "#60a5fa",
-                    marginBottom: "5px",
-                  }}
-                >
-                  Phone
-                </div>
-
-                <div
-                  style={{
-                    color: "var(--text-primary)",
-                    fontSize: "15px",
-                    fontWeight: 600,
-                  }}
-                >
-                  +49 152 59380812
-                </div>
-              </div>
-            </a>
-
-            {/* GITHUB */}
-            <a
-              href="https://github.com/franklinosuji2-afk"
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-                padding: "20px 22px",
-                borderRadius: "12px",
-                border: "1px solid var(--border)",
-                background: "var(--bg-card2)",
-                textDecoration: "none",
-              }}
-            >
-              <div
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "9px",
-                  background: "rgba(59,130,246,0.1)",
-                  color: "#60a5fa",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "18px",
-                  flexShrink: 0,
-                }}
-              >
-                ◉
-              </div>
-
-              <div>
-                <div
-                  style={{
-                    fontSize: "12px",
-                    color: "#60a5fa",
-                    marginBottom: "5px",
-                  }}
-                >
-                  GitHub
-                </div>
-
-                <div
-                  style={{
-                    color: "var(--text-primary)",
-                    fontSize: "15px",
-                    fontWeight: 600,
-                  }}
-                >
-                  github.com/franklinosuji2-afk
-                </div>
-              </div>
-            </a>
-
-            {/* LINKEDIN */}
-            <a
-              href="https://www.linkedin.com/in/franklin-osuji-a96003321"
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-                padding: "20px 22px",
-                borderRadius: "12px",
-                border: "1px solid var(--border)",
-                background: "var(--bg-card2)",
-                textDecoration: "none",
-              }}
-            >
-              <div
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "9px",
-                  background: "rgba(59,130,246,0.1)",
-                  color: "#60a5fa",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "17px",
-                  flexShrink: 0,
-                }}
-              >
-                in
-              </div>
-
-              <div>
-                <div
-                  style={{
-                    fontSize: "12px",
-                    color: "#60a5fa",
-                    marginBottom: "5px",
-                  }}
-                >
-                  LinkedIn
-                </div>
-
-                <div
-                  style={{
-                    color: "var(--text-primary)",
-                    fontSize: "15px",
-                    fontWeight: 600,
-                  }}
-                >
-                  linkedin.com/in/franklin-osuji-a96003321
-                </div>
-              </div>
-            </a>
-
-            {/* RESUME */}
-            <a
-              href="/cv.html"
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-                padding: "20px 22px",
-                borderRadius: "12px",
-                border: "1px solid var(--border)",
-                background: "var(--bg-card2)",
-                textDecoration: "none",
-              }}
-            >
-              <div
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "9px",
-                  background: "rgba(59,130,246,0.1)",
-                  color: "#60a5fa",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "18px",
-                  flexShrink: 0,
-                }}
-              >
-                ▤
-              </div>
-
-              <div>
-                <div
-                  style={{
-                    fontSize: "12px",
-                    color: "#60a5fa",
-                    marginBottom: "5px",
-                  }}
-                >
-                  Resume
-                </div>
-
-                <div
-                  style={{
-                    color: "var(--text-primary)",
-                    fontSize: "15px",
-                    fontWeight: 600,
-                  }}
-                >
-                  Download PDF
-                </div>
-              </div>
+        <div className="contact-grid">
+          <div style={{ display: "grid", gap: "12px" }}>
+            {contacts.map(item => (
+              <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined} className="contact-card">
+                <span className="contact-icon">{item.icon}</span>
+                <span>
+                  <span className="contact-label">{item.label}</span>
+                  <strong>{item.value}</strong>
+                </span>
+                <span className="arrow">â†—</span>
+              </a>
+            ))}
+            <a href="/cv.html" target="_blank" rel="noreferrer" className="contact-card">
+              <span className="contact-icon">â–¤</span>
+              <span><span className="contact-label">Resume</span><strong>Download PDF</strong></span>
+              <span className="arrow">â†—</span>
             </a>
           </div>
 
-          {/* RIGHT */}
-          <div
-            style={{
-              padding: "28px",
-              borderRadius: "14px",
-              border: "1px solid var(--border)",
-              background: "var(--bg-card2)",
-              minHeight: "100%",
-            }}
-          >
-            {/* LOCATION */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: "16px",
-                marginBottom: "28px",
-              }}
-            >
-              <div
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "9px",
-                  background: "rgba(59,130,246,0.1)",
-                  color: "#60a5fa",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "20px",
-                  flexShrink: 0,
-                }}
-              >
-                ◎
-              </div>
-
-              <div>
-                <div
-                  style={{
-                    color: "var(--text-primary)",
-                    fontSize: "16px",
-                    fontWeight: 700,
-                    marginBottom: "6px",
-                  }}
-                >
-                  Location
-                </div>
-
-                <div
-                  style={{
-                    color: "var(--text-secondary)",
-                    fontSize: "14px",
-                  }}
-                >
-                  Berlin, Germany
-                </div>
-              </div>
+          <div className="contact-panel">
+            <div className="location">
+              <span className="contact-icon">â—Ž</span>
+              <div><span className="contact-label">Location</span><strong>Berlin, Germany</strong></div>
             </div>
 
-            {/* AVAILABILITY */}
-            <div
-              style={{
-                padding: "22px",
-                borderRadius: "12px",
-                background: "rgba(59,130,246,0.06)",
-                border: "1px solid rgba(59,130,246,0.08)",
-                marginBottom: "28px",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "12px",
-                  color: "var(--text-primary)",
-                  fontSize: "14px",
-                  marginBottom: "18px",
-                }}
-              >
-                <span style={{ color: "#22c55e", fontSize: "18px" }}>✓</span>
-                <span>
-                  <strong>Niederlassungserlaubnis</strong> (permanent work
-                  authorisation)
-                </span>
-              </div>
-
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "12px",
-                  color: "var(--text-primary)",
-                  fontSize: "14px",
-                }}
-              >
-                <span style={{ color: "#22c55e", fontSize: "18px" }}>◷</span>
-                <span>Available immediately</span>
-              </div>
+            <div className="availability">
+              <div><span>âœ“</span><strong>Niederlassungserlaubnis</strong><small>Permanent work authorisation</small></div>
+              <div><span>â—·</span><strong>Available immediately</strong><small>Open to Berlin, hybrid and remote opportunities</small></div>
             </div>
 
-            {/* MESSAGE */}
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                fontSize: "13px",
-                lineHeight: 1.8,
-                maxWidth: "520px",
-              }}
-            >
-              For opportunities, please include the role, location or remote
-              policy, and expected timeline in your message.
-            </p>
+            <div className="languages">
+              <span className="contact-label">Languages</span>
+              <strong>English â€” Fluent Â· German â€” B2</strong>
+            </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        @media (max-width: 850px) {
-          .contact-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-
-        @media (max-width: 520px) {
-          .contact-grid {
-            gap: 16px !important;
-          }
-        }
+        .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+        .contact-card { min-height:76px; display:flex; align-items:center; gap:14px; padding:18px 20px; border:1px solid var(--border); border-radius:12px; background:var(--bg-card2); color:inherit; text-decoration:none; transition:.2s ease; }
+        .contact-card:hover { border-color:#3b82f655; transform:translateY(-1px); }
+        .contact-icon { width:44px; height:44px; flex-shrink:0; display:flex; align-items:center; justify-content:center; border-radius:9px; background:rgba(59,130,246,.09); color:#60a5fa; font-family:monospace; }
+        .contact-label { display:block; color:#7f95b5; font-size:11px; margin-bottom:4px; }
+        .contact-card strong, .location strong { color:var(--text-primary); font-size:14px; overflow-wrap:anywhere; }
+        .arrow { margin-left:auto; color:#536681; }
+        .contact-panel { padding:28px; border:1px solid var(--border); border-radius:14px; background:var(--bg-card2); }
+        .location { display:flex; gap:14px; align-items:center; margin-bottom:28px; }
+        .availability { display:grid; gap:18px; padding:20px; border-radius:11px; background:rgba(59,130,246,.045); border:1px solid rgba(59,130,246,.08); }
+        .availability div { display:grid; grid-template-columns:27px 1fr; column-gap:10px; align-items:center; }
+        .availability div span { color:#22c55e; font-size:18px; grid-row:span 2; }
+        .availability strong { color:var(--text-primary); font-size:13px; }
+        .availability small { color:var(--text-secondary); font-size:11px; line-height:1.5; }
+        .languages { margin-top:26px; padding-top:20px; border-top:1px solid var(--border); }
+        .languages strong { color:var(--text-primary); font-size:13px; }
+        @media (max-width:800px) { .contact-grid { grid-template-columns:1fr; } }
       `}</style>
     </section>
   )
