@@ -1,441 +1,96 @@
-# 📌 Franklin Portfolio
+﻿# Franklin Osuji - Cloud Infrastructure & DevOps Engineer
 
-A modern, high-performance personal portfolio built to showcase my work as a **Cloud & DevOps Engineer**, highlighting real-world projects, cloud architecture expertise, platform engineering mindset, and production-ready engineering practices.
+[Live Portfolio](https://fc-dev.netlify.app/) | [GitHub](https://github.com/franklinosuji2-afk) | [LinkedIn](https://www.linkedin.com/in/franklin-osuji-a96003321/)
 
-This portfolio is not just a personal website it is a technical artifact designed to reflect how I think about **systems, infrastructure, scalability, observability, and developer experience**.
+Professional portfolio for **Cloud Infrastructure, DevOps, Platform Engineering, Kubernetes, CI/CD, Observability, and SRE**.
 
----
+## About
 
-## 🚀 Live Demo
+Cloud Infrastructure & DevOps Engineer focused on reliable, automated, secure and maintainable infrastructure.
 
-👉 [Franklin Portfolio Live Demo](https://fc-sparkle-studio.lovable.app/?utm_source=chatgpt.com)
+## Technology Stack
 
----
+- AWS, Azure
+- Terraform, Ansible
+- Docker, Kubernetes, Helm, Kustomize, Kind
+- GitHub Actions, Jenkins, GitLab CI
+- Prometheus, Grafana, Loki, CloudWatch
+- Python, FastAPI, Node.js, TypeScript, Bash, SQL
+- PostgreSQL, DynamoDB, SQLite
+- Linux, Git, GitHub, WSL2
 
-# 🧠 About This Project
+## Featured Projects
 
-This project serves as the central hub of my professional identity, bringing together:
+### ChaosForge
 
-* Engineering projects
-* Cloud & DevOps expertise
-* Technical certifications
-* Architecture thinking
-* Career journey
+SRE and chaos engineering laboratory for controlled failure injection, automated recovery, observability, MTTR measurement and SLO evaluation.
 
-It was built to demonstrate not only frontend engineering capability, but also the broader engineering qualities expected from modern infrastructure professionals:
+[View ChaosForge](https://github.com/franklinosuji2-afk/chaosforge)
 
-* System design thinking
-* Maintainable architecture
-* Performance optimization
-* Clean component composition
-* Production deployment readiness
+### KubeSentinel
 
----
+GitOps-driven Kubernetes security platform combining policy enforcement, runtime security, vulnerability scanning and observability.
 
-# 🎯 Project Goals
+[View KubeSentinel](https://github.com/franklinosuji2-afk/sentinel-gate)
 
-This portfolio is designed to communicate five core strengths:
+### PlatformOps-Lab
 
-✅ Cloud engineering expertise
-✅ DevOps and platform engineering mindset
-✅ Strong documentation habits
-✅ Production-grade development practices
-✅ Attention to performance and user experience
+Local Kubernetes platform demonstrating infrastructure automation, container orchestration, configuration management, CI/CD and observability.
 
----
+[View PlatformOps-Lab](https://github.com/franklinosuji2-afk/PlatformOps-Lab)
 
-# 🏗 Architecture Overview
+### LocalCloud Control Plane
 
-The application follows a modern static web architecture optimized for performance and maintainability.
+Local-first platform engineering control plane modelling service management, desired state, deployment orchestration, lifecycle transitions and infrastructure state.
 
-```text
-User Browser
-     │
-     ▼
-Next.js Frontend Application
-     │
-     ▼
-Static Asset Delivery / CDN
-     │
-     ▼
-Hosting Platform (Netlify)
-```
+[View LocalCloud Control Plane](https://github.com/franklinosuji2-afk/LocalCloud-Control-Plane)
 
-Optional CI/CD pipeline:
+## Certifications
 
-```text
-Git Push
-   │
-   ▼
-GitHub Actions Pipeline
-   │
- ┌─┴────────────┐
- │ Lint & Build │
- └─┬────────────┘
-   ▼
-Deploy to Netlify
-```
+- AWS Certified Cloud Practitioner - Active
+- HashiCorp Certified: Terraform Associate - In Progress / Exam Scheduled
+- AWS Certified Solutions Architect - Associate - In Progress / Expected 2026
 
----
+## Local Development
 
-# ⚙️ Tech Stack
+Requirements: Node.js and npm
 
-## Frontend Framework
+Install: `npm install`
 
-* Next.js
-* React
-* TypeScript
+Development: `npm run dev`
 
-## Styling
+Open: `http://localhost:3000`
 
-* Tailwind CSS
-* Custom animations
-* Responsive design principles
+Production build: `npm run build`
+
+Production start: `npm start`
 
 ## Deployment
 
-* [Netlify](https://www.netlify.com/?utm_source=chatgpt.com)
+Deployed on Netlify.
 
-## Tooling
+Production: https://fc-dev.netlify.app/
 
-* Node.js
-* npm
-* PostCSS
+## Engineering Practices
 
----
+- Component-based architecture
+- Maintainable TypeScript and React code
+- Responsive UI design
+- Production deployment workflows
+- Infrastructure-oriented technical presentation
+- Recruiter-friendly technical documentation
+- Local-first development where practical
+- Reproducible engineering workflows
 
-# ✨ Features
+## Contact
 
----
+**Franklin Osuji**
+Cloud Infrastructure & DevOps Engineer
+Berlin, Germany
 
-## Responsive Design
+- Portfolio: https://fc-dev.netlify.app/
+- LinkedIn: https://www.linkedin.com/in/franklin-osuji-a96003321/
+- GitHub: https://github.com/franklinosuji2-afk
+- Email: franklin.osuji2@gmail.com
 
-Fully optimized for:
-
-* Desktop
-* Tablet
-* Mobile devices
-
-Uses mobile-first layout principles.
-
----
-
-## Interactive Sections
-
-Portfolio includes:
-
-* Hero section
-* About me
-* Skills & technologies
-* Certifications
-* Project showcase
-* Experience timeline
-* Contact section
-
----
-
-## Engineering-Focused UI
-
-Designed to visually communicate technical competence through:
-
-* Architecture diagrams
-* Terminal-inspired components
-* Infrastructure visualizations
-* Technical storytelling
-
----
-
-## Performance Optimization
-
-Optimized for:
-
-* Fast page loads
-* Reduced asset size
-* Smooth interactions
-* Improved Core Web Vitals
-
----
-
-## SEO-Friendly
-
-Built with discoverability in mind:
-
-* Semantic HTML
-* Metadata optimization
-* Search-engine-friendly structure
-
----
-
-# 📁 Project Structure
-
-```bash
-franklin-portfolio/
-│
-├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-│
-├── components/
-│   ├── About.tsx
-│   ├── ArchDiagram.tsx
-│   ├── Blog.tsx
-│   ├── Certifications.tsx
-│   ├── Contact.tsx
-│   ├── Experience.tsx
-│   ├── Footer.tsx
-│   ├── Hero.tsx
-│   ├── Nav.tsx
-│   ├── Projects.tsx
-│   ├── Skills.tsx
-│   ├── TechStack.tsx
-│   ├── Terminal.tsx
-│   └── ThemeContext.tsx
-│
-├── public/
-│   └── cv.html
-│
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── README.md
-```
-
----
-
-# 🧩 Core Components
-
----
-
-## Hero Component
-
-Landing section introducing professional identity and core value proposition.
-
-Highlights:
-
-* Role branding
-* Core expertise
-* Call-to-action
-
----
-
-## Projects Section
-
-Showcases portfolio projects demonstrating:
-
-* Infrastructure automation
-* Cloud engineering
-* DevOps workflows
-* Platform design
-
----
-
-## Skills Section
-
-Displays technical capabilities across domains:
-
-* Cloud platforms
-* Infrastructure as Code
-* Container orchestration
-* CI/CD
-* Monitoring
-
----
-
-## Certifications Section
-
-Professional certifications and training achievements.
-
-Examples:
-
-* AWS certifications
-* Cloud engineering training
-* DevOps residency programs
-
----
-
-## Contact Section
-
-Provides channels for:
-
-* Recruiter outreach
-* Professional networking
-* Collaboration opportunities
-
----
-
-# 🚀 Local Development
-
-## Clone Repository
-
-```bash
-git clone https://github.com/<your-username>/franklin-portfolio.git
-cd franklin-portfolio
-```
-
----
-
-## Install Dependencies
-
-```bash
-npm install
-```
-
----
-
-## Run Development Server
-
-```bash
-npm run dev
-```
-
-Development server runs at:
-
-```text
-http://localhost:3000
-```
-
----
-
-## Production Build
-
-```bash
-npm run build
-```
-
----
-
-## Start Production Server
-
-```bash
-npm start
-```
-
----
-
-# 🌐 Deployment
-
-This project can be deployed to:
-
-* [Netlify](https://www.netlify.com/?utm_source=chatgpt.com)
-* [Vercel](https://vercel.com/?utm_source=chatgpt.com)
-* [GitHub Pages](https://pages.github.com/?utm_source=chatgpt.com)
-
-Example deployment:
-
-```bash
-netlify deploy
-```
-
----
-
-# 📊 Engineering Principles Demonstrated
-
-This portfolio reflects core software engineering and infrastructure principles:
-
----
-
-## Component-Based Architecture
-
-Reusable modular UI components improve maintainability and scalability.
-
----
-
-## Separation of Concerns
-
-Presentation logic is isolated from layout and styling.
-
----
-
-## Scalability
-
-Architecture supports future additions such as:
-
-* blog engines
-* analytics
-* APIs
-* dashboards
-
----
-
-## Developer Experience
-
-Project setup prioritizes:
-
-* fast local development
-* clean structure
-* minimal complexity
-
----
-
-# 🔮 Future Improvements
-
-Planned enhancements include:
-
-### Content
-
-* Technical blog integration
-* Case studies
-* Project deep dives
-
-### UX
-
-* Advanced animations
-* Dark/light themes
-* Improved accessibility
-
-### DevOps
-
-* [GitHub Actions](https://github.com/features/actions?utm_source=chatgpt.com) CI/CD pipeline
-* Dockerized development
-* Automated testing
-
-### Observability
-
-* Analytics dashboard
-* Error tracking
-* Performance monitoring
-
----
-
-# 📈 What This Project Demonstrates
-
-Rather than being just a visual portfolio, this project demonstrates:
-
-* Frontend engineering fundamentals
-* Production deployment readiness
-* Infrastructure awareness
-* Clean software architecture
-* DevOps culture and operational thinking
-
----
-
-# 💡 Why This Project Matters
-
-A strong engineer portfolio should do more than list technologies.
-
-It should communicate **how the engineer thinks**.
-
-This portfolio reflects my engineering philosophy:
-
-> Great infrastructure should be invisible it enables teams to build, deploy, and scale with confidence.
-
-That same philosophy shapes both my infrastructure work and how I build software.
-
----
-
-# 👤 Author
-
-## Franklin Chinonso Osuji
-
-Cloud & DevOps Engineer
-AWS Certified | Terraform | Kubernetes | CI/CD | Platform Engineering
-
----
-
-# 📄 License
-
-This project is released under the **MIT License**.
-
-
-
+> Building infrastructure that is automated, observable, secure and reliable.
