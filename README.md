@@ -1,4 +1,4 @@
-﻿# Franklin Osuji - Cloud Infrastructure & DevOps Engineer
+# Franklin Osuji - Cloud Infrastructure & DevOps Engineer
 
 [Live Portfolio](https://fc-dev.netlify.app/) | [GitHub](https://github.com/franklinosuji2-afk) | [LinkedIn](https://www.linkedin.com/in/franklin-osuji-a96003321/)
 
