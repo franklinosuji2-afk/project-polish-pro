@@ -194,7 +194,7 @@ export default function Projects() {
                     borderColor: `${project.color}66`,
                   }}
                 >
-                  GitHub ->
+                  GitHub -&gt;
                 </a>
               </div>
               <div className="project-body">
