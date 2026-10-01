@@ -1,12 +1,14 @@
 "use client"
+
 const roleFocus = [
-  "Cloud Infrastructure Engineer",
-  "DevOps Engineer",
-  "Platform Engineer",
-  "Site Reliability Engineer (SRE)",
-  "Cloud Engineer",
-  "Infrastructure Automation Engineer",
+  "AWS and Azure infrastructure",
+  "Infrastructure automation",
+  "Terraform and CI/CD",
+  "Docker and container workloads",
+  "Linux and cloud troubleshooting",
+  "Reliable deployment workflows",
 ]
+
 export default function About() {
   return (
     <section id="about" className="section-pad" style={{ background: "var(--bg-section)" }}>
@@ -20,20 +22,21 @@ export default function About() {
           </h2>
           <div style={{ width: "40px", height: "2px", background: "#3b82f6" }} />
         </div>
+
         <div style={{ maxWidth: "1000px" }}>
           <p style={{ color: "var(--text-secondary)", fontSize: "clamp(14px,2vw,17px)", lineHeight: 1.8, marginBottom: "20px" }}>
-            <strong style={{ color: "var(--text-primary)" }}>Cloud Infrastructure & DevOps Engineer</strong> with 4+ years of combined engineering, consulting, and digital operations experience. I work mainly with AWS, Terraform, Docker, Kubernetes, ECS/Fargate, Linux, and CI/CD automation.
+            <strong style={{ color: "var(--text-primary)" }}>Cloud & DevOps Engineer</strong> with 5+ years of experience supporting cloud infrastructure, automation, and reliable deployment workflows across AWS, Azure, Terraform, Docker, Kubernetes, Linux, and CI/CD environments.
           </p>
           <p style={{ color: "var(--text-secondary)", lineHeight: 1.8, marginBottom: "20px" }}>
-            My focus is on making infrastructure repeatable and deployments easier to operate. I work across infrastructure-as-code, containerized workloads, automation, troubleshooting, reliability, security, and cost-aware cloud operations.
+            I focus on infrastructure that is reproducible, reviewed in code, and easier to troubleshoot and maintain. My work spans platform operations, infrastructure provisioning, containerized workloads, automation, and observability.
           </p>
+
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "28px" }}>
             <span className="about-badge">Berlin, Germany</span>
-            <span className="about-badge">Niederlassungserlaubnis (Permanent)</span>
-            <span className="about-badge">Available Immediately</span>
             <span className="about-badge">English - Fluent</span>
             <span className="about-badge">German - B2</span>
           </div>
+
           <div style={{ padding: "18px 20px", borderRadius: "12px", border: "1px solid var(--border)", background: "var(--bg-card)" }}>
             <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#3b82f6", marginBottom: "14px", letterSpacing: "2px" }}>
               ROLE_FOCUS
@@ -55,7 +58,7 @@ export default function About() {
                     lineHeight: 1.4,
                   }}
                 >
-                  <span style={{ color: "#3b82f6", fontSize: "10px" }}></span>
+                  <span style={{ color: "#3b82f6", fontSize: "10px" }}>â€¢</span>
                   {role}
                 </div>
               ))}

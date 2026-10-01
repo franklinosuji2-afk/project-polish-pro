@@ -1,11 +1,11 @@
 # Franklin Osuji Portfolio Roadmap
 
-## Active Tasks
-- [ ] Connect custom domain to replace https://fc-sparkle-studio.lovable.app
-- [ ] Help choose a shorter domain/URL if desired
-- [ ] Apply updated build/SEO fixes if still pending after domain change
+## Active tasks
+- [x] Canonical domain set to https://cfo-dev.pages.dev
+- [x] SEO metadata and sitemap aligned to the canonical domain
+- [x] Static export kept compatible with Cloudflare Pages
+- [x] Resume link kept at `/Franklin_Osuji_Resume.pdf`
 
 ## Notes
-- User owns/proposes: fc-dev.netlify.app
-- Target project domain: fc-sparkle-studio.lovable.app
-- Pending Google Search Console verification and sitemap submission once site is live at final domain
+- The project remains a static portfolio deployed via Cloudflare Pages.
+- Any unresolved placeholders should stay visible only in development and remain absent from the production build.

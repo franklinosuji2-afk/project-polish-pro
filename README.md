@@ -1,223 +1,25 @@
-# Franklin Osuji - Cloud Infrastructure & DevOps Engineer
+# Franklin Osuji Portfolio
 
-[Live Portfolio](https://cfo-dev.pages.dev/) | [GitHub](https://github.com/franklinosuji2-afk) | [LinkedIn](https://www.linkedin.com/in/franklin-osuji-a96003321/)
+This repository contains a static portfolio for Franklin Chinonso Osuji, built with Next.js and exported for Cloudflare Pages.
 
-Professional portfolio showcasing hands-on work across **Cloud Infrastructure, DevOps, Platform Engineering, Kubernetes, Infrastructure as Code, CI/CD, Observability, and SRE practices**.
+- Live site: https://cfo-dev.pages.dev
+- GitHub: https://github.com/franklinosuji2-afk
+- LinkedIn: https://www.linkedin.com/in/franklin-osuji-a96003321/
 
----
+## Project purpose
 
-## About
+The site presents a truthful summary of current cloud and DevOps work, including selected project work, experience, skills, and resume access. It avoids unsupported claims, invented numbers, and fake performance metrics.
 
-I am a Cloud Infrastructure and DevOps Engineer focused on building **automated, observable, secure, reliable, and maintainable infrastructure and delivery workflows**.
+## Static export
 
-My work combines cloud engineering with practical platform engineering and SRE principles, with a strong emphasis on automation, infrastructure as code, containerization, Kubernetes, CI/CD, observability, reliability, and local-first engineering.
+The app uses a static export setup (`output: 'export'`) with a `dist` output directory for Cloudflare Pages compatibility.
 
----
+## Notes
 
-## Core Engineering Focus
-
-```text
-Cloud Infrastructure
-        |
-        +--> Infrastructure as Code
-        |
-        +--> Containers and Kubernetes
-        |
-        +--> CI/CD Automation
-        |
-        +--> Observability
-        |
-        +--> SRE and Reliability
-        |
-        +--> Security and DevSecOps
-        |
-        +--> Platform Engineering
-
-
-Technology Stack
-Cloud
-AWS
-Azure
-EC2
-S3
-VPC
-IAM
-Lambda
-ECS
-Fargate
-RDS
-CloudFormation
-Route 53
-CloudWatch
-Infrastructure as Code and Automation
-Terraform
-Ansible
-Kustomize
-Helm
-PowerShell
-Bash
-Containers and Kubernetes
-Docker
-Docker Compose
-Kubernetes
-kind
-kubectl
-Helm
-Kustomize
-CI/CD and GitOps
-GitHub Actions
-Jenkins
-GitLab CI
-Git
-GitHub
-GitOps concepts
-Observability and SRE
-Prometheus
-Grafana
-Loki
-CloudWatch
-Incident response
-SLO concepts
-MTTR
-Reliability engineering
-Chaos engineering
-Programming and Data
-Python
-FastAPI
-Node.js
-TypeScript
-JavaScript
-Bash
-SQL
-PostgreSQL
-DynamoDB
-SQLite
-Development Environment
-Linux
-Windows
-WSL2
-Docker Desktop
-Featured Engineering Projects
-ChaosForge
-SRE and Chaos Engineering Laboratory
-
-ChaosForge is an SRE and chaos engineering laboratory focused on controlled failure injection, automated recovery, observability, MTTR measurement, and SLO evaluation.
-
-The project explores reliability engineering through controlled operational failures and measurable recovery workflows.
-
-Key areas:
-
-Chaos engineering
-Failure injection
-Automated recovery
-Observability
-MTTR measurement
-SLO evaluation
-Incident response
-Reliability engineering
-
-View ChaosForge
-
-KubeSentinel
-Kubernetes Security and GitOps Engineering Lab
-
-KubeSentinel is a Kubernetes security and GitOps engineering project focused on manifest validation, container security, policy as code, CI security gates, runtime security concepts, and observability.
-
-Key areas:
-
-Kubernetes security
-Container security
-GitOps workflows
-Trivy scanning
-Conftest policy validation
-Falco runtime security concepts
-Kubernetes manifest validation
-Prometheus
-Grafana
-Loki
-CI security automation
-
-View KubeSentinel
-
-PlatformOps-Lab
-Local Kubernetes Platform Engineering Lab
-
-PlatformOps-Lab demonstrates a local Kubernetes platform built around infrastructure automation, configuration management, container orchestration, CI/CD, and observability.
-
-Key technologies include:
-
-Terraform
-Kubernetes
-kind
-Kustomize
-Docker Compose
-Ansible
-Prometheus
-Grafana
-Loki
-CI/CD
-
-The project demonstrates how platform infrastructure can be defined, automated, deployed, and observed using reproducible local workflows.
-
-View PlatformOps-Lab
-
-LocalCloud Control Plane
-Local-First Platform Engineering Control Plane
-
-LocalCloud Control Plane is a local-first platform engineering simulation that models service management, desired state, deployment orchestration, lifecycle transitions, and infrastructure state.
-
-Key areas:
-
-Platform engineering
-Desired state management
-Service lifecycle management
-Deployment orchestration
-Infrastructure state
-Local development
-Docker Compose
-React
-Vite
-Node.js
-Express
-
-The project explores the design concepts behind internal developer platforms and cloud control planes without requiring paid cloud resources.
-
-View LocalCloud Control Plane
-
-Additional Projects
-CloudPulse
-
-Local-first observability and FinOps platform combining:
-
-Infrastructure telemetry
-Anomaly detection
-Root-cause analysis workflows
-FinOps analysis
-AI-assisted operational analysis
-FastAPI
-Docker
-Docker Compose
-PostgreSQL
-Prometheus-compatible metrics
-
-View CloudPulse
-
-CloudOps Portfolio API
-
-Python-based API and infrastructure engineering project demonstrating:
-
-FastAPI
-REST API development
-CRUD operations
-Pytest
-Flake8
-Terraform
-AWS-oriented infrastructure patterns
-LocalStack
-GitHub Actions
-Infrastructure as Code
-
-View CloudOps Portfolio API
+- Use the canonical domain `https://cfo-dev.pages.dev` in metadata and SEO files.
+- Resume asset path: `/Franklin_Osuji_Resume.pdf`
+- Dev-only placeholders remain supported where evidence is missing, but they must not appear in the production build.
+- Do not invent project outcomes, infrastructure metrics, or deployment claims.
 
 LocalOps Dashboard
 

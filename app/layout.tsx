@@ -3,10 +3,23 @@ import "./globals.css"
 import { ThemeProvider } from "../components/ThemeContext"
 
 export const metadata: Metadata = {
-  title: "Franklin Chinonso Osuji | AWS Cloud & DevOps Engineer",
-  description: "Cloud Infrastructure & DevOps Engineer with 4+ years of combined engineering, consulting, and digital operations experience. Based in Berlin, Germany. Hands-on with AWS, Azure, Terraform, Docker, Kubernetes, ECS/Fargate, Linux, and CI/CD automation.",
-  keywords: ["Franklin Osuji","Cloud Infrastructure Engineer","DevOps Engineer","Cloud Engineer","Platform Engineer","SRE","AWS","Azure","Terraform","Kubernetes","Berlin"],
+  metadataBase: new URL("https://cfo-dev.pages.dev"),
+  title: "Franklin Chinonso Osuji | Cloud & DevOps Engineer",
+  description: "Cloud & DevOps Engineer with 5+ years of experience building infrastructure, automation, and deployment workflows across AWS, Azure, Terraform, Kubernetes, and Linux environments in Berlin, Germany.",
+  keywords: ["Franklin Osuji", "Cloud Engineer", "DevOps Engineer", "AWS", "Azure", "Terraform", "Kubernetes", "Berlin"],
   authors: [{ name: "Franklin Chinonso Osuji" }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Franklin Chinonso Osuji | Cloud & DevOps Engineer",
+    description: "Cloud & DevOps Engineer with 5+ years of experience building infrastructure, automation, and deployment workflows across AWS, Azure, Terraform, Kubernetes, and Linux environments in Berlin, Germany.",
+    url: "https://cfo-dev.pages.dev",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Franklin Chinonso Osuji | Cloud & DevOps Engineer",
+    description: "Cloud & DevOps Engineer with 5+ years of experience building infrastructure, automation, and deployment workflows across AWS, Azure, Terraform, Kubernetes, and Linux environments in Berlin, Germany.",
+  },
 }
 
 const themeScript = `(function(){try{var t=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();`
