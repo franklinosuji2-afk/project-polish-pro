@@ -1,63 +1,22 @@
 "use client"
 const exps = [
-  {
-    title: "Cloud Engineer",
-    company: "Macview - Contract",
-    location: "Remote",
-    period: "APR 2026 - PRESENT",
-    type: "Contract",
-    bullets: [
-      "Work with AWS and Azure infrastructure, focusing on reliable, secure, and maintainable cloud environments.",
-      "Automate infrastructure provisioning and deployment workflows with Terraform and CI/CD tooling.",
-      "Build and support containerized workloads using Docker and cloud-native services.",
-      "Troubleshoot infrastructure and deployment issues and improve repeatability across delivery workflows.",
-    ],
-    tags: ["AWS", "Azure", "Terraform", "Docker", "CI/CD"],
-  },
-  {
-    title: "Cloud Infrastructure & DevOps Engineering Trainee",
-    company: "Digital Career Institute (DCI)",
-    location: "Berlin, Germany",
-    period: "NOV 2024 - MAR 2026",
-    type: "Training",
-    bullets: [
-      "Built CI/CD pipelines with Jenkins and GitHub Actions to automate repeatable software delivery.",
-      "Built infrastructure with Terraform and worked hands-on with EC2, S3, IAM, VPC, Lambda, and RDS.",
-      "Deployed ECS/Fargate workloads and practiced Blue/Green deployment strategies.",
-    ],
-    tags: ["AWS", "Jenkins", "Terraform", "Docker", "GitHub Actions", "ECS/Fargate"],
-  },
-  {
-    title: "Cloud & DevOps Consultant / Freelancer",
-    company: "Independent",
-    location: "Remote",
-    period: "JUL 2023 - AUG 2024",
-    type: "Freelance",
-    bullets: [
-      "Automated cloud provisioning and deployment tasks for client environments using AWS, Docker, and scripting.",
-      "Diagnosed Linux, infrastructure, and deployment issues across client environments.",
-      "Supported CI/CD workflow implementation and Oracle E-Business Suite operational environments.",
-    ],
-    tags: ["AWS", "Docker", "CI/CD", "Linux", "Python", "Bash", "Oracle EBS"],
-  },
-  {
-    title: "E-Commerce & Digital Marketing Specialist",
-    company: "Paper & Tea",
-    location: "Berlin, Germany",
-    period: "MAR 2020 - APR 2023",
-    type: "Full-time",
-    bullets: [
-      "Automated reporting workflows with Bash and Python and supported improvements to website performance and daily operations.",
-      "Supported technical website optimization, reporting, and digital operations.",
-    ],
-    tags: ["Python", "Bash", "Analytics", "Digital Operations"],
-  },
+  { title:"Cloud Engineer", company:"Macview", location:"Remote", period:"APR 2026 - PRESENT", type:"Contract", bullets:["Work with AWS and Azure infrastructure, focusing on reliable, secure, and maintainable cloud environments.","Automate infrastructure provisioning and deployment workflows with Terraform and CI/CD tooling.","Build and support containerized workloads using Docker and cloud-native services.","Troubleshoot infrastructure and deployment issues and improve repeatability across delivery workflows."], tags:["AWS","Azure","Terraform","Docker","CI/CD"] },
+  { title:"Cloud & DevOps Engineer", company:"DCI Digital Career Institute", location:"Berlin, Germany", period:"NOV 2024 - MAR 2026", type:"Work Study", bullets:["Built CI/CD pipelines with Jenkins and GitHub Actions to automate repeatable software delivery.","Built infrastructure with Terraform and worked hands-on with EC2, S3, IAM, VPC, Lambda, and RDS.","Deployed ECS/Fargate workloads and practiced Blue/Green deployment strategies."], tags:["AWS","Jenkins","Terraform","Docker","GitHub Actions","ECS/Fargate"] },
+  { title:"DevOps Engineer", company:"Bridge IT Engineering", location:"Berlin, Germany", period:"NOV 2022 - NOV 2024", type:"Contract", bullets:["Automated cloud provisioning and deployment tasks for client environments using AWS, Docker, and scripting.","Diagnosed Linux, infrastructure, and deployment issues across client environments.","Supported CI/CD workflow implementation and operational environments."], tags:["AWS","Docker","CI/CD","Linux","Python","Bash"] },
+  { title:"Consultant / Freelancer Cloud & DevOps Engineer", company:"Basecamp: Outdoor Jobs, Freelance Gigs, Networking", location:"Berlin, Germany", period:"AUG 2021 - NOV 2022", type:"Freelance", bullets:["Automated cloud provisioning and deployment tasks for client environments using AWS, Docker, and scripting.","Diagnosed Linux, infrastructure, and deployment issues across client environments.","Supported CI/CD workflow implementation and operational environments."], tags:["AWS","Docker","CI/CD","Linux","Python","Bash"] },
+  { title:"Cloud Support Engineer", company:"Cisco Networking Academy", location:"Berlin, Germany", period:"JAN 2020 - AUG 2021", type:"Internship", bullets:["Automated cloud provisioning and deployment tasks using AWS, Terraform, Docker, Python, and Bash.","Worked with Kubernetes, ECS/Fargate, CI/CD pipelines, and cloud monitoring.","Supported Linux, cloud infrastructure, container, networking, and deployment troubleshooting."], tags:["AWS","Terraform","Kubernetes","Docker","ECS/Fargate","GitHub Actions","Jenkins","Linux","Python"] },
+  { title:"Cloud Engineer", company:"PC-COLLEGE Berlin", location:"Berlin, Germany", period:"FEB 2019 - DEC 2019", type:"Apprenticeship", bullets:["Supported cloud infrastructure, deployment automation, and technical operations."], tags:["Cloud","Infrastructure","Automation"] },
+  { title:"E-commerce and Digital Marketing", company:"PAPER & TEA", location:"Berlin, Germany", period:"AUG 2017 - FEB 2019", type:"Full-time", bullets:["Automated reporting workflows with Bash and Python and supported improvements to website performance and daily operations.","Supported technical website optimization, reporting, and digital operations."], tags:["Python","Bash","Analytics","Digital Operations"] },
+  { title:"Salesperson", company:"Modulor GmbH", location:"Berlin, Germany", period:"AUG 2016 - AUG 2017", type:"Full-time", bullets:["Worked in sales and customer-facing operations."], tags:["Sales","Customer Service","Operations"] },
 ]
 const typeColor: Record<string, { color: string; border: string; bg: string }> = {
   Contract: { color: "#4ade80", border: "rgba(74,222,128,.3)", bg: "rgba(74,222,128,.05)" },
   Training: { color: "#60a5fa", border: "rgba(96,165,250,.3)", bg: "rgba(96,165,250,.05)" },
   Freelance: { color: "#c084fc", border: "rgba(192,132,252,.3)", bg: "rgba(192,132,252,.05)" },
   "Full-time": { color: "#34d399", border: "rgba(52,211,153,.3)", bg: "rgba(52,211,153,.05)" },
+  "Work Study": { color: "#60a5fa", border: "rgba(96,165,250,.3)", bg: "rgba(96,165,250,.05)" },
+  Internship: { color: "#a78bfa", border: "rgba(167,139,250,.3)", bg: "rgba(167,139,250,.05)" },
+  Apprenticeship: { color: "#f59e0b", border: "rgba(245,158,11,.3)", bg: "rgba(245,158,11,.05)" },
 }
 export default function Experience() {
   return (
