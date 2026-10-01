@@ -1,6 +1,6 @@
 # Franklin Osuji - Cloud Infrastructure & DevOps Engineer
 
-[Live Portfolio](https://fc-dev.netlify.app/) | [GitHub](https://github.com/franklinosuji2-afk) | [LinkedIn](https://www.linkedin.com/in/franklin-osuji-a96003321/)
+[Live Portfolio](https://cfo-dev.pages.dev/) | [GitHub](https://github.com/franklinosuji2-afk) | [LinkedIn](https://www.linkedin.com/in/franklin-osuji-a96003321/)
 
 Professional portfolio showcasing hands-on work across **Cloud Infrastructure, DevOps, Platform Engineering, Kubernetes, Infrastructure as Code, CI/CD, Observability, and SRE practices**.
 
@@ -337,7 +337,7 @@ The portfolio is deployed on Netlify.
 
 Production:
 
-https://fc-dev.netlify.app/
+https://cfo-dev.pages.dev/
 
 The deployment workflow uses the project's Git repository and production build configuration.
 
@@ -386,7 +386,7 @@ Cloud Infrastructure & DevOps Engineer
 
 Berlin, Germany
 
-Portfolio: https://fc-dev.netlify.app/
+Portfolio: https://cfo-dev.pages.dev/
 GitHub: https://github.com/franklinosuji2-afk
 LinkedIn: https://www.linkedin.com/in/franklin-osuji-a96003321/
 Email: franklin.osuji2@gmail.com
