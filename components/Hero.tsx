@@ -209,8 +209,8 @@ export default function Hero() {
                 letterSpacing: "-0.5px",
               }}
             >
-              I build scalable cloud infrastructure, automate deployments, and
-              optimize production systems.
+              I am a Cloud Infrastructure & DevOps Engineer focused on AWS,
+              Terraform, containers, and deployment automation.
             </h1>
             <p
               style={{
@@ -221,9 +221,9 @@ export default function Hero() {
                 maxWidth: "520px",
               }}
             >
-              AWS-Certified Cloud Infrastructure & DevOps Engineer specialising in Terraform,
-              ECS/Fargate, and CI/CD automation. Based in Berlin, open to Cloud,
-              DevOps, and SRE roles across Germany and Europe.
+              I work with AWS, Terraform, Docker, Kubernetes, ECS/Fargate, and CI/CD
+              tooling to build repeatable infrastructure and reliable deployment workflows.
+              Based in Berlin, I am open to Cloud, DevOps, Platform, and SRE roles across Europe.
             </p>
 
             {/* Metrics */}
@@ -427,7 +427,7 @@ export default function Hero() {
                   color: "var(--text-muted)",
                 }}
               >
-                franklin@prod-cluster:~
+                franklin@portfolio:~
               </span>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "4px" }}
@@ -447,7 +447,7 @@ export default function Hero() {
                     fontFamily: "monospace",
                   }}
                 >
-                  live
+                  ready
                 </span>
               </div>
             </div>
@@ -504,13 +504,13 @@ export default function Hero() {
                       marginBottom: "8px",
                     }}
                   >
-                    // System status
+                    // What I work on
                   </div>
                   {[
-                    { k: "deployment", v: "SUCCESS", c: "#4ade80" },
-                    { k: "infrastructure", v: "HEALTHY", c: "#4ade80" },
-                    { k: "monitoring", v: "ACTIVE", c: "#4ade80" },
-                    { k: "cost_savings", v: "OPTIMIZED", c: "#60a5fa" },
+                    { k: "focus", v: "INFRASTRUCTURE", c: "#4ade80" },
+                    { k: "work", v: "AUTOMATION", c: "#4ade80" },
+                    { k: "interest", v: "RELIABILITY", c: "#4ade80" },
+                    { k: "location", v: "BERLIN", c: "#60a5fa" },
                   ].map((r) => (
                     <div
                       key={r.k}
