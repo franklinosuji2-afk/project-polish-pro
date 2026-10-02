@@ -5,7 +5,7 @@ export default function Footer() {
     { label: "GitHub", href: "https://github.com/franklinosuji2-afk" },
     { label: "LinkedIn", href: "https://linkedin.com/in/franklin-osuji-a96003321" },
     { label: "Email", href: "mailto:franklin.osuji2@gmail.com" },
-    { label: "CV", href: "/Franklin_Osuji_Resume.pdf" },
+    { label: "CV / Resume", href: "/Franklin_Osuji_Resume.pdf" },
   ]
 
   return (
