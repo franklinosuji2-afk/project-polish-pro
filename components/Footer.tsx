@@ -32,7 +32,7 @@ export default function Footer() {
 
         <div style={{ borderTop: "1px solid var(--border)", paddingTop: "24px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
           <div style={{ fontFamily: "monospace", fontSize: "11px", color: "var(--text-muted)", fontStyle: "italic" }}>&ldquo;Infrastructure as code. Reliability by design. Automation at scale.&rdquo;</div>
-          <div style={{ fontFamily: "monospace", fontSize: "11px", color: "var(--text-muted)" }}>Â© 2026 Franklin Chinonso Osuji</div>
+          <div style={{ fontFamily: "monospace", fontSize: "11px", color: "var(--text-muted)" }}>© 2026 Franklin Chinonso Osuji</div>
         </div>
       </div>
     </footer>

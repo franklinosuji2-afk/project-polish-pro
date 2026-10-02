@@ -58,7 +58,7 @@ export default function About() {
                     lineHeight: 1.4,
                   }}
                 >
-                  <span style={{ color: "#3b82f6", fontSize: "10px" }}>â€¢</span>
+                  <span style={{ color: "#3b82f6", fontSize: "10px" }}>•</span>
                   {role}
                 </div>
               ))}

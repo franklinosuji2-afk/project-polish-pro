@@ -134,7 +134,7 @@ export default function Hero() {
         <div className="hero-grid">
           <div>
             <h1 style={{ fontSize: "clamp(28px,4.5vw,54px)", fontWeight: 800, color: "var(--text-primary)", lineHeight: 1.1, marginBottom: "20px", letterSpacing: "-0.5px" }}>
-              Cloud & DevOps Engineer â€” AWS, Terraform, Kubernetes
+              Cloud & DevOps Engineer — AWS, Terraform, Kubernetes
             </h1>
             <p style={{ color: "var(--text-secondary)", fontSize: "clamp(14px,2vw,17px)", lineHeight: 1.8, marginBottom: "32px", maxWidth: "520px" }}>
               I design, automate, and support cloud infrastructure and deployment workflows across AWS, Azure, Terraform, Docker, Kubernetes, Linux, and CI/CD tooling.

@@ -46,7 +46,7 @@ export default function Skills() {
           <div style={{ display: "grid", gap: "10px" }}>
             {howIWork.map((item) => (
               <div key={item} style={{ display: "flex", gap: "12px", color: "var(--text-secondary)", lineHeight: 1.7 }}>
-                <span style={{ color: "#3b82f6", flexShrink: 0 }}>â€¢</span>
+                <span style={{ color: "#3b82f6", flexShrink: 0 }}>•</span>
                 <span>{item}</span>
               </div>
             ))}

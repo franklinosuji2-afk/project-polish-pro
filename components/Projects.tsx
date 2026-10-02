@@ -84,7 +84,7 @@ export default function Projects() {
                     <h3 style={{ fontSize: "clamp(22px,3vw,30px)", fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>{project.title}</h3>
                   </div>
                   <a href={project.github} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} GitHub repository`} style={{ color: "#60a5fa", border: "1px solid rgba(96,165,250,0.3)", borderRadius: "8px", padding: "8px 12px", textDecoration: "none", fontWeight: 600 }}>
-                    GitHub â†’
+                    GitHub →
                   </a>
                 </div>
               </div>
