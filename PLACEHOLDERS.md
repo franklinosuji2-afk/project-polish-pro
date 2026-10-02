@@ -7,3 +7,4 @@
 - [ADD: Terraform exam date]
 - [ADD: AWS SAA target month]
 - [ADD: OG preview image]
+- Architecture diagram and Grafana dashboard image assets are not present under `public/images/diagrams`; project diagram areas are omitted until genuine assets are available.

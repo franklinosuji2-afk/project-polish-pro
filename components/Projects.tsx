@@ -8,12 +8,11 @@ const projects = [
     problem: "Practice reliability engineering and controlled failure testing locally.",
     approach: "Introduce controlled failures into containerized workloads and observe detection, recovery, MTTR, SLO compliance and error-budget impact where actually implemented.",
     stack: ["PowerShell", "FastAPI", "Prometheus", "Grafana", "Docker/Compose"],
-    result: "[ADD: measurable result]",
+    result: null,
     github: "https://github.com/franklinosuji2-afk/chaosforge",
-    demo: "[ADD: demo URL]",
-    demoVideo: "[ADD: 60â€“90 sec demo video/GIF]",
-    diagram: "[ADD: real Grafana dashboard screenshot from ChaosForge or PlatformOps-Lab]",
-    caption: "ChaosForge",
+    demo: null,
+    demoVideo: null,
+    diagram: null,
   },
   {
     number: "02",
@@ -22,12 +21,11 @@ const projects = [
     problem: "Local platform engineering practice without depending on paid cloud infrastructure.",
     approach: "Terraform + Kind + Kustomize + Helm + GitHub Actions with Prometheus, Grafana and Loki for observability.",
     stack: ["Terraform", "Kind", "Kustomize", "Helm", "GitHub Actions", "Prometheus", "Grafana", "Loki"],
-    result: "[ADD: measurable result]",
+    result: null,
     github: "https://github.com/franklinosuji2-afk/PlatformOps-Lab",
-    demo: "[ADD: demo URL]",
-    demoVideo: "[ADD: 60â€“90 sec demo video/GIF]",
-    diagram: "[ADD: real Grafana dashboard screenshot from ChaosForge or PlatformOps-Lab]",
-    caption: "PlatformOps-Lab",
+    demo: null,
+    demoVideo: null,
+    diagram: null,
   },
   {
     number: "03",
@@ -36,12 +34,11 @@ const projects = [
     problem: "Create a local platform engineering environment for managing services, deployments, events and simulated operational state.",
     approach: "React/Vite dashboard + Node.js/Express API to model service management and operational state without describing the simulated system as real cloud infrastructure.",
     stack: ["React", "Vite", "Node.js", "Express", "Docker"],
-    result: "[ADD: measurable result]",
+    result: null,
     github: "https://github.com/franklinosuji2-afk/LocalCloud-Control-Plane",
-    demo: "[ADD: demo URL]",
-    demoVideo: "[ADD: 60â€“90 sec demo video/GIF]",
-    diagram: "[ADD: architecture diagram for LocalCloud Control Plane]",
-    caption: "LocalCloud Control Plane",
+    demo: null,
+    demoVideo: null,
+    diagram: null,
   },
   {
     number: "04",
@@ -50,18 +47,15 @@ const projects = [
     problem: "Collect infrastructure signals and make operational investigation easier.",
     approach: "FastAPI + PostgreSQL + REST API to collect and expose infrastructure signals for investigation.",
     stack: ["FastAPI", "PostgreSQL", "REST API", "Python"],
-    result: "[ADD: measurable result]",
+    result: null,
     github: "https://github.com/franklinosuji2-afk/cloudpulse",
-    demo: "[ADD: demo URL]",
-    demoVideo: "[ADD: 60â€“90 sec demo video/GIF]",
-    diagram: "[ADD: architecture diagram for CloudPulse]",
-    caption: "CloudPulse",
+    demo: null,
+    demoVideo: null,
+    diagram: null,
   },
 ]
 
 export default function Projects() {
-  const isDev = process.env.NODE_ENV !== "production"
-
   return (
     <section id="projects" className="section-pad" style={{ background: "var(--bg-section)", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -95,7 +89,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "0", alignItems: "stretch" }}>
+              <div style={{ display: "grid", gridTemplateColumns: project.diagram || project.demo || project.demoVideo ? "1.1fr 0.9fr" : "1fr", gap: "0", alignItems: "stretch" }}>
                 <div style={{ padding: "24px" }}>
                   <div style={{ marginBottom: "18px" }}>
                     <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#3b82f6", letterSpacing: "2px", marginBottom: "8px" }}>PROBLEM</div>
@@ -113,44 +107,35 @@ export default function Projects() {
                       ))}
                     </div>
                   </div>
-                  <div>
-                    <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#3b82f6", letterSpacing: "2px", marginBottom: "8px" }}>RESULT</div>
-                    {project.result && project.result !== "[ADD: measurable result]" ? (
+                  {project.result && (
+                    <div>
+                      <div style={{ fontFamily: "monospace", fontSize: "10px", color: "#3b82f6", letterSpacing: "2px", marginBottom: "8px" }}>RESULT</div>
                       <p style={{ color: "var(--text-secondary)", lineHeight: 1.7 }}>{project.result}</p>
-                    ) : isDev ? (
-                      <p style={{ color: "var(--text-secondary)", lineHeight: 1.7 }}>[ADD: measurable result]</p>
-                    ) : null}
-                  </div>
+                    </div>
+                  )}
                 </div>
 
-                <div style={{ padding: "24px", borderLeft: "1px solid var(--border)", background: "rgba(96,165,250,0.02)" }}>
-                  <div style={{ border: "1px solid var(--border)", borderRadius: "10px", minHeight: "220px", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--bg-card)" }}>
-                    {project.diagram && project.diagram !== "[ADD: real Grafana dashboard screenshot from ChaosForge or PlatformOps-Lab]" && project.diagram !== "[ADD: architecture diagram for LocalCloud Control Plane]" && project.diagram !== "[ADD: architecture diagram for CloudPulse]" ? (
-                      <img src={project.diagram} alt={`${project.caption} architecture diagram`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                    ) : isDev ? (
-                      <div style={{ color: "var(--text-muted)", fontFamily: "monospace", fontSize: "12px", textAlign: "center", padding: "24px" }}>{project.diagram}</div>
-                    ) : null}
-                  </div>
-                  <div style={{ marginTop: "12px", color: "var(--text-secondary)", fontSize: "12px", fontFamily: "monospace" }}>
-                    {project.caption} architecture diagram
-                  </div>
-                  <div style={{ marginTop: "18px", display: "grid", gap: "10px" }}>
-                    {project.demo !== "[ADD: demo URL]" ? (
+                {(project.diagram || project.demo || project.demoVideo) && (
+                  <div style={{ padding: "24px", borderLeft: "1px solid var(--border)", background: "rgba(96,165,250,0.02)" }}>
+                    {project.diagram && (
+                      <div style={{ border: "1px solid var(--border)", borderRadius: "10px", overflow: "hidden", background: "var(--bg-card)" }}>
+                        <img src={project.diagram} alt={`${project.title} architecture diagram`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                      </div>
+                    )}
+                    <div style={{ marginTop: "18px", display: "grid", gap: "10px" }}>
+                      {project.demo && (
                       <a href={project.demo} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} demo`} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "8px", background: "#2563eb", color: "#fff", padding: "10px 12px", textDecoration: "none", fontWeight: 600 }}>
                         Demo
                       </a>
-                    ) : isDev ? (
-                      <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "8px", border: "1px dashed var(--border)", color: "var(--text-muted)", padding: "10px 12px", fontFamily: "monospace", fontSize: "12px" }}>[ADD: demo URL]</span>
-                    ) : null}
-                    {project.demoVideo !== "[ADD: 60â€“90 sec demo video/GIF]" ? (
+                      )}
+                      {project.demoVideo && (
                       <a href={project.demoVideo} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} demo video`} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "8px", border: "1px solid var(--border)", color: "var(--text-primary)", padding: "10px 12px", textDecoration: "none" }}>
                         Demo video
                       </a>
-                    ) : isDev ? (
-                      <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "8px", border: "1px dashed var(--border)", color: "var(--text-muted)", padding: "10px 12px", fontFamily: "monospace", fontSize: "12px" }}>[ADD: 60â€“90 sec demo video/GIF]</span>
-                    ) : null}
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </article>
           ))}

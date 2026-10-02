@@ -20,18 +20,16 @@ const certs = [
   {
     issuer: "HASHICORP",
     name: "Terraform Associate",
-    period: "In progress",
+    period: null,
     status: "IN PROGRESS",
     color: "#f97316",
-    note: "[ADD: exam date]",
   },
   {
     issuer: "AMAZON WEB SERVICES",
     name: "AWS Certified Solutions Architect - Associate",
-    period: "In progress",
+    period: null,
     status: "IN PROGRESS",
     color: "#f97316",
-    note: "[ADD: target month]",
   },
   {
     issuer: "DIGITAL CAREER INSTITUTE (DCI)",
@@ -51,8 +49,6 @@ const certs = [
 ]
 
 export default function Certifications() {
-  const isDev = process.env.NODE_ENV !== "production"
-
   return (
     <section id="certifications" className="section-pad" style={{ background: "var(--bg-section)" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -70,12 +66,12 @@ export default function Certifications() {
                 <span style={{ fontFamily: "monospace", fontSize: "9px", color: cert.color, border: `1px solid ${cert.color}44`, padding: "2px 6px", borderRadius: "4px", flexShrink: 0, whiteSpace: "nowrap" }}>{cert.status}</span>
               </div>
               <h3 style={{ fontWeight: 600, color: "var(--text-primary)", marginBottom: "6px", fontSize: "13px", lineHeight: 1.4 }}>{cert.name}</h3>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "var(--text-muted)", marginBottom: "6px" }}>{cert.period}</div>
-              {cert.note && (
-                <p style={{ fontSize: "11px", color: "var(--text-secondary)", lineHeight: 1.5 }}>
-                  {cert.note === "[ADD: exam date]" || cert.note === "[ADD: target month]" ? (isDev ? cert.note : "In progress") : cert.note}
-                </p>
+              {(cert.period || cert.status === "IN PROGRESS") && (
+                <div style={{ fontFamily: "monospace", fontSize: "10px", color: "var(--text-muted)", marginBottom: "6px" }}>
+                  {cert.period || "In progress"}
+                </div>
               )}
+              {cert.note && <p style={{ fontSize: "11px", color: "var(--text-secondary)", lineHeight: 1.5 }}>{cert.note}</p>}
               {cert.verify && <a href={cert.verify} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", color: "#22c55e", textDecoration: "none", fontFamily: "monospace" }}>Verify on Credly</a>}
             </div>
           ))}
