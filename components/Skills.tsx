@@ -1,13 +1,13 @@
 "use client"
 
 const skillGroups = [
-  { title: "Cloud", skills: ["AWS", "Azure", "EC2", "S3", "VPC", "IAM", "Lambda", "ECS/Fargate", "RDS", "CloudFormation", "Route 53", "CloudWatch"] },
-  { title: "IaC", skills: ["Terraform", "AWS CloudFormation"] },
-  { title: "Containers", skills: ["Docker", "Kubernetes", "Helm", "ECS/Fargate", "Kustomize", "GitOps concepts"] },
-  { title: "CI/CD", skills: ["GitHub Actions", "Jenkins", "PowerShell", "Bash", "Deployment automation"] },
-  { title: "Observability", skills: ["CloudWatch", "Prometheus", "Grafana", "Loki", "Incident Response", "SRE", "Chaos Engineering", "SLOs", "MTTR"] },
-  { title: "Programming", skills: ["Python", "FastAPI", "Node.js", "JavaScript", "Bash", "SQL", "Linux"] },
-  { title: "Data", skills: ["PostgreSQL", "DynamoDB", "JSON", "Git", "GitHub"] },
+  { title: "Cloud", skills: ["AWS", "Azure", "EC2", "S3", "VPC", "IAM", "Lambda", "API Gateway", "ECS/Fargate", "RDS", "CloudFormation", "Route 53", "CloudWatch"] },
+  { title: "IaC & Automation", skills: ["Terraform", "Ansible", "PowerShell", "Bash", "Deployment automation"] },
+  { title: "Containers & Platform", skills: ["Docker", "Docker Compose", "Kubernetes", "RBAC", "Ingress", "HPA", "Cluster upgrades (lab)", "Helm", "Kustomize", "Kind", "ECS/Fargate"] },
+  { title: "CI/CD & GitOps", skills: ["GitHub Actions", "Jenkins", "GitLab CI", "Argo CD", "Flux", "GitOps concepts"] },
+  { title: "Observability & Reliability", skills: ["CloudWatch", "Prometheus", "Grafana", "Loki", "OpenTelemetry", "Incident response", "SLOs/SLIs", "MTTR", "Chaos engineering"] },
+  { title: "Security — Project Experience", skills: ["Trivy", "Snyk", "AWS KMS", "AWS Secrets Manager"] },
+  { title: "Programming & Data", skills: ["Python", "FastAPI", "Node.js", "JavaScript", "SQL", "PostgreSQL", "DynamoDB", "JSON persistence", "Linux administration", "Git", "GitHub"] },
 ]
 
 const howIWork = [

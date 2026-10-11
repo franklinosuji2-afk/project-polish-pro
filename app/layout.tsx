@@ -5,20 +5,20 @@ import { ThemeProvider } from "../components/ThemeContext"
 export const metadata: Metadata = {
   metadataBase: new URL("https://cfo-dev.pages.dev"),
   title: "Franklin Chinonso Osuji | Cloud & DevOps Engineer",
-  description: "Cloud & DevOps Engineer with 5+ years of experience building infrastructure, automation, and deployment workflows across AWS, Azure, Terraform, Kubernetes, and Linux environments in Berlin, Germany.",
+  description: "Cloud & DevOps Engineer with almost 4 years of professional experience delivering AWS and Azure infrastructure as code, containerized workloads, and CI/CD pipelines, alongside apprenticeship and work-study experience since 2019. Based in Berlin, Germany.",
   keywords: ["Franklin Osuji", "Cloud Engineer", "DevOps Engineer", "AWS", "Azure", "Terraform", "Kubernetes", "Berlin"],
   authors: [{ name: "Franklin Chinonso Osuji" }],
   alternates: { canonical: "/" },
   openGraph: {
     title: "Franklin Chinonso Osuji | Cloud & DevOps Engineer",
-    description: "Cloud & DevOps Engineer with 5+ years of experience building infrastructure, automation, and deployment workflows across AWS, Azure, Terraform, Kubernetes, and Linux environments in Berlin, Germany.",
+    description: "Cloud & DevOps Engineer with almost 4 years of professional experience delivering AWS and Azure infrastructure as code, containerized workloads, and CI/CD pipelines, alongside apprenticeship and work-study experience since 2019. Based in Berlin, Germany.",
     url: "https://cfo-dev.pages.dev",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Franklin Chinonso Osuji | Cloud & DevOps Engineer",
-    description: "Cloud & DevOps Engineer with 5+ years of experience building infrastructure, automation, and deployment workflows across AWS, Azure, Terraform, Kubernetes, and Linux environments in Berlin, Germany.",
+    description: "Cloud & DevOps Engineer with almost 4 years of professional experience delivering AWS and Azure infrastructure as code, containerized workloads, and CI/CD pipelines, alongside apprenticeship and work-study experience since 2019. Based in Berlin, Germany.",
   },
 }
 
@@ -37,4 +37,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-

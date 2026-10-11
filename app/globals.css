@@ -91,3 +91,15 @@ a:focus-visible, button:focus-visible {
   .grid-3col { grid-template-columns: 1fr; }
   .grid-2col-sm { grid-template-columns: 1fr; }
 }
+/* Hero certification badge - responsive positioning */
+@media (max-width: 768px) {
+  .hero-verified-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}

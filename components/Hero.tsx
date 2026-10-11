@@ -82,15 +82,16 @@ export default function Hero() {
           margin: "0 auto",
           position: "relative",
           zIndex: 1,
+          paddingTop: "54px",
         }}
       >
-        {/* Verified certification badge */}
+        {/* Verified certification — separate row to prevent overlap */}
         <div
           style={{
-            position: "absolute",
-            top: "-20px",
-            right: "0",
-            zIndex: 3,
+            display: "flex",
+            justifyContent: "flex-end",
+            width: "100%",
+            marginBottom: "18px",
           }}
         >
           <a
@@ -102,7 +103,7 @@ export default function Hero() {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              padding: "7px 12px",
+              padding: "8px 12px",
               borderRadius: "7px",
               border: "1px solid rgba(34,197,94,0.35)",
               background: "rgba(34,197,94,0.07)",
@@ -113,7 +114,6 @@ export default function Hero() {
               fontWeight: 700,
               letterSpacing: "0.4px",
               boxShadow: "0 8px 24px rgba(0,0,0,0.18)",
-              backdropFilter: "blur(8px)",
             }}
           >
             <span
@@ -218,7 +218,7 @@ export default function Hero() {
                 letterSpacing: "-0.5px",
               }}
             >
-              Cloud & DevOps Engineer — AWS, Terraform, Kubernetes
+              Cloud & DevOps Engineer | AWS, Terraform, Kubernetes
             </h1>
             <p
               style={{
@@ -229,10 +229,7 @@ export default function Hero() {
                 maxWidth: "700px",
               }}
             >
-              Cloud Infrastructure & DevOps Engineer with 5+ years of combined
-              engineering, consulting, and digital operations experience. I
-              work mainly with AWS, Terraform, Docker, Kubernetes, ECS/Fargate,
-              Linux, and CI/CD automation.
+              Cloud & DevOps Engineer with almost 4 years of professional experience delivering AWS and Azure infrastructure as code, containerized workloads, and CI/CD pipelines in contract and client environments, alongside a 2.5-year apprenticeship and 1.5 years of work-study since 2019.
             </p>
             <p
               style={{
@@ -243,10 +240,7 @@ export default function Hero() {
                 maxWidth: "700px",
               }}
             >
-              My focus is on making infrastructure repeatable and deployments
-              easier to operate. I work across infrastructure-as-code,
-              containerized workloads, automation, troubleshooting, reliability,
-              security, and cost-aware cloud operations.
+              I work across Terraform-provisioned infrastructure, Jenkins and GitHub Actions pipelines, ECS/Fargate and Kubernetes deployments, and Prometheus, Grafana, and Loki observability. My personal projects include Kubernetes platform tooling with GitOps workflows and Trivy/Snyk security scanning.
             </p>
             {/* Professional details */}
             <div
@@ -451,6 +445,7 @@ export default function Hero() {
                 href="/Franklin_Osuji_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="View Franklin Osuji resume PDF"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -469,7 +464,8 @@ export default function Hero() {
               </a>
               <a
                 href="/Franklin_Osuji_Resume.pdf"
-                download
+                download="Franklin_Osuji_Resume.pdf"
+                aria-label="Download Franklin Osuji resume PDF"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
