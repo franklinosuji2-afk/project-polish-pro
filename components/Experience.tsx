@@ -1,86 +1,117 @@
 "use client"
+
 const exps = [
-  { title:"Cloud Engineer", company:"Macview", location:"Remote", period:"APR 2026 - PRESENT", type:"Contract", bullets:["Work with AWS and Azure infrastructure, focusing on reliable, secure, and maintainable cloud environments.","Automate infrastructure provisioning and deployment workflows with Terraform and CI/CD tooling.","Build and support containerized workloads using Docker and cloud-native services.","Troubleshoot infrastructure and deployment issues and improve repeatability across delivery workflows."], tags:["AWS","Azure","Terraform","Docker","CI/CD"] },
-  { title:"Cloud & DevOps Engineer", company:"DCI Digital Career Institute", location:"Berlin, Germany", period:"NOV 2024 - MAR 2026", type:"Work Study", bullets:["Built CI/CD pipelines with Jenkins and GitHub Actions to automate repeatable software delivery.","Built infrastructure with Terraform and worked hands-on with EC2, S3, IAM, VPC, Lambda, and RDS.","Deployed ECS/Fargate workloads and practiced Blue/Green deployment strategies."], tags:["AWS","Jenkins","Terraform","Docker","GitHub Actions","ECS/Fargate"] },
-  { title:"DevOps Engineer", company:"Bridge IT Engineering", location:"Berlin, Germany", period:"NOV 2022 - NOV 2024", type:"Contract", bullets:["Automated cloud provisioning and deployment tasks for client environments using AWS, Docker, and scripting.","Diagnosed Linux, infrastructure, and deployment issues across client environments.","Supported CI/CD workflow implementation and operational environments."], tags:["AWS","Docker","CI/CD","Linux","Python","Bash"] },
-  { title:"Consultant / Freelancer Cloud & DevOps Engineer", company:"Basecamp: Outdoor Jobs, Freelance Gigs, Networking", location:"Berlin, Germany", period:"AUG 2021 - NOV 2022", type:"Freelance", bullets:["Automated cloud provisioning and deployment tasks for client environments using AWS, Docker, and scripting.","Diagnosed Linux, infrastructure, and deployment issues across client environments.","Supported CI/CD workflow implementation and operational environments."], tags:["AWS","Docker","CI/CD","Linux","Python","Bash"] },
-  { title:"Cloud Support Engineer", company:"Cisco Networking Academy", location:"Berlin, Germany", period:"JAN 2020 - AUG 2021", type:"Internship", bullets:["Automated cloud provisioning and deployment tasks using AWS, Terraform, Docker, Python, and Bash.","Worked with Kubernetes, ECS/Fargate, CI/CD pipelines, and cloud monitoring.","Supported Linux, cloud infrastructure, container, networking, and deployment troubleshooting."], tags:["AWS","Terraform","Kubernetes","Docker","ECS/Fargate","GitHub Actions","Jenkins","Linux","Python"] },
-  { title:"Cloud Engineer", company:"PC-COLLEGE Berlin", location:"Berlin, Germany", period:"FEB 2019 - DEC 2019", type:"Apprenticeship", bullets:["Supported cloud infrastructure, deployment automation, and technical operations."], tags:["Cloud","Infrastructure","Automation"] },
-  { title:"E-commerce and Digital Marketing", company:"PAPER & TEA", location:"Berlin, Germany", period:"AUG 2017 - FEB 2019", type:"Full-time", bullets:["Automated reporting workflows with Bash and Python and supported improvements to website performance and daily operations.","Supported technical website optimization, reporting, and digital operations."], tags:["Python","Bash","Analytics","Digital Operations"] },
-  { title:"Salesperson", company:"Modulor GmbH", location:"Berlin, Germany", period:"AUG 2016 - AUG 2017", type:"Full-time", bullets:["Worked in sales and customer-facing operations."], tags:["Sales","Customer Service","Operations"] },
+  {
+    title: "Cloud Engineer",
+    company: "Macview",
+    location: "Remote",
+    period: "APR 2026 - PRESENT",
+    type: "Contract",
+    bullets: [
+      "Design and deploy cloud infrastructure across AWS and Azure with an emphasis on reliability, scalability, security and operational efficiency.",
+      "Automate infrastructure provisioning and deployment workflows using Terraform and CI/CD practices.",
+      "Build and support containerized workloads with Docker and cloud-native services across multiple environments.",
+      "Diagnose and resolve infrastructure and deployment issues, contributing to platform reliability and delivery efficiency.",
+    ],
+    tags: ["AWS", "Azure", "Terraform", "Docker", "CI/CD"],
+  },
+  {
+    title: "Cloud & DevOps Engineer",
+    company: "DCI Digital Career Institute",
+    location: "Berlin, Germany",
+    period: "NOV 2024 - MAR 2026",
+    type: "Work Study",
+    bullets: [
+      "Built CI/CD pipelines with Jenkins and GitHub Actions for repeatable, automated build and deployment.",
+      "Developed infrastructure as code with Terraform and worked hands-on with EC2, S3, IAM, VPC, Lambda and RDS.",
+      "Delivered containerized workloads on AWS ECS/Fargate using Terraform and Docker, applying multiple deployment strategies, including Blue/Green.",
+    ],
+    tags: ["AWS", "Jenkins", "Terraform", "Docker", "GitHub Actions", "ECS/Fargate"],
+  },
+  {
+    title: "DevOps Engineer",
+    company: "Bridge IT Engineering",
+    location: "Berlin, Germany",
+    period: "NOV 2022 - NOV 2024",
+    type: "Contract",
+    bullets: [
+      "Automated AWS provisioning and deployment workflows with Docker and scripting to make client and team environments repeatable.",
+      "Operated and supported Linux infrastructure and CI/CD pipelines day to day, troubleshooting issues and keeping environments stable.",
+    ],
+    tags: ["AWS", "EC2", "S3", "Lambda", "API Gateway", "CloudWatch", "Python", "Terraform", "Bash"],
+  },
+  {
+    title: "Consultant / Freelancer Cloud & DevOps Engineer",
+    company: "Basecamp: Outdoor Jobs, Freelance Gigs, Networking",
+    location: "Berlin, Germany",
+    period: "AUG 2021 - NOV 2022",
+    type: "Freelance",
+    bullets: [
+      "Delivered cloud infrastructure and deployment automation for client environments on AWS using Terraform, Python and Bash, and supported their Linux systems.",
+    ],
+    tags: ["AWS", "EC2", "S3", "Lambda", "API Gateway", "CloudWatch", "Python", "Terraform", "Bash"],
+  },
+  {
+    title: "Cloud Support Engineer",
+    company: "Cisco Networking Academy",
+    location: "Berlin, Germany",
+    period: "MAR 2019 - AUG 2021",
+    type: "Apprenticeship",
+    bullets: [
+      "Supported cloud infrastructure, containers, networking and CI/CD in a hands-on role; handled technical troubleshooting.",
+    ],
+    tags: ["Cloud", "Containers", "Networking", "CI/CD", "Troubleshooting"],
+  },
 ]
-const typeColor: Record<string, { color: string; border: string; bg: string }> = {
-  Contract: { color: "#4ade80", border: "rgba(74,222,128,.3)", bg: "rgba(74,222,128,.05)" },
-  Training: { color: "#60a5fa", border: "rgba(96,165,250,.3)", bg: "rgba(96,165,250,.05)" },
-  Freelance: { color: "#c084fc", border: "rgba(192,132,252,.3)", bg: "rgba(192,132,252,.05)" },
-  "Full-time": { color: "#34d399", border: "rgba(52,211,153,.3)", bg: "rgba(52,211,153,.05)" },
-  "Work Study": { color: "#60a5fa", border: "rgba(96,165,250,.3)", bg: "rgba(96,165,250,.05)" },
-  Internship: { color: "#a78bfa", border: "rgba(167,139,250,.3)", bg: "rgba(167,139,250,.05)" },
-  Apprenticeship: { color: "#f59e0b", border: "rgba(245,158,11,.3)", bg: "rgba(245,158,11,.05)" },
+
+const typeColor: Record<string, string> = {
+  Contract: "#4ade80",
+  Freelance: "#c084fc",
+  "Full-time": "#34d399",
+  "Work Study": "#60a5fa",
+  Apprenticeship: "#a78bfa",
 }
+
 export default function Experience() {
   return (
-    <section id="experience" className="section-pad" style={{ background: "var(--bg-section)" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <div style={{ marginBottom: "48px" }}>
-          <div style={{ fontFamily: "monospace", fontSize: "11px", color: "#3b82f6", letterSpacing: "4px", marginBottom: "12px" }}>
-            // EXPERIENCE
-          </div>
-          <h2 style={{ fontSize: "clamp(24px,4vw,38px)", fontWeight: 700, color: "var(--text-primary)", marginBottom: "12px" }}>
-            Career Timeline
-          </h2>
-          <div style={{ width: "40px", height: "2px", background: "#3b82f6" }} />
+    <section id="experience" className="section-pad" aria-labelledby="experience-title">
+      <div className="container">
+        <div className="section-heading">
+          <div className="eyebrow">// EXPERIENCE</div>
+          <h2 id="experience-title">Career Timeline</h2>
+          <p>Cloud and DevOps roles from apprenticeship to current contract work, followed by a note on earlier experience.</p>
         </div>
-        <div style={{ position: "relative", paddingLeft: "32px" }}>
-          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "1px", background: "linear-gradient(to bottom,#3b82f6,var(--border))" }} />
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            {exps.map((exp, i) => {
-              const tc = typeColor[exp.type]
-              return (
-                <div key={i} style={{ position: "relative", padding: "24px", borderRadius: "12px", border: "1px solid var(--border)", background: "var(--bg-card)" }}>
-                  <div style={{ position: "absolute", left: "-40px", top: "28px", width: "16px", height: "16px", borderRadius: "50%", border: `2px solid ${i === 0 ? "#4ade80" : "#3b82f6"}`, background: "var(--bg-primary)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: i === 0 ? "#4ade80" : "#3b82f6" }} />
+
+        <div className="timeline">
+          {exps.map((exp, index) => (
+            <article key={exp.company} className="experience-card">
+              <div className="timeline-dot" aria-hidden="true" />
+              <div className="experience-header">
+                <div>
+                  <div className="experience-title-row">
+                    <h3>{exp.title}</h3>
+                    {index === 0 && <span className="current-badge">CURRENT</span>}
                   </div>
-                  <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
-                    <div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "4px", flexWrap: "wrap" }}>
-                        <h3 style={{ fontSize: "17px", fontWeight: 700, color: "var(--text-primary)" }}>{exp.title}</h3>
-                        {i === 0 && (
-                          <span style={{ fontSize: "11px", fontFamily: "monospace", padding: "2px 8px", borderRadius: "999px", color: "#4ade80", border: "1px solid rgba(74,222,128,.3)", background: "rgba(74,222,128,.05)" }}>
-                            CURRENT
-                          </span>
-                        )}
-                      </div>
-                      <div style={{ fontSize: "13px", color: "var(--text-secondary)" }}>
-                        {exp.company} | {exp.location}
-                      </div>
-                    </div>
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6px" }}>
-                      <span style={{ fontFamily: "monospace", fontSize: "12px", color: "#3b82f6" }}>{exp.period}</span>
-                      <span style={{ fontFamily: "monospace", fontSize: "10px", padding: "2px 8px", borderRadius: "4px", color: tc.color, border: `1px solid ${tc.border}`, background: tc.bg }}>
-                        {exp.type}
-                      </span>
-                    </div>
-                  </div>
-                  <ul style={{ listStyle: "none", marginBottom: "16px" }}>
-                    {exp.bullets.map((b, j) => (
-                      <li key={j} style={{ display: "flex", gap: "10px", fontSize: "14px", color: "var(--text-secondary)", marginBottom: "8px", lineHeight: 1.6 }}>
-                        <span style={{ color: "#3b82f6", flexShrink: 0 }}>-</span>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                    {exp.tags.map((t) => (
-                      <span key={t} style={{ padding: "2px 10px", fontSize: "11px", borderRadius: "4px", border: "1px solid var(--border)", color: "var(--text-muted)", fontFamily: "monospace" }}>
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="company-line">{exp.company} · {exp.location}</p>
                 </div>
-              )
-            })}
-          </div>
+                <div className="experience-meta">
+                  <span>{exp.period}</span>
+                  <b style={{ color: typeColor[exp.type] }}>{exp.type}</b>
+                </div>
+              </div>
+              <ul>
+                {exp.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+              </ul>
+              <div className="tag-list">
+                {exp.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="earlier-experience">
+          <span>EARLIER EXPERIENCE</span>
+          <p>PAPER &amp; TEA — E-commerce &amp; Digital Marketing (Aug 2017–Feb 2019) · Modulor GmbH — Salesperson (Aug 2016–Aug 2017)</p>
         </div>
       </div>
     </section>

@@ -1,36 +1,33 @@
 "use client"
 
-const cats = [
-  { title: "Cloud Platforms", color: "#3b82f6", skills: ["AWS", "Azure", "EC2", "S3", "VPC", "IAM", "Lambda", "ECS/Fargate", "RDS", "CloudFormation", "Route 53", "CloudWatch"] },
-  { title: "Infrastructure as Code", color: "#8b5cf6", skills: ["Terraform", "Ansible", "AWS CloudFormation"] },
-  { title: "Containers & Platform", color: "#06b6d4", skills: ["Docker", "Kubernetes", "Helm", "ECS/Fargate", "Kustomize", "GitOps concepts"] },
-  { title: "CI/CD & Automation", color: "#f97316", skills: ["GitHub Actions", "Jenkins", "GitLab CI", "PowerShell", "Bash", "Deployment automation"] },
-  { title: "Observability & Reliability", color: "#22c55e", skills: ["CloudWatch", "Prometheus", "Grafana", "Loki", "Incident Response", "SRE", "Chaos Engineering", "SLOs", "MTTR"] },
-  { title: "Programming & Scripting", color: "#eab308", skills: ["Python", "FastAPI", "Node.js", "JavaScript", "Bash", "SQL", "Linux"] },
-  { title: "Data & Systems", color: "#ec4899", skills: ["PostgreSQL", "DynamoDB", "JSON Persistence", "Linux Administration", "Git", "GitHub"] },
+const groups = [
+  { title: "Cloud", items: ["AWS", "Azure", "EC2", "S3", "VPC", "IAM", "Lambda", "API Gateway", "ECS/Fargate", "RDS", "CloudFormation", "Route 53"] },
+  { title: "IaC & Automation", items: ["Terraform", "Ansible", "Bash", "PowerShell", "Deployment automation"] },
+  { title: "Containers & Platform", items: ["Docker", "Docker Compose", "Kubernetes", "Helm", "Kustomize", "Kind", "ECS/Fargate", "Argo CD", "Flux", "GitOps concepts", "Kubernetes RBAC (lab)", "Ingress (lab)", "HPA (lab)", "Cluster upgrades (lab)"] },
+  { title: "CI/CD & Version Control", items: ["GitHub Actions", "Jenkins", "GitLab CI", "Git", "GitHub", "Code review"] },
+  { title: "Observability & Reliability", items: ["CloudWatch", "Prometheus", "Grafana", "Loki", "OpenTelemetry", "Incident response", "SRE", "Chaos engineering", "SLOs/SLIs", "MTTR"] },
+  { title: "Security & Secrets (project experience)", items: ["Trivy", "Snyk", "AWS KMS", "AWS Secrets Manager"] },
+  { title: "Programming & Scripting", items: ["Python", "FastAPI", "Node.js", "JavaScript", "Bash", "SQL"] },
+  { title: "Data & Systems", items: ["PostgreSQL", "DynamoDB", "JSON persistence", "Linux administration"] },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-pad" style={{ background: "#0a0e17" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <div style={{ marginBottom: "40px" }}>
-          <div style={{ fontFamily: "monospace", fontSize: "11px", color: "#3b82f6", letterSpacing: "4px", marginBottom: "12px" }}>// CORE_TECHNOLOGIES</div>
-          <h2 style={{ fontSize: "clamp(24px,4vw,38px)", fontWeight: 700, color: "var(--text-primary)", marginBottom: "12px" }}>Technical Skills</h2>
-          <div style={{ width: "40px", height: "2px", background: "#3b82f6" }} />
-          <p style={{ marginTop: "16px", color: "var(--text-secondary)", fontSize: "13px", fontFamily: "monospace" }}>Cloud infrastructure, platform engineering, automation, and reliability technologies</p>
+    <section id="skills" className="section-pad" aria-labelledby="skills-title">
+      <div className="container">
+        <div className="section-heading">
+          <div className="eyebrow">// SKILLS</div>
+          <h2 id="skills-title">Technical Skills</h2>
+          <p>Tools and technologies I use across client work, training, and personal projects.</p>
         </div>
-
-        <div className="grid-3col">
-          {cats.map(c => (
-            <div key={c.title} style={{ padding: "20px", borderRadius: "12px", border: `1px solid ${c.color}33`, background: `${c.color}08` }}>
-              <h3 style={{ fontSize: "11px", fontWeight: 600, fontFamily: "monospace", color: c.color, marginBottom: "14px", letterSpacing: "2px" }}>{c.title.toUpperCase()}</h3>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                {c.skills.map(s => (
-                  <span key={s} style={{ padding: "3px 8px", fontSize: "11px", borderRadius: "4px", border: `1px solid ${c.color}33`, color: c.color, background: `${c.color}15`, fontFamily: "monospace" }}>{s}</span>
-                ))}
+        <div className="skills-grid">
+          {groups.map((group) => (
+            <article className="skill-group" key={group.title}>
+              <h3>{group.title}</h3>
+              <div className="tag-list">
+                {group.items.map((item) => <span key={item}>{item}</span>)}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

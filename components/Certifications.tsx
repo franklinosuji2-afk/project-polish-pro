@@ -1,10 +1,10 @@
-﻿"use client"
+"use client"
 
 const certs = [
   {
     issuer: "AMAZON WEB SERVICES",
     name: "AWS Certified Cloud Practitioner",
-    period: "Aug 2025 - Aug 2028",
+    period: "Active · Aug 2025 – Aug 2028",
     status: "ACTIVE",
     color: "#22c55e",
     verify: "https://www.credly.com/users/franklin-chinonso-osuji.4b5356de",
@@ -20,13 +20,13 @@ const certs = [
   {
     issuer: "HASHICORP",
     name: "HashiCorp Certified: Terraform Associate",
-    period: "Exam Scheduled",
+    period: "Exam scheduled",
     status: "IN PROGRESS",
     color: "#f97316",
   },
   {
     issuer: "AMAZON WEB SERVICES",
-    name: "AWS Certified Solutions Architect - Associate",
+    name: "AWS Certified Solutions Architect – Associate",
     period: "Expected 2026",
     status: "IN PROGRESS",
     color: "#f97316",
@@ -34,48 +34,45 @@ const certs = [
   {
     issuer: "DIGITAL CAREER INSTITUTE (DCI)",
     name: "DevOps & Cloud Engineering Program",
-    period: "Nov 2024 - Mar 2026",
+    period: "Berlin · Nov 2024 – Mar 2026",
     status: "COMPLETED",
-    color: "#3b82f6",
+    color: "#22c55e",
   },
   {
     issuer: "FEDERAL UNIVERSITY OF TECHNOLOGY, OWERRI (FUTO)",
     name: "B.Eng. Petroleum Engineering",
-    period: "2012 - 2016",
+    period: "Nigeria · 2012 – 2016",
     status: "COMPLETED",
-    color: "#3b82f6",
-    note: "Nigeria",
+    color: "#22c55e",
   },
 ]
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="section-pad" style={{ background: "var(--bg-section)" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <div style={{ marginBottom: "40px" }}>
-          <div style={{ fontFamily: "monospace", fontSize: "11px", color: "#3b82f6", letterSpacing: "4px", marginBottom: "12px" }}>// EDUCATION_AND_CERTIFICATIONS</div>
-          <h2 style={{ fontSize: "clamp(24px,4vw,38px)", fontWeight: 700, color: "var(--text-primary)", marginBottom: "12px" }}>Education & Credentials</h2>
-          <div style={{ width: "40px", height: "2px", background: "#3b82f6" }} />
+    <section id="certifications" className="section-pad section-alt" aria-labelledby="certifications-title">
+      <div className="container">
+        <div className="section-heading">
+          <div className="eyebrow">// EDUCATION_AND_CERTIFICATIONS</div>
+          <h2 id="certifications-title">Education &amp; Certifications</h2>
         </div>
-
-        <div className="grid-3col">
-          {certs.map((cert, i) => (
-            <div key={i} style={{ padding: "18px", borderRadius: "12px", border: `1px solid ${cert.color}22`, background: "var(--bg-card)" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "10px", gap: "6px" }}>
-                <span style={{ fontFamily: "monospace", fontSize: "9px", color: "var(--text-muted)", letterSpacing: "1px", lineHeight: 1.4 }}>{cert.issuer}</span>
-                <span style={{ fontFamily: "monospace", fontSize: "9px", color: cert.color, border: `1px solid ${cert.color}44`, padding: "2px 6px", borderRadius: "4px", flexShrink: 0, whiteSpace: "nowrap" }}>{cert.status}</span>
+        <div className="cert-grid">
+          {certs.map((cert) => (
+            <article className="cert-card" key={cert.name}>
+              <div className="cert-top">
+                <span>{cert.issuer}</span>
+                <b style={{ color: cert.color }}>{cert.status}</b>
               </div>
-              <h3 style={{ fontWeight: 600, color: "var(--text-primary)", marginBottom: "6px", fontSize: "13px", lineHeight: 1.4 }}>{cert.name}</h3>
-              <div style={{ fontFamily: "monospace", fontSize: "10px", color: "var(--text-muted)", marginBottom: "6px" }}>{cert.period}</div>
-              {cert.note && <p style={{ fontSize: "11px", color: "var(--text-secondary)", lineHeight: 1.5 }}>{cert.note}</p>}
-              {cert.verify && <a href={cert.verify} target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", color: "#22c55e", textDecoration: "none", fontFamily: "monospace" }}>Verify on Credly</a>}
-            </div>
+              <h3>{cert.name}</h3>
+              <p>{cert.period}</p>
+              {cert.verify && (
+                <a href={cert.verify} target="_blank" rel="noreferrer" aria-label={`Verify ${cert.name} on Credly`}>
+                  Verify on Credly →
+                </a>
+              )}
+            </article>
           ))}
         </div>
       </div>
     </section>
   )
 }
-
-
-

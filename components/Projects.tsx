@@ -1,22 +1,30 @@
 "use client"
-const projects = [
+
+type Project = {
+  number: string
+  title: string
+  category: string
+  problem: string
+  approach: string
+  stack: string[]
+  shows: string
+  image: string
+  caption: string
+  github: string
+  color: string
+}
+
+const projects: Project[] = [
   {
     number: "01",
     title: "PlatformOps-Lab",
     category: "KUBERNETES & PLATFORM ENGINEERING",
-    description:
-      "A local Kubernetes environment I built to practice platform engineering workflows without relying on a paid cloud environment.",
-    architecture:
-      "Terraform provisions the platform foundation while Kind runs the Kubernetes cluster. Kustomize handles environment configuration, Helm packages workloads, and GitHub Actions validates the delivery workflow.",
-    pipeline: ["Terraform", "Kind", "Kubernetes", "Helm", "Kustomize", "GitHub Actions"],
-    monitoring: ["Prometheus metrics", "Grafana dashboards", "Loki log aggregation", "Application visibility"],
-    value: [
-      "Reusable Kubernetes deployment patterns",
-      "Infrastructure-as-Code workflow",
-      "Integrated observability stack",
-      "Local platform engineering laboratory",
-    ],
-    tags: ["Kubernetes", "Terraform", "Docker", "Kind", "Helm", "Kustomize", "Prometheus", "Grafana"],
+    problem: "Platform engineering workflows need a repeatable environment for practicing infrastructure, deployment, and observability without relying on paid cloud resources.",
+    approach: "Use Terraform and Kind for the platform foundation, then combine Kubernetes, Helm, Kustomize, GitHub Actions, Prometheus, Grafana, and Loki, with Git-based GitOps practices and Trivy and Snyk scanning.",
+    stack: ["Terraform", "Kind", "Kubernetes", "Helm", "Kustomize", "Docker Compose", "GitHub Actions", "Prometheus", "Grafana", "Loki", "Argo CD", "Flux", "Trivy", "Snyk"],
+    shows: "Reproducible cluster setup, declarative configuration with Kustomize, and metrics and log observability in a local environment.",
+    image: "/projects/platformops-lab.png",
+    caption: "Architecture diagram — PlatformOps-Lab",
     github: "https://github.com/franklinosuji2-afk/PlatformOps-Lab",
     color: "#8b5cf6",
   },
@@ -24,19 +32,12 @@ const projects = [
     number: "02",
     title: "LocalCloud Control Plane",
     category: "PLATFORM ENGINEERING",
-    description:
-      "A local platform engineering project for managing services, deployments, events, and simulated operational state through a small control-plane API.",
-    architecture:
-      "A React + Vite dashboard communicates with a Node.js/Express API. Service management, orchestration, lifecycle events, logging, metrics simulation, and state persistence are separated into clear platform components.",
-    pipeline: ["React Dashboard", "REST API", "Service Manager", "Orchestrator", "Lifecycle Events", "State Persistence"],
-    monitoring: ["Service lifecycle events", "Deployment state tracking", "Operational event logging", "Metrics simulation"],
-    value: [
-      "Control-plane architecture",
-      "Separation of platform and application concerns",
-      "Runs completely locally",
-      "Foundation for Kubernetes-style extensions",
-    ],
-    tags: ["React", "Vite", "Node.js", "Express", "Docker", "GitHub Actions"],
+    problem: "A local platform needs a clear control plane for services, deployments, lifecycle events, and simulated operational state.",
+    approach: "Separate the React dashboard, Node.js/Express API, service management, orchestration, lifecycle events, state persistence, and metrics simulation into clear components.",
+    stack: ["React", "Vite", "Node.js", "Express", "Docker", "Docker Compose", "GitHub Actions"],
+    shows: "Control-plane design with service lifecycle, deployment state, and event logging separated into clear components, running fully locally.",
+    image: "/projects/localcloud-control-plane.png",
+    caption: "Architecture diagram — LocalCloud Control Plane",
     github: "https://github.com/franklinosuji2-afk/LocalCloud-Control-Plane",
     color: "#3b82f6",
   },
@@ -44,19 +45,12 @@ const projects = [
     number: "03",
     title: "ChaosForge",
     category: "SRE & CHAOS ENGINEERING",
-    description:
-      "A local reliability engineering lab where I introduce controlled failures into containerized workloads and measure detection, recovery, MTTR, SLO compliance, and error-budget impact.",
-    architecture:
-      "PowerShell orchestrates controlled failure experiments across Docker workloads. FastAPI provides the workload and API layer while Prometheus and Grafana capture and visualize reliability behaviour.",
-    pipeline: ["Chaos Injection", "Failure Detection", "Incident Creation", "Recovery", "MTTR Measurement", "SLO Evaluation"],
-    monitoring: ["Prometheus metrics", "Grafana dashboards", "Incident history", "MTTR tracking"],
-    value: [
-      "Turns reliability assumptions into experiments",
-      "Measures recovery performance",
-      "Supports SLO and error-budget analysis",
-      "Provides a local SRE laboratory",
-    ],
-    tags: ["Python", "FastAPI", "Docker", "PowerShell", "Prometheus", "Grafana", "SRE"],
+    problem: "Reliability assumptions are difficult to validate without deliberately introducing controlled failures.",
+    approach: "Run local failure experiments against containerized workloads, observe detection and recovery, and use reliability signals to inspect the experiment.",
+    stack: ["Python", "FastAPI", "Docker", "PowerShell", "Prometheus", "Grafana"],
+    shows: "Controlled failure injection with detection, recovery, MTTR, and SLO evaluation built into the experiment workflow.",
+    image: "/projects/chaosforge.png",
+    caption: "Architecture diagram — ChaosForge",
     github: "https://github.com/franklinosuji2-afk/chaosforge",
     color: "#ef4444",
   },
@@ -64,321 +58,70 @@ const projects = [
     number: "04",
     title: "CloudPulse",
     category: "CLOUD OBSERVABILITY",
-    description:
-      "A cloud operations project focused on collecting metrics, detecting anomalies, exposing health information, and turning infrastructure signals into something easier to investigate.",
-    architecture:
-      "Containerized FastAPI services ingest and process operational metrics, persist data in PostgreSQL, and expose REST APIs for dashboards and alerting integrations.",
-    pipeline: ["Metric Ingestion", "Processing", "Anomaly Detection", "Health Insights", "PostgreSQL", "REST API"],
-    monitoring: ["Metric ingestion", "Health signals", "Anomaly detection", "Operational API visibility"],
-    value: [
-      "Practical cloud operations workflow",
-      "Actionable health signals",
-      "Reusable REST API",
-      "Hands-on observability practice",
-    ],
-    tags: ["Python", "FastAPI", "PostgreSQL", "Docker", "REST API", "Observability"],
+    problem: "Operational metrics become more useful when they can be ingested, processed, persisted, and exposed through a consistent interface.",
+    approach: "Use containerized FastAPI services to process metrics, surface anomaly and health signals, persist data in PostgreSQL, and expose REST endpoints.",
+    stack: ["Python", "FastAPI", "PostgreSQL", "Docker", "REST API"],
+    shows: "Backend development, data handling, and containerized delivery of an observability tool.",
+    image: "/projects/cloudpulse.png",
+    caption: "Architecture diagram — CloudPulse",
     github: "https://github.com/franklinosuji2-afk/cloudpulse",
     color: "#22c55e",
   },
 ]
+
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="section-pad"
-      style={{
-        background: "var(--bg-section)",
-        borderTop: "1px solid var(--border)",
-      }}
-    >
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <div style={{ marginBottom: "48px" }}>
-          <div
-            style={{
-              fontFamily: "monospace",
-              fontSize: "11px",
-              color: "#3b82f6",
-              letterSpacing: "4px",
-              marginBottom: "12px",
-            }}
-          >
-            // PROJECTS
-          </div>
-          <h2
-            style={{
-              fontSize: "clamp(28px, 4vw, 42px)",
-              fontWeight: 700,
-              color: "var(--text-primary)",
-              marginBottom: "12px",
-            }}
-          >
-            Engineering Projects
-          </h2>
-          <div
-            style={{
-              width: "42px",
-              height: "2px",
-              background: "#3b82f6",
-              marginBottom: "18px",
-            }}
-          />
-          <p
-            style={{
-              color: "var(--text-secondary)",
-              fontSize: "15px",
-              maxWidth: "720px",
-              lineHeight: 1.8,
-            }}
-          >
-            Selected platform engineering, Kubernetes, SRE, cloud infrastructure,
-            automation, and observability projects built to demonstrate practical
-            engineering work.
-          </p>
+    <section id="projects" className="section-pad" aria-labelledby="projects-title">
+      <div className="container">
+        <div className="section-heading">
+          <div className="eyebrow">// PROJECTS</div>
+          <h2 id="projects-title">Selected Engineering Work</h2>
+          <p>Personal projects covering platform engineering, Kubernetes, SRE, cloud operations, and observability.</p>
         </div>
+
         <div className="projects-grid">
           {projects.map((project) => (
-            <article
-              key={project.number}
-              className="project-card"
-              style={{
-                borderColor: `${project.color}55`,
-              }}
-            >
-              <div
-                className="project-header"
-                style={{
-                  borderBottom: `1px solid ${project.color}30`,
-                }}
-              >
+            <article key={project.number} className="project-card" style={{ "--accent": project.color } as React.CSSProperties}>
+              <div className="project-top">
                 <div>
-                  <div
-                    style={{
-                      fontFamily: "monospace",
-                      fontSize: "10px",
-                      color: project.color,
-                      letterSpacing: "2px",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    PROJECT {project.number}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "monospace",
-                      fontSize: "10px",
-                      color: "var(--text-muted)",
-                      letterSpacing: "1.5px",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    {project.category}
-                  </div>
-                  <h3
-                    style={{
-                      fontSize: "clamp(22px, 3vw, 30px)",
-                      fontWeight: 700,
-                      color: "var(--text-primary)",
-                      margin: 0,
-                    }}
-                  >
-                    {project.title}
-                  </h3>
+                  <div className="project-number">PROJECT {project.number}</div>
+                  <div className="project-category">{project.category}</div>
+                  <h3>{project.title}</h3>
                 </div>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="github-button"
-                  style={{
-                    color: project.color,
-                    borderColor: `${project.color}66`,
-                  }}
-                >
-                  GitHub -&gt;
+                <a className="repo-link" href={project.github} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} GitHub repository`}>
+                  GitHub →
                 </a>
               </div>
-              <div className="project-body">
-                <div className="project-overview">
-                  <Label color={project.color}>PROJECT OVERVIEW</Label>
-                  <p>{project.description}</p>
+
+              <div className="project-grid">
+                <div className="project-fact">
+                  <span>PROBLEM</span>
+                  <p>{project.problem}</p>
                 </div>
-                <div className="project-columns">
-                  <div className="project-info">
-                    <Label color="#60a5fa">ARCHITECTURE</Label>
-                    <p>{project.architecture}</p>
-                  </div>
-                  <div className="project-info">
-                    <Label color="#a78bfa">ENGINEERING WORKFLOW</Label>
-                    <div className="tags">
-                      {project.pipeline.map((step, index) => (
-                        <span key={step} className="workflow-tag">
-                          {step}
-                          {index < project.pipeline.length - 1 && " ->"}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="project-info">
-                    <Label color="#06b6d4">OBSERVABILITY</Label>
-                    {project.monitoring.map((item) => (
-                      <div key={item} className="list-item">
-                        <span style={{ color: "#06b6d4" }}>-</span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="project-info">
-                    <Label color="#22c55e">ENGINEERING VALUE</Label>
-                    {project.value.map((item) => (
-                      <div key={item} className="list-item">
-                        <span style={{ color: "#22c55e" }}>+</span>
-                        {item}
-                      </div>
-                    ))}
+                <div className="project-fact">
+                  <span>APPROACH</span>
+                  <p>{project.approach}</p>
+                </div>
+                <div className="project-fact">
+                  <span>STACK</span>
+                  <div className="tag-list">
+                    {project.stack.map((item) => <span key={item}>{item}</span>)}
                   </div>
                 </div>
-                <div className="technology">
-                  <Label color="var(--text-muted)">TECHNOLOGY STACK</Label>
-                  <div className="tags">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="tech-tag"
-                        style={{
-                          color: project.color,
-                          borderColor: `${project.color}35`,
-                          background: `${project.color}0c`,
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <div className="project-fact">
+                  <span>DEMONSTRATES</span>
+                  <p>{project.shows}</p>
                 </div>
               </div>
+
+              <figure className="architecture">
+                <img src={project.image} alt={`${project.title} architecture diagram`} loading="lazy" />
+                <figcaption>{project.caption}</figcaption>
+              </figure>
             </article>
           ))}
         </div>
       </div>
-      <style jsx>{`
-        .projects-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-        .project-card {
-          border: 1px solid;
-          border-radius: 16px;
-          background: var(--bg-card2);
-          overflow: hidden;
-          transition: transform .2s ease, box-shadow .2s ease;
-        }
-        .project-card:hover {
-          transform: translateY(-3px);
-        }
-        .project-header {
-          padding: 26px 28px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 20px;
-        }
-        .github-button {
-          display: inline-flex;
-          align-items: center;
-          padding: 9px 15px;
-          border: 1px solid;
-          border-radius: 8px;
-          text-decoration: none;
-          font-family: monospace;
-          font-size: 11px;
-          white-space: nowrap;
-        }
-        .project-body {
-          padding: 28px;
-        }
-        .project-overview {
-          padding: 22px;
-          border: 1px solid var(--border);
-          border-radius: 12px;
-          margin-bottom: 16px;
-        }
-        .project-overview p,
-        .project-info p {
-          color: var(--text-secondary);
-          font-size: 13px;
-          line-height: 1.8;
-          margin: 0;
-        }
-        .project-columns {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-        }
-        .project-info {
-          padding: 22px;
-          border: 1px solid var(--border);
-          border-radius: 12px;
-        }
-        .tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 7px;
-        }
-        .workflow-tag,
-        .tech-tag {
-          padding: 6px 9px;
-          border-radius: 6px;
-          border: 1px solid var(--border);
-          font-family: monospace;
-          font-size: 10px;
-        }
-        .list-item {
-          display: flex;
-          gap: 9px;
-          margin-bottom: 8px;
-          color: var(--text-secondary);
-          font-size: 12px;
-        }
-        .technology {
-          margin-top: 20px;
-          padding-top: 20px;
-          border-top: 1px solid var(--border);
-        }
-        @media (max-width: 700px) {
-          .project-header {
-            align-items: flex-start;
-            flex-direction: column;
-          }
-          .project-body {
-            padding: 20px;
-          }
-          .project-columns {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </section>
-  )
-}
-function Label({
-  children,
-  color,
-}: {
-  children: React.ReactNode
-  color: string
-}) {
-  return (
-    <div
-      style={{
-        fontFamily: "monospace",
-        fontSize: "10px",
-        color,
-        letterSpacing: "2px",
-        marginBottom: "12px",
-      }}
-    >
-      {children}
-    </div>
   )
 }
