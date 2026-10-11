@@ -1,46 +1,36 @@
-﻿"use client"
+"use client"
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react"
+import React, { createContext, useContext, useEffect, useState } from "react"
 
 type Theme = "dark" | "light"
 
-type ThemeContextValue = {
-  theme: Theme
-  toggle: () => void
-}
-
-const ThemeContext = createContext<ThemeContextValue>({
+const ThemeCtx = createContext<{ theme: Theme; toggle: () => void }>({
   theme: "dark",
   toggle: () => {},
 })
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark")
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme")
-    const initial: Theme = saved === "light" ? "light" : "dark"
-
-    setTheme(initial)
-    document.documentElement.setAttribute("data-theme", initial)
+    // The inline script in layout.tsx has already set data-theme from the saved choice or the system setting.
+    setTheme(document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark")
   }, [])
 
   const toggle = () => {
-    setTheme((current) => {
-      const next: Theme = current === "dark" ? "light" : "dark"
-
-      document.documentElement.setAttribute("data-theme", next)
+    const next: Theme = theme === "dark" ? "light" : "dark"
+    setTheme(next)
+    document.documentElement.setAttribute("data-theme", next)
+    try {
       localStorage.setItem("theme", next)
-
-      return next
-    })
+    } catch (e) {
+      /* storage can be blocked; the choice just won't persist */
+    }
   }
 
-  return (
-    <ThemeContext.Provider value={{ theme, toggle }}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeCtx.Provider value={{ theme, toggle }}>{children}</ThemeCtx.Provider>
 }
 
-export const useTheme = () => useContext(ThemeContext)
+export function useTheme() {
+  return useContext(ThemeCtx)
+}

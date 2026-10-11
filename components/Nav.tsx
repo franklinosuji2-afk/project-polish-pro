@@ -1,71 +1,44 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useTheme } from "./ThemeContext"
 
 const links = [
-  { href: "#home", label: "Home" },
   { href: "#projects", label: "Projects" },
+  { href: "#pipeline", label: "How this site is built" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
-  { href: "#how-i-work", label: "How I work" },
-  { href: "#certifications", label: "Certifications" },
+  { href: "#credentials", label: "Credentials" },
   { href: "#contact", label: "Contact" },
 ]
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { theme, toggle } = useTheme()
-  const dark = theme === "dark"
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40)
-    window.addEventListener("scroll", fn)
-    return () => window.removeEventListener("scroll", fn)
-  }, [])
 
   return (
-    <nav className={`site-nav ${scrolled || open ? "nav-scrolled" : ""}`} aria-label="Primary navigation">
-      <div className="nav-inner">
-        <a className="brand" href="#home" aria-label="Franklin Osuji home">
-          <span className="brand-mark" aria-hidden="true">FO</span>
-          <span>franklin.osuji</span>
-        </a>
-
-        <div className="nav-links">
-          {links.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}
-          <a href="https://linkedin.com/in/franklin-osuji-a96003321" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a className="resume-button" href="/Franklin_Osuji_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-        </div>
-
-        <div className="nav-actions">
-          <button
-            className="theme-button"
-            onClick={toggle}
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-          >
-            {dark ? "LIGHT" : "DARK"}
+    <header className="nav">
+      <div className="container nav-inner">
+        <a className="nav-brand" href="#top">Franklin Osuji</a>
+        <button
+          className="nav-menu"
+          type="button"
+          aria-expanded={open}
+          aria-controls="nav-links"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "Close" : "Menu"}
+        </button>
+        <nav id="nav-links" className={open ? "nav-links open" : "nav-links"} aria-label="Primary">
+          {links.map((link) => (
+            <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</a>
+          ))}
+          <a className="btn btn-small" href="/Franklin_Osuji_Resume.pdf" download>Download CV</a>
+          <button className="theme-toggle" type="button" onClick={toggle}>
+            {theme === "dark" ? "Light theme" : "Dark theme"}
           </button>
-          <button
-            className="menu-button"
-            onClick={() => setOpen(!open)}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-          >
-            {open ? "×" : "☰"}
-          </button>
-        </div>
+        </nav>
       </div>
-
-      <div id="mobile-menu" className={`mobile-menu ${open ? "open" : ""}`}>
-        {links.map((link) => (
-          <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</a>
-        ))}
-        <a href="https://linkedin.com/in/franklin-osuji-a96003321" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a className="resume-button" href="/Franklin_Osuji_Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
-      </div>
-    </nav>
+    </header>
   )
 }

@@ -1,108 +1,87 @@
-"use client"
+import { getBuildInfo } from "./buildInfo"
 
-import { useEffect, useState } from "react"
+const facts = [
+  { label: "Based in", value: "Berlin, Germany" },
+  { label: "Work permit", value: "Permanent (Niederlassungserlaubnis)" },
+  { label: "Available", value: "Immediately" },
+  { label: "Languages", value: "English (native), German (B2)" },
+  { label: "Experience", value: "Almost 4 years professional, plus a 2.5-year apprenticeship and 1.5 years of work-study" },
+  { label: "Looking for", value: "Cloud, DevOps, Platform and SRE roles in Berlin, the EU or remote" },
+]
 
-const lines = [
-  "$ whoami",
-  "> Franklin Osuji",
-  "$ role --current",
-  "> Cloud & DevOps Engineer",
-  "$ experience --years",
-  "> Almost 4 years professional",
-  "$ cloud --focus",
-  "> AWS | Terraform | Kubernetes | CI/CD",
-  "$ status",
-  "> Available immediately",
+const stages = [
+  { name: "Type-check", detail: "tsc --noEmit" },
+  { name: "Build", detail: "next build" },
+  { name: "Security scan", detail: "Trivy" },
 ]
 
 export default function Hero() {
-  const [displayed, setDisplayed] = useState<string[]>([])
-  const [lineIdx, setLineIdx] = useState(0)
-  const [charIdx, setCharIdx] = useState(0)
-  const [current, setCurrent] = useState("")
-
-  useEffect(() => {
-    if (lineIdx >= lines.length) return
-    if (charIdx < lines[lineIdx].length) {
-      const timer = setTimeout(() => {
-        setCurrent((value) => value + lines[lineIdx][charIdx])
-        setCharIdx((value) => value + 1)
-      }, lines[lineIdx].startsWith("$") ? 35 : 12)
-      return () => clearTimeout(timer)
-    }
-    const timer = setTimeout(() => {
-      setDisplayed((value) => [...value, lines[lineIdx]])
-      setCurrent("")
-      setCharIdx(0)
-      setLineIdx((value) => value + 1)
-    }, 250)
-    return () => clearTimeout(timer)
-  }, [lineIdx, charIdx])
+  const build = getBuildInfo()
 
   return (
-    <section id="home" className="hero section-pad" aria-labelledby="hero-title">
-      <div className="hero-grid">
-        <div>
-          <div className="eyebrow-row" aria-label="Professional status">
-            <span className="status-badge"><span className="status-dot" /> Available immediately</span>
-            <span className="plain-badge">AWS Certified Cloud Practitioner</span>
-            <span className="plain-badge">Berlin, Germany</span>
-          </div>
-
-          <h1 id="hero-title" className="hero-title">
-            Cloud &amp; DevOps Engineer — AWS, Terraform, Kubernetes, CI/CD
-          </h1>
-
-          <p className="hero-subtext">
-            Almost 4 years of professional experience delivering AWS and Azure infrastructure as code,
-            containerized workloads, and CI/CD pipelines in contract and client environments, plus a
-            2.5-year apprenticeship and 1.5 years of work-study since 2019. Based in Berlin, I am open
-            to Cloud, DevOps, Platform, and SRE roles across Europe.
+    <section id="top" className="hero">
+      <div className="container hero-grid">
+        <div className="hero-main">
+          <p className="hero-name">Franklin Osuji</p>
+          <h1>I build and run cloud infrastructure as code.</h1>
+          <p className="hero-lead">
+            Cloud &amp; DevOps engineer in Berlin. AWS and Azure, Terraform, Kubernetes, and the CI/CD and
+            observability that keep them running.
           </p>
 
-          <div className="hero-actions">
-            <a className="button primary" href="#projects">View Projects</a>
-            <a className="button secondary" href="/Franklin_Osuji_Resume.pdf" download>
-              Download CV
-            </a>
-            <a className="button ghost" href="#contact">Contact Me</a>
-          </div>
-
-          <div className="hero-links" aria-label="Professional links">
-            <a href="https://github.com/franklinosuji2-afk" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/franklin-osuji-a96003321" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="mailto:franklin.osuji2@gmail.com">Email</a>
-          </div>
-        </div>
-
-        <div className="terminal" aria-label="Terminal-style professional summary">
-          <div className="terminal-bar">
-            <span className="terminal-dots" aria-hidden="true"><i /><i /><i /></span>
-            <span>franklin@portfolio:~</span>
-            <span className="terminal-ready">● ready</span>
-          </div>
-          <div className="terminal-body">
-            {displayed.map((line, index) => (
-              <div key={index} className={line.startsWith("$") ? "terminal-command" : "terminal-output"}>
-                {line}
+          <dl className="facts">
+            {facts.map((fact) => (
+              <div key={fact.label}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
               </div>
             ))}
-            {lineIdx < lines.length && (
-              <div className={lines[lineIdx].startsWith("$") ? "terminal-command" : "terminal-output"}>
-                {current}<span className="cursor" aria-hidden="true">_</span>
-              </div>
-            )}
-            {lineIdx >= lines.length && (
-              <div className="terminal-focus">
-                <div className="terminal-comment">// What I work on</div>
-                <div><span>focus</span><b>INFRASTRUCTURE</b></div>
-                <div><span>work</span><b>AUTOMATION</b></div>
-                <div><span>interest</span><b>RELIABILITY</b></div>
-                <div><span>location</span><b>BERLIN</b></div>
-              </div>
-            )}
+          </dl>
+
+          <div className="hero-actions">
+            <a className="btn" href="/Franklin_Osuji_Resume.pdf" download>Download CV (English)</a>
+            <a className="btn btn-quiet" href="/Franklin_Osuji_Lebenslauf_DE.pdf" download>Lebenslauf (Deutsch)</a>
+            <a className="text-link" href="https://github.com/franklinosuji2-afk" target="_blank" rel="noreferrer">GitHub</a>
+            <a className="text-link" href="https://linkedin.com/in/franklin-osuji-a96003321" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a className="text-link" href="mailto:franklin.osuji2@gmail.com">Email</a>
           </div>
         </div>
+
+        <aside className="build-panel" aria-label="Latest build of this site">
+          <h2>Latest build of this site</h2>
+          <ol className="stages">
+            {stages.map((stage, index) => (
+              <li key={stage.name} style={{ animationDelay: `${0.35 + index * 0.45}s` }}>
+                <span className="stage-name">{stage.name}</span>
+                <code>{stage.detail}</code>
+              </li>
+            ))}
+          </ol>
+          <dl className="build-meta">
+            <div>
+              <dt>Commit</dt>
+              <dd>
+                {build.short ? (
+                  <a href={`${build.repo}/commit/${build.sha}`} target="_blank" rel="noreferrer"><code>{build.short}</code></a>
+                ) : (
+                  <code>local build</code>
+                )}
+              </dd>
+            </div>
+            <div>
+              <dt>Branch</dt>
+              <dd><code>{build.branch || "local"}</code></dd>
+            </div>
+            <div>
+              <dt>Built</dt>
+              <dd><code>{build.builtAt}</code></dd>
+            </div>
+          </dl>
+          <div className="build-status">
+            <img src={build.badge} alt="Status of the latest CI run" width={96} height={20} />
+            <a className="text-link" href={build.workflow} target="_blank" rel="noreferrer">View the workflow</a>
+          </div>
+        </aside>
       </div>
     </section>
   )
