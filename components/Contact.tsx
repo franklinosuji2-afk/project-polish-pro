@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="section" aria-labelledby="contact-title">
+    <section id="contact" className="section section-alt" aria-labelledby="contact-title">
       <div className="container narrow">
         <h2 id="contact-title">Contact</h2>
         <p className="section-intro">

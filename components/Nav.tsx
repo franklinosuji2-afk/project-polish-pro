@@ -19,7 +19,7 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a className="nav-brand" href="#top">Franklin Osuji</a>
+        <a className="nav-brand" href="#top" aria-label="Franklin Osuji, back to top">cfo</a>
         <button
           className="nav-menu"
           type="button"

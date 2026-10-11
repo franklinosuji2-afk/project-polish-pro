@@ -19,7 +19,7 @@ export default function Pipeline() {
   const build = getBuildInfo()
 
   return (
-    <section id="pipeline" className="section" aria-labelledby="pipeline-title">
+    <section id="pipeline" className="section section-alt" aria-labelledby="pipeline-title">
       <div className="container narrow">
         <h2 id="pipeline-title">How this site is built</h2>
         <p className="section-intro">

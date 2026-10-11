@@ -66,7 +66,7 @@ const groups: Group[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="section" aria-labelledby="skills-title">
+    <section id="skills" className="section section-alt" aria-labelledby="skills-title">
       <div className="container">
         <h2 id="skills-title">Skills</h2>
         <p className="section-intro">
