@@ -1,41 +1,29 @@
 name: Site CI
-
 on:
   push:
     branches: [main]
   pull_request:
-
 permissions:
   contents: read
-
 jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-
       - name: Install dependencies
         run: npm ci
-
       - name: Type-check
         run: npx tsc --noEmit
-
       - name: Build
         run: npm run build
-
       - name: Security scan (Trivy)
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: fs
-          scan-ref: .
-          severity: HIGH,CRITICAL
-          ignore-unfixed: true
-          format: table
-          exit-code: "0"
+        continue-on-error: true
+        run: |
+          docker run --rm -v "$PWD:/src" -w /src ghcr.io/aquasecurity/trivy:0.58.0 \
+            fs --severity HIGH,CRITICAL --ignore-unfixed --exit-code 0 --no-progress .
