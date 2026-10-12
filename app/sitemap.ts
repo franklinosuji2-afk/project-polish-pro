@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 
-const BASE_URL = "https://fc-sparkle-studio.lovable.app"
+const BASE_URL = "https://cfo-dev.pages.dev"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
