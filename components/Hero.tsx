@@ -23,11 +23,23 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-main">
           <p className="hero-name">Franklin Osuji</p>
-          <h1>I build and run cloud infrastructure as code.</h1>
-          <p className="hero-lead">
-            Cloud &amp; DevOps engineer in Berlin. AWS and Azure, Terraform, Kubernetes, and the CI/CD and
-            observability that keep them running.
-          </p>
+          <h1>Cloud &amp; DevOps Engineer based in Berlin</h1>
+          <div className="hero-copy">
+            <p>
+              I work on the infrastructure behind reliable software, with a focus on repeatable deployments, monitoring,
+              and structured troubleshooting.
+            </p>
+            <p>
+              My day-to-day work includes AWS and Azure infrastructure, Terraform automation, containerized workloads,
+              and CI/CD pipelines. Outside of work, I build hands-on lab projects to practise Kubernetes, failure testing,
+              and observability. I publish selected project source code so recruiters and engineers can review my approach
+              to cloud infrastructure and automation.
+            </p>
+            <p className="hero-tech">
+              <strong>Technologies:</strong> AWS, Azure, Terraform, Docker, Kubernetes, GitHub Actions, Jenkins, Prometheus,
+              Grafana, Python, and Bash.
+            </p>
+          </div>
 
           <dl className="facts">
             {facts.map((fact) => (

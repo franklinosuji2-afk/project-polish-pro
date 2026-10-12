@@ -7,15 +7,15 @@
    Status colours (green, amber) appear only on credential status. */
 :root,
 [data-theme="dark"] {
-  --bg: #0a1220;
-  --bg-alt: #0d182a;
-  --surface: #111f34;
-  --surface-2: #15263e;
-  --border: #1f3550;
-  --border-strong: #2c4666;
+  --bg: #0b1f3a;
+  --bg-alt: #0e2748;
+  --surface: #112c52;
+  --surface-2: #153561;
+  --border: #22446b;
+  --border-strong: #31588a;
   --text: #afbccc;
   --text-strong: #e6edf5;
-  --text-3: #7e91a8;
+  --text-3: #8ea3bb;
   --heading: #6ee7d8;
   --accent: #6cb4f5;
   --accent-ink: #07111f;
@@ -136,6 +136,11 @@ h1, h2, h3, h4 { margin: 0; color: var(--heading); font-family: "Sora", "IBM Ple
 .hero-name { margin: 0 0 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.01em; }
 .hero h1 { font-size: clamp(2.1rem, 4vw, 3.1rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 700; }
 .hero-lead { margin: 22px 0 28px; max-width: 58ch; color: var(--text); font-size: 1.125rem; }
+.hero-copy { margin: 22px 0 28px; max-width: 60ch; }
+.hero-copy p { color: var(--text); font-size: 1.0625rem; }
+.hero-copy p + p { margin-top: 14px; }
+.hero-copy .hero-tech { color: var(--text-3); font-size: 0.95rem; }
+.hero-copy .hero-tech strong { color: var(--text-strong); font-weight: 600; }
 
 .facts { margin: 0 0 30px; max-width: 640px; }
 .facts > div { display: grid; grid-template-columns: 104px 1fr; gap: 16px; padding: 8px 0; border-top: 1px solid var(--border); }
