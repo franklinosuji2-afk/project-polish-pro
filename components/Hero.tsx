@@ -22,13 +22,9 @@ export default function Hero() {
     <section id="top" className="hero">
       <div className="container hero-grid">
         <div className="hero-main">
-          <p className="hero-name">Franklin Osuji</p>
-          <h1>Cloud &amp; DevOps Engineer based in Berlin</h1>
+          <p className="hero-name">Franklin Osuji, Cloud &amp; DevOps engineer in Berlin</p>
+          <h1>I work on the infrastructure behind reliable software: repeatable deployments, monitoring and troubleshooting.</h1>
           <div className="hero-copy">
-            <p>
-              I work on the infrastructure behind reliable software, with a focus on repeatable deployments, monitoring,
-              and structured troubleshooting.
-            </p>
             <p>
               My day-to-day work includes AWS and Azure infrastructure, Terraform automation, containerized workloads,
               and CI/CD pipelines. Outside of work, I build hands-on lab projects to practise Kubernetes, failure testing,
