@@ -2,8 +2,7 @@ import { getBuildInfo } from "./buildInfo"
 
 const facts = [
   { label: "Based in", value: "Berlin, Germany" },
-  { label: "Work permit", value: "Permanent (Niederlassungserlaubnis)" },
-  { label: "Available", value: "Immediately" },
+  { label: "Work permit", value: "Permanent (Niederlassungserlaubnis), available immediately" },
   { label: "Languages", value: "English (native), German (B2)" },
   { label: "Experience", value: "Almost 4 years professional, plus a 2.5-year apprenticeship and 1.5 years of work-study" },
   { label: "Looking for", value: "Cloud, DevOps, Platform and SRE roles in Berlin, the EU or remote" },
@@ -26,14 +25,9 @@ export default function Hero() {
           <h1>I work on the infrastructure behind reliable software: repeatable deployments, monitoring and troubleshooting.</h1>
           <div className="hero-copy">
             <p>
-              My day-to-day work includes AWS and Azure infrastructure, Terraform automation, containerized workloads,
-              and CI/CD pipelines. Outside of work, I build hands-on lab projects to practise Kubernetes, failure testing,
-              and observability. I publish selected project source code so recruiters and engineers can review my approach
-              to cloud infrastructure and automation.
-            </p>
-            <p className="hero-tech">
-              <strong>Technologies:</strong> AWS, Azure, Terraform, Docker, Kubernetes, GitHub Actions, Jenkins, Prometheus,
-              Grafana, Python, and Bash.
+              My day-to-day work covers AWS and Azure infrastructure, Terraform automation, containerized workloads and
+              CI/CD pipelines. Outside work I build lab projects to practise Kubernetes, failure testing and observability,
+              and publish the source so you can review my approach.
             </p>
           </div>
 
