@@ -22,9 +22,9 @@ const groups: Group[] = [
     title: "Containers and platform",
     skills: [
       { name: "Docker, Docker Compose", where: "Macview, DCI, Bridge IT and all four projects." },
-      { name: "Kubernetes, Helm, Kustomize, Kind", where: "PlatformOps-Lab. RBAC, Ingress, HPA and cluster upgrades in lab projects." },
+      { name: "Kubernetes, Kustomize, Kind", where: "PlatformOps-Lab. RBAC, Ingress, HPA and cluster upgrades in lab projects." },
       { name: "ECS/Fargate", where: "DCI, with Blue/Green deployments." },
-      { name: "Argo CD, Flux", where: "PlatformOps-Lab." },
+      { name: "Argo CD", where: "PlatformOps-Lab, syncing the Kustomize overlay from Git." },
     ],
   },
   {
@@ -48,8 +48,8 @@ const groups: Group[] = [
   {
     title: "Security and secrets",
     skills: [
-      { name: "Trivy", where: "PlatformOps-Lab and this site's pipeline." },
-      { name: "Snyk", where: "PlatformOps-Lab." },
+      { name: "Trivy", where: "PlatformOps-Lab and this site's pipeline, reporting findings." },
+      { name: "Snyk", where: "Optional step in the PlatformOps-Lab pipeline, runs when a token is set." },
       { name: "AWS KMS, Secrets Manager", where: "Personal projects." },
     ],
   },

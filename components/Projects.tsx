@@ -10,6 +10,7 @@ type Project = {
   // Optional. They only render when you fill them in, so the page never shows empty placeholders.
   result?: string
   demo?: string
+  proof?: { image: string; alt: string; caption: string; width: number; height: number }[]
 }
 
 const projects: Project[] = [
@@ -17,15 +18,20 @@ const projects: Project[] = [
     title: "PlatformOps-Lab",
     lead: "A local Kubernetes platform for practising infrastructure, deployment and observability without paid cloud resources.",
     shows: [
-      "Reproducible cluster setup: Terraform and Kind build the foundation.",
-      "Declarative configuration with Kustomize and Helm, delivered with Git-based GitOps practices.",
-      "Metrics and log observability with Prometheus, Grafana and Loki.",
+      "A Kind cluster with Kustomize base and overlay manifests, plus a Terraform example for the namespace.",
+      "Argo CD syncing the overlay from this repository, so the app deploys and stays healthy from Git.",
+      "A Docker Compose observability stack: Prometheus scraping the API, a Grafana dashboard and Loki logs through promtail.",
+      "GitHub Actions that validate Compose, Kustomize and Terraform, build the images and report Trivy findings.",
     ],
-    stack: "Terraform, Kind, Kubernetes, Helm, Kustomize, Docker Compose, GitHub Actions, Prometheus, Grafana, Loki, Argo CD, Flux, Trivy, Snyk",
+    stack: "Terraform, Kind, Kubernetes, Kustomize, Argo CD, Docker Compose, GitHub Actions, Prometheus, Grafana, Loki, promtail, Trivy",
     image: "/projects/platformops-lab.png",
     width: 1800,
     height: 900,
     github: "https://github.com/franklinosuji2-afk/PlatformOps-Lab",
+    proof: [
+      { image: "/projects/platformops-lab-grafana.png", alt: "Grafana dashboard for the PlatformOps API showing request rate, latency, memory, CPU and logs from Loki", caption: "Grafana: request rate, p95 latency, memory, CPU and API logs from Loki", width: 1500, height: 745 },
+      { image: "/projects/platformops-lab-argocd.png", alt: "Argo CD application platformops, Healthy and Synced to main, with its namespace, services, deployments and pods", caption: "Argo CD: platformops is Healthy and Synced to main", width: 1500, height: 742 },
+    ],
   },
   {
     title: "ChaosForge",
@@ -95,10 +101,22 @@ export default function Projects() {
                 <a className="text-link" href={project.github} target="_blank" rel="noreferrer">View source on GitHub</a>
               </p>
             </div>
-            <figure className="project-figure">
-              <img src={project.image} alt={`${project.title} architecture diagram`} width={project.width} height={project.height} loading="lazy" />
-              <figcaption>Architecture of {project.title}</figcaption>
-            </figure>
+            <div className="project-visuals">
+              <figure className="project-figure">
+                <a href={project.image} target="_blank" rel="noreferrer" aria-label={`Open the ${project.title} architecture diagram full size`}>
+                  <img src={project.image} alt={`${project.title} architecture diagram`} width={project.width} height={project.height} loading="lazy" />
+                </a>
+                <figcaption>Architecture of {project.title}. Select to open full size.</figcaption>
+              </figure>
+              {project.proof?.map((shot) => (
+                <figure className="project-figure" key={shot.image}>
+                  <a href={shot.image} target="_blank" rel="noreferrer" aria-label={`Open full size: ${shot.caption}`}>
+                    <img src={shot.image} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />
+                  </a>
+                  <figcaption>{shot.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
           </article>
         ))}
 
