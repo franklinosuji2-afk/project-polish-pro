@@ -31,7 +31,7 @@ const credentials: Credential[] = [
     name: "AWS Certified Solutions Architect – Associate",
     issuer: "Amazon Web Services",
     status: "progress",
-    note: "In progress, expected 2026",
+    note: "In progress",
   },
   {
     name: "DevOps & Cloud Engineering Program",
