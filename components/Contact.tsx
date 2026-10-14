@@ -9,7 +9,7 @@ export default function Contact() {
         </p>
         <ul className="contact-list">
           <li><a href="mailto:franklin.osuji2@gmail.com">franklin.osuji2@gmail.com</a></li>
-          <li><a href="https://linkedin.com/in/franklin-osuji-a96003321" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/cfo-dev/" target="_blank" rel="noreferrer">LinkedIn</a></li>
           <li><a href="https://github.com/franklinosuji2-afk" target="_blank" rel="noreferrer">GitHub</a></li>
           <li><a href="/Franklin_Osuji_Resume.pdf" download>CV in English</a></li>
           <li><a href="/Franklin_Osuji_Lebenslauf_DE.pdf" download>Lebenslauf auf Deutsch</a></li>

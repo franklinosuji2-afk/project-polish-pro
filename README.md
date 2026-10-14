@@ -1,6 +1,6 @@
 # Franklin Osuji - Cloud Infrastructure & DevOps Engineer
 
-[Live Portfolio](https://cfo-dev.pages.dev/) | [GitHub](https://github.com/franklinosuji2-afk) | [LinkedIn](https://www.linkedin.com/in/franklin-osuji-a96003321/)
+[Live Portfolio](https://cfo-dev.pages.dev/) | [GitHub](https://github.com/franklinosuji2-afk) | [LinkedIn](https://www.linkedin.com/in/cfo-dev/)
 
 Professional portfolio showcasing hands-on work across **Cloud Infrastructure, DevOps, Platform Engineering, Kubernetes, Infrastructure as Code, CI/CD, Observability, and SRE practices**.
 
@@ -388,7 +388,7 @@ Berlin, Germany
 
 Portfolio: https://cfo-dev.pages.dev/
 GitHub: https://github.com/franklinosuji2-afk
-LinkedIn: https://www.linkedin.com/in/franklin-osuji-a96003321/
+LinkedIn: https://www.linkedin.com/in/cfo-dev/
 Email: franklin.osuji2@gmail.com
 Connect
 

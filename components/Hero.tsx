@@ -44,7 +44,7 @@ export default function Hero() {
             <a className="btn" href="/Franklin_Osuji_Resume.pdf" download>Download CV (English)</a>
             <a className="btn btn-quiet" href="/Franklin_Osuji_Lebenslauf_DE.pdf" download>Lebenslauf (Deutsch)</a>
             <a className="text-link" href="https://github.com/franklinosuji2-afk" target="_blank" rel="noreferrer">GitHub</a>
-            <a className="text-link" href="https://linkedin.com/in/franklin-osuji-a96003321" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a className="text-link" href="https://www.linkedin.com/in/cfo-dev/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a className="text-link" href="mailto:franklin.osuji2@gmail.com">Email</a>
           </div>
         </div>
