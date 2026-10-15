@@ -40,6 +40,12 @@ const credentials: Credential[] = [
     note: "Mar 2025 to Mar 2026, 1,800 teaching units",
   },
   {
+    name: "Testing Center for Digital Professions",
+    issuer: "Training course",
+    status: "done",
+    note: "12 Nov 2024 to 19 Dec 2024",
+  },
+  {
     name: "B.Eng. Petroleum Engineering",
     issuer: "Federal University of Technology, Owerri, Nigeria",
     status: "done",

@@ -4,7 +4,7 @@ const facts = [
   { label: "Based in", value: "Berlin, Germany" },
   { label: "Work permit", value: "Permanent (Niederlassungserlaubnis), available immediately" },
   { label: "Languages", value: "English (native), German (B2)" },
-  { label: "Experience", value: "Almost 4 years professional, plus a 2.5-year apprenticeship and 1.5 years of work-study" },
+  { label: "Experience", value: "Almost 4 years professional, plus a 2.5-year apprenticeship and 1 year of work-study" },
   { label: "Looking for", value: "Cloud, DevOps, Platform and SRE roles in Berlin, the EU or remote" },
 ]
 

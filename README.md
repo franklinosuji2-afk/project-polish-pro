@@ -238,7 +238,7 @@ View LocalOps Dashboard
 Certifications
 AWS Certified Cloud Practitioner - Active
 HashiCorp Certified: Terraform Associate - In Progress / Exam Scheduled
-AWS Certified Solutions Architect - Associate - In Progress / Expected 2026
+AWS Certified Solutions Architect - Associate - In Progress
 Engineering Approach
 
 My projects are built around practical engineering principles:

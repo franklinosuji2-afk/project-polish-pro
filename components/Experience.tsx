@@ -16,7 +16,7 @@ const roles = [
     title: "Cloud & DevOps Engineer",
     company: "DCI Digital Career Institute",
     place: "Berlin, Germany",
-    when: "Nov 2024 – Mar 2026",
+    when: "Mar 2025 – Mar 2026",
     type: "Work-study alongside the AWS Cloud Engineer program",
     bullets: [
       "Built CI/CD pipelines with Jenkins and GitHub Actions for repeatable, automated build and deployment.",
@@ -36,8 +36,8 @@ const roles = [
     ],
   },
   {
-    title: "Consultant / Freelancer Cloud & DevOps Engineer",
-    company: "Basecamp: Outdoor Jobs, Freelance Gigs, Networking",
+    title: "Cloud & DevOps Engineer",
+    company: "Self-employed",
     place: "Berlin, Germany",
     when: "Aug 2021 – Nov 2022",
     type: "Freelance",
