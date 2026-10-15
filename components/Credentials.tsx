@@ -34,10 +34,10 @@ const credentials: Credential[] = [
     note: "In progress",
   },
   {
-    name: "DevOps & Cloud Engineering Program",
+    name: "AWS Cloud Engineer (Weiterbildung)",
     issuer: "Digital Career Institute, Berlin",
     status: "done",
-    note: "Nov 2024 to Mar 2026",
+    note: "Mar 2025 to Mar 2026, 1,800 teaching units",
   },
   {
     name: "B.Eng. Petroleum Engineering",

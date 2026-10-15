@@ -17,7 +17,7 @@ const roles = [
     company: "DCI Digital Career Institute",
     place: "Berlin, Germany",
     when: "Nov 2024 – Mar 2026",
-    type: "Work-study alongside the DevOps & Cloud Engineering program",
+    type: "Work-study alongside the AWS Cloud Engineer program",
     bullets: [
       "Built CI/CD pipelines with Jenkins and GitHub Actions for repeatable, automated build and deployment.",
       "Developed infrastructure as code with Terraform and worked hands-on with EC2, S3, IAM, VPC, Lambda and RDS.",
