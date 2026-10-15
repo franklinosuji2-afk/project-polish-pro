@@ -41,7 +41,7 @@ const credentials: Credential[] = [
   },
   {
     name: "Testing Center for Digital Professions",
-    issuer: "Training course",
+    issuer: "Digital Career Institute",
     status: "done",
     note: "12 Nov 2024 to 19 Dec 2024",
   },
