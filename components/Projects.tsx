@@ -25,7 +25,7 @@ const projects: Project[] = [
       "Deployed end to end: the Lambda page it created is served from AWS. The ECS and ALB option is not deployed yet.",
     ],
     stack: "Terraform, AWS (IAM, S3, VPC, Lambda), GitHub Actions, OIDC, TFLint, Trivy",
-    image: "/projects/aws-terraform-platform.png",
+    image: "/projects/aws-terraform-platform-v2.png",
     width: 1800,
     height: 1000,
     github: "https://github.com/franklinosuji2-afk/aws-terraform-platform",
