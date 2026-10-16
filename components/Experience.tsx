@@ -13,7 +13,7 @@ const roles = [
     ],
   },
   {
-    title: "Cloud & DevOps Engineer",
+    title: "AWS Cloud & DevOps Engineer",
     company: "DCI Digital Career Institute",
     place: "Berlin, Germany",
     when: "Mar 2025 – Mar 2026",
@@ -27,7 +27,7 @@ const roles = [
   {
     title: "DevOps Engineer",
     company: "Bridge IT Engineering",
-    place: "Berlin, Germany",
+    place: "Berlin, Germany (remote)",
     when: "Nov 2022 – Nov 2024",
     type: "Contract",
     bullets: [

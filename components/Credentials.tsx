@@ -25,7 +25,7 @@ const credentials: Credential[] = [
     name: "HashiCorp Certified: Terraform Associate",
     issuer: "HashiCorp",
     status: "progress",
-    note: "In progress, exam scheduled",
+    note: "In preparation, exam planned for 2027",
   },
   {
     name: "AWS Certified Solutions Architect – Associate",
@@ -46,10 +46,10 @@ const credentials: Credential[] = [
     note: "12 Nov 2024 to 19 Dec 2024",
   },
   {
-    name: "B.Eng. Petroleum Engineering",
+    name: "BSc Petroleum Engineering",
     issuer: "Federal University of Technology, Owerri, Nigeria",
     status: "done",
-    note: "2012 to 2016",
+    note: "2012 to 2016, Upper Second-Class Honours (2:1)",
   },
 ]
 
