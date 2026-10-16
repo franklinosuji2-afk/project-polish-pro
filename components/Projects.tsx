@@ -50,6 +50,21 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "KubeSentinel",
+    lead: "A local Kubernetes security lab that checks manifests and images in CI and blocks insecure workloads with admission policies.",
+    shows: [
+      "GitHub Actions gates: yamllint and kubeconform validation, an image build, and Trivy image and config scans that fail the build on HIGH or CRITICAL findings.",
+      "Four OPA Gatekeeper policies for root containers, privileged containers, the latest tag and missing resource limits, with deliberately insecure example manifests to test them.",
+      "Scripts that stand up a local kind cluster with Argo CD, Gatekeeper, Prometheus and Grafana, and Falco for runtime alerts.",
+      "Fixed a real finding the scan raised: three HIGH CVEs in Starlette, resolved by upgrading FastAPI.",
+    ],
+    stack: "Kubernetes, kind, Argo CD, OPA Gatekeeper, Trivy, Falco, Prometheus, Grafana, GitHub Actions, Python, FastAPI",
+    image: "/projects/kubesentinel-v2.png",
+    width: 1800,
+    height: 1000,
+    github: "https://github.com/franklinosuji2-afk/kubesentinel",
+  },
+  {
     title: "ChaosForge",
     lead: "A local reliability lab that injects controlled failures into containerized workloads and measures detection, recovery, MTTR and SLO impact.",
     shows: [
@@ -85,7 +100,7 @@ export default function Projects() {
       <div className="container">
         <h2 id="projects-title">Projects</h2>
         <p className="section-intro">
-          Four projects I would walk you through. Each one links to its source and shows its architecture.
+          Five projects I would walk you through. Each one links to its source and shows its architecture.
         </p>
 
         {projects.map((project) => (
