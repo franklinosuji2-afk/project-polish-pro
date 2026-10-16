@@ -46,7 +46,7 @@ const roles = [
     ],
   },
   {
-    title: "Cloud Support Engineer",
+    title: "Support Technical Networking",
     company: "Cisco Networking Academy",
     place: "Berlin, Germany",
     when: "Mar 2019 – Aug 2021",
