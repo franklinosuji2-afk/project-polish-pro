@@ -15,6 +15,22 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "AWS Terraform Platform",
+    lead: "A Terraform platform on AWS that is planned, reviewed and deployed from GitHub Actions without any stored AWS keys.",
+    shows: [
+      "Reusable modules for a VPC, a Lambda service with a function URL and an optional ECS Fargate service behind an ALB.",
+      "Remote state in S3 with native locking, and separate plan and apply IAM roles.",
+      "GitHub Actions that authenticate through OIDC. Pull requests run fmt, validate, TFLint, Trivy and a plan that is posted as a comment.",
+      "Manual apply and destroy workflows that need a reviewer approval in a protected environment.",
+      "Deployed end to end: the Lambda page it created was served from AWS, and the stack was destroyed and applied again from the same workflow. The ECS and ALB option is not deployed yet.",
+    ],
+    stack: "Terraform, AWS (IAM, S3, VPC, Lambda), GitHub Actions, OIDC, TFLint, Trivy",
+    image: "/projects/aws-terraform-platform.png",
+    width: 1800,
+    height: 900,
+    github: "https://github.com/franklinosuji2-afk/aws-terraform-platform",
+  },
+  {
     title: "PlatformOps-Lab",
     lead: "A local Kubernetes platform for practising infrastructure, deployment and observability without paid cloud resources.",
     shows: [
@@ -69,7 +85,7 @@ export default function Projects() {
       <div className="container">
         <h2 id="projects-title">Projects</h2>
         <p className="section-intro">
-          Three projects I would walk you through. Each one links to its source and shows its architecture.
+          Four projects I would walk you through. Each one links to its source and shows its architecture.
         </p>
 
         {projects.map((project) => (

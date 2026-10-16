@@ -12,7 +12,7 @@ const groups: Group[] = [
   {
     title: "Infrastructure as code and automation",
     skills: [
-      { name: "Terraform", where: "Macview, DCI, freelance work and PlatformOps-Lab." },
+      { name: "Terraform", where: "Macview, DCI, freelance work, PlatformOps-Lab and AWS Terraform Platform." },
       { name: "Ansible", where: "Personal projects." },
       { name: "Python, Bash", where: "Freelance work, Bridge IT scripting, ChaosForge and CloudPulse." },
       { name: "PowerShell", where: "ChaosForge." },
@@ -30,7 +30,7 @@ const groups: Group[] = [
   {
     title: "CI/CD",
     skills: [
-      { name: "GitHub Actions", where: "DCI, PlatformOps-Lab, LocalCloud Control Plane and this site." },
+      { name: "GitHub Actions", where: "DCI, PlatformOps-Lab, AWS Terraform Platform, LocalCloud Control Plane and this site." },
       { name: "Jenkins", where: "DCI." },
       { name: "GitLab CI", where: "Personal projects." },
     ],
@@ -48,7 +48,7 @@ const groups: Group[] = [
   {
     title: "Security and secrets",
     skills: [
-      { name: "Trivy", where: "PlatformOps-Lab and this site's pipeline, reporting findings." },
+      { name: "Trivy", where: "PlatformOps-Lab, AWS Terraform Platform and this site's pipeline, reporting findings." },
       { name: "Snyk", where: "Optional step in the PlatformOps-Lab pipeline, runs when a token is set." },
       { name: "AWS KMS, Secrets Manager", where: "Personal projects." },
     ],
