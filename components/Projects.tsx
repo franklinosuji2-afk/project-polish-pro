@@ -27,7 +27,7 @@ const projects: Project[] = [
     stack: "Terraform, AWS (IAM, S3, VPC, Lambda), GitHub Actions, OIDC, TFLint, Trivy",
     image: "/projects/aws-terraform-platform.png",
     width: 1800,
-    height: 900,
+    height: 1000,
     github: "https://github.com/franklinosuji2-afk/aws-terraform-platform",
   },
   {
