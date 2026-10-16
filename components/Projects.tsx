@@ -22,7 +22,7 @@ const projects: Project[] = [
       "Remote state in S3 with native locking, and separate plan and apply IAM roles.",
       "GitHub Actions that authenticate through OIDC. Pull requests run fmt, validate, TFLint, Trivy and a plan that is posted as a comment.",
       "Manual apply and destroy workflows that need a reviewer approval in a protected environment.",
-      "Deployed end to end: the Lambda page it created was served from AWS, and the stack was destroyed and applied again from the same workflow. The ECS and ALB option is not deployed yet.",
+      "Deployed end to end: the Lambda page it created is served from AWS. The ECS and ALB option is not deployed yet.",
     ],
     stack: "Terraform, AWS (IAM, S3, VPC, Lambda), GitHub Actions, OIDC, TFLint, Trivy",
     image: "/projects/aws-terraform-platform.png",
