@@ -51,10 +51,10 @@ const projects: Project[] = [
   },
   {
     title: "KubeSentinel",
-    lead: "A local Kubernetes security lab that checks manifests and images in CI and defines admission policies meant to block insecure workloads.",
+    lead: "A local Kubernetes security lab that checks manifests and images in CI and uses admission policies to reject insecure workloads.",
     shows: [
       "GitHub Actions gates: yamllint and kubeconform validation, an image build, and Trivy image and config scans that fail the build on HIGH or CRITICAL findings.",
-      "Four OPA Gatekeeper policies for root containers, privileged containers, the latest tag and missing resource limits, with deliberately insecure example manifests to test them.",
+      "Four OPA Gatekeeper policies for root containers, privileged containers, the latest tag and missing resource limits, tested on a local kind cluster, where Gatekeeper rejected all four deliberately insecure example manifests.",
       "Scripts that stand up a local kind cluster with Argo CD, Gatekeeper, Prometheus and Grafana, and Falco for runtime alerts.",
       "Fixed a real finding the scan raised: three HIGH CVEs in Starlette, resolved by upgrading FastAPI.",
     ],
