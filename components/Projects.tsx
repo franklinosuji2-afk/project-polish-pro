@@ -51,7 +51,7 @@ const projects: Project[] = [
   },
   {
     title: "KubeSentinel",
-    lead: "A local Kubernetes security lab that checks manifests and images in CI and blocks insecure workloads with admission policies.",
+    lead: "A local Kubernetes security lab that checks manifests and images in CI and defines admission policies meant to block insecure workloads.",
     shows: [
       "GitHub Actions gates: yamllint and kubeconform validation, an image build, and Trivy image and config scans that fail the build on HIGH or CRITICAL findings.",
       "Four OPA Gatekeeper policies for root containers, privileged containers, the latest tag and missing resource limits, with deliberately insecure example manifests to test them.",
@@ -156,7 +156,7 @@ export default function Projects() {
           <p>
             <a href="https://github.com/franklinosuji2-afk/LocalCloud-Control-Plane" target="_blank" rel="noreferrer">LocalCloud Control Plane</a>
             , a local-first platform engineering simulation with a React and Vite dashboard, a Node.js and Express API,
-            service lifecycle management and deployment state.
+            service lifecycle management and deployment state. The repository is now archived.
           </p>
         </div>
       </div>

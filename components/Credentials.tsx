@@ -18,8 +18,14 @@ const credentials: Credential[] = [
     name: "AWS re/Start Graduate",
     issuer: "Amazon Web Services",
     status: "done",
-    note: "Completed",
+    note: "Completed, Jun 2025",
     verify: "https://www.credly.com/badges/9405ef7c-91a8-466b-b970-a917de42a180",
+  },
+  {
+    name: "Support Technical Networking",
+    issuer: "Cisco Networking Academy",
+    status: "done",
+    note: "Certificate, Mar 2019",
   },
   {
     name: "HashiCorp Certified: Terraform Associate",
