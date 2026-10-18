@@ -1,6 +1,12 @@
 import type { Metadata } from "next"
+import { Inter, Plus_Jakarta_Sans, IBM_Plex_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "../components/ThemeContext"
+
+// Fonts are downloaded at build time and served from this site, so the CSP needs no third-party font hosts.
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-inter" })
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["600", "700", "800"], display: "swap", variable: "--font-jakarta" })
+const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], display: "swap", variable: "--font-plex-mono" })
 
 const siteUrl = "https://cfo-dev.pages.dev"
 const description =
@@ -35,7 +41,7 @@ const themeScript = `(function(){try{var t=localStorage.getItem("theme");if(!t){
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning>
+    <html lang="en" data-theme="dark" className={`${inter.variable} ${jakarta.variable} ${plexMono.variable}`} suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="PY7i0NfY3Y5zZB636hDYIyfVifSF-OZUh2-csBRYCiM" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
