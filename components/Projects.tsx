@@ -65,6 +65,22 @@ const projects: Project[] = [
     github: "https://github.com/franklinosuji2-afk/kubesentinel",
   },
   {
+    title: "SecureScope",
+    lead: "A multi-tenant web security scanner with a React dashboard and a FastAPI backend. It runs passive checks only, and only against domains the organization has proven it controls.",
+    shows: [
+      "Accounts, organizations and five roles, with server-side authorization and tenant isolation tested across accounts.",
+      "Domain ownership verification by DNS TXT record or a file on the website, with expiring challenges. Scans of unverified domains are refused.",
+      "A fetcher that blocks private addresses, pins DNS, revalidates every redirect and limits time and size, covered by SSRF regression tests.",
+      "GitHub Actions runs 217 backend tests on PostgreSQL, Vitest, Playwright browser tests with axe accessibility checks, Bandit, Semgrep, pip-audit, npm audit and Trivy.",
+      "Ran end to end against my own site and produced a report. Still in development: no real email delivery, no PDF reports, and the DNS verification path is tested with mocks only.",
+    ],
+    stack: "Python, FastAPI, PostgreSQL, Alembic, React, TypeScript, Docker Compose, GitHub Actions, Playwright, Bandit, Semgrep, Trivy",
+    image: "/projects/securescope-v2.png",
+    width: 1800,
+    height: 1000,
+    github: "https://github.com/franklinosuji2-afk/securescope",
+  },
+  {
     title: "ChaosForge",
     lead: "A local reliability lab that injects controlled failures into containerized workloads and measures detection, recovery, MTTR and SLO impact.",
     shows: [
@@ -100,7 +116,7 @@ export default function Projects() {
       <div className="container">
         <h2 id="projects-title">Projects</h2>
         <p className="section-intro">
-          Five projects I would walk you through. Each one links to its source and shows its architecture.
+          Six projects I would walk you through. Each one links to its source and shows its architecture.
         </p>
 
         {projects.map((project) => (
