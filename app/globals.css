@@ -7,6 +7,8 @@
    --line-2 #33333B, --fg #FAFAFA, --fg-2 #A1A1AA, --ok #4ADE93, --mid #FFAE45. Only --text-3 is lifted slightly for contrast. */
 :root,
 [data-theme="dark"] {
+  --brand-from: #4ade93;
+  --brand-to: #38bdf8;
   --bg: #000000;
   --bg-alt: #000000;
   --surface: #0c0c0e;
@@ -26,6 +28,8 @@
 }
 
 [data-theme="light"] {
+  --brand-from: #0b6e75;
+  --brand-to: #1f5f99;
   --bg: #f3f7fb;
   --bg-alt: #e9f0f7;
   --surface: #ffffff;
@@ -106,8 +110,11 @@ h1, h2, h3, h4 { margin: 0; color: var(--heading); font-family: "Plus Jakarta Sa
 /* Navigation */
 .nav { position: sticky; top: 0; z-index: 40; background: var(--bg); border-bottom: 1px solid var(--border); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; min-height: 62px; gap: 16px; }
-.nav-brand { font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.03em; color: var(--heading); text-decoration: none; }
+.nav-brand { font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.03em; color: var(--brand-from); text-decoration: none;
+  background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .nav-brand:hover { text-decoration: none; filter: brightness(1.1); }
+@media (forced-colors: active) { .nav-brand { background: none; -webkit-text-fill-color: currentColor; color: LinkText; } }
 .nav-links { display: flex; align-items: center; gap: 22px; }
 .nav-links > a:not(.btn) { color: var(--text); font-size: 0.9rem; font-weight: 500; text-decoration: none; }
 .nav-links > a:not(.btn):hover { color: var(--text-strong); }
