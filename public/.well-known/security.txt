@@ -1,0 +1,5 @@
+# How to report a security problem with cfo-dev.pages.dev (a personal portfolio site).
+Contact: mailto:franklin.osuji2@gmail.com
+Expires: 2027-09-30T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://cfo-dev.pages.dev/.well-known/security.txt
