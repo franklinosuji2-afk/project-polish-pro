@@ -1,3 +1,6 @@
+import FloatingFigure from "./FloatingFigure"
+import { site } from "./site"
+
 type Project = {
   title: string
   lead: string
@@ -110,7 +113,49 @@ const projects: Project[] = [
   },
 ]
 
+// "Terraform, AWS (IAM, S3, VPC, Lambda), GitHub Actions" -> ["Terraform", "AWS (IAM, S3, VPC, Lambda)", "GitHub Actions"]
+// Commas inside parentheses stay with their item.
+function splitStack(stack: string): string[] {
+  const items: string[] = []
+  let depth = 0
+  let current = ""
+  for (const char of stack) {
+    if (char === "(") depth++
+    if (char === ")") depth--
+    if (char === "," && depth === 0) {
+      items.push(current.trim())
+      current = ""
+    } else {
+      current += char
+    }
+  }
+  if (current.trim()) items.push(current.trim())
+  return items
+}
+
+const webp = (png: string) => png.replace(/\.png$/, ".webp")
+
+function Figure({ index, href, src, alt, width, height, caption, label }: {
+  index: number; href: string; src: string; alt: string; width: number; height: number; caption: string; label: string
+}) {
+  return (
+    <FloatingFigure index={index}>
+      <figure className="project-figure">
+        <a href={href} target="_blank" rel="noreferrer" aria-label={label}>
+          <picture>
+            <source srcSet={webp(src)} type="image/webp" />
+            <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+          </picture>
+        </a>
+        <figcaption>{caption}</figcaption>
+      </figure>
+    </FloatingFigure>
+  )
+}
+
 export default function Projects() {
+  let figureIndex = 0
+
   return (
     <section id="projects" className="section" aria-labelledby="projects-title">
       <div className="container">
@@ -133,7 +178,9 @@ export default function Projects() {
               </ul>
 
               <h4>Built with</h4>
-              <p className="stack">{project.stack}</p>
+              <ul className="chips" aria-label={`${project.title} technologies`}>
+                {splitStack(project.stack).map((tech) => <li key={tech}>{tech}</li>)}
+              </ul>
 
               {project.result && (
                 <>
@@ -149,19 +196,28 @@ export default function Projects() {
               </p>
             </div>
             <div className="project-visuals">
-              <figure className="project-figure">
-                <a href={project.image} target="_blank" rel="noreferrer" aria-label={`Open the ${project.title} architecture diagram full size`}>
-                  <img src={project.image} alt={`${project.title} architecture diagram`} width={project.width} height={project.height} loading="lazy" />
-                </a>
-                <figcaption>Architecture of {project.title}. Select to open full size.</figcaption>
-              </figure>
+              <Figure
+                index={figureIndex++}
+                href={project.image}
+                src={project.image}
+                alt={`${project.title} architecture diagram`}
+                width={project.width}
+                height={project.height}
+                caption={`Architecture of ${project.title}. Select to open full size.`}
+                label={`Open the ${project.title} architecture diagram full size`}
+              />
               {project.proof?.map((shot) => (
-                <figure className="project-figure" key={shot.image}>
-                  <a href={shot.image} target="_blank" rel="noreferrer" aria-label={`Open full size: ${shot.caption}`}>
-                    <img src={shot.image} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />
-                  </a>
-                  <figcaption>{shot.caption}</figcaption>
-                </figure>
+                <Figure
+                  key={shot.image}
+                  index={figureIndex++}
+                  href={shot.image}
+                  src={shot.image}
+                  alt={shot.alt}
+                  width={shot.width}
+                  height={shot.height}
+                  caption={shot.caption}
+                  label={`Open full size: ${shot.caption}`}
+                />
               ))}
             </div>
           </article>
@@ -170,7 +226,7 @@ export default function Projects() {
         <div className="also-built">
           <h3>Also built</h3>
           <p>
-            <a href="https://github.com/franklinosuji2-afk/LocalCloud-Control-Plane" target="_blank" rel="noreferrer">LocalCloud Control Plane</a>
+            <a href={`${site.github}/LocalCloud-Control-Plane`} target="_blank" rel="noreferrer">LocalCloud Control Plane</a>
             , a local-first platform engineering simulation with a React and Vite dashboard, a Node.js and Express API,
             service lifecycle management and deployment state. The repository is now archived.
           </p>

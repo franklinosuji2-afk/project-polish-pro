@@ -324,22 +324,38 @@ Open:
 
 http://localhost:3000
 
-Create a production build:
+Run the checks and create a production build (lint, type-check, static export, then verification of the export):
 
+npm run check
+
+Individual steps:
+
+npm run lint
+npm run typecheck
 npm run build
+npm run verify
 
-Start the production build:
+Preview the exported site locally with the production security headers applied:
 
 npm start
+
+Open:
+
+http://127.0.0.1:4173
+
+Requires Node.js 20.9 or newer (22 recommended, see .nvmrc).
 Deployment
 
-The portfolio is deployed on Netlify.
+The portfolio is a static Next.js export (output: export, written to dist/) hosted on Cloudflare Pages.
 
 Production:
 
 https://cfo-dev.pages.dev/
 
-The deployment workflow uses the project's Git repository and production build configuration.
+Cloudflare Pages build command: npm run build
+Build output directory: dist
+
+The build ends with scripts/csp-hashes.mjs, which replaces 'unsafe-inline' in script-src with SHA-256 hashes of the inline scripts in the export, so the Content-Security-Policy in public/_headers stays strict. scripts/verify-dist.mjs fails the build if a link, image, header or hash is wrong. GitHub Actions (site-ci.yml) runs lint, type-check, build, verification, npm audit and a Trivy scan on every push to main and every pull request.
 
 Portfolio Goals
 

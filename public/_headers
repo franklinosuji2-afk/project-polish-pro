@@ -3,5 +3,14 @@
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
+  Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://github.com/franklinosuji2-afk/project-polish-pro/actions/workflows/site-ci.yml/badge.svg; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data: https://github.com/franklinosuji2-afk/project-polish-pro/actions/workflows/site-ci.yml/badge.svg; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# Content-hashed build output never changes under the same name.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Diagrams keep their file names, so allow a week of caching with background revalidation.
+/projects/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
