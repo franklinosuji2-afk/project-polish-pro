@@ -1,3 +1,5 @@
+import { site } from "./site"
+
 export default function Contact() {
   return (
     <section id="contact" className="section section-alt" aria-labelledby="contact-title">
@@ -7,12 +9,14 @@ export default function Contact() {
           I am available immediately for Cloud, DevOps, Platform and SRE roles in Berlin, across the EU, or remote.
           Email is the fastest way to reach me.
         </p>
+        <p className="contact-main">
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
         <ul className="contact-list">
-          <li><a href="mailto:franklin.osuji2@gmail.com">franklin.osuji2@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/cfo-dev/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-          <li><a href="https://github.com/franklinosuji2-afk" target="_blank" rel="noreferrer">GitHub</a></li>
-          <li><a href="/Franklin_Osuji_Resume.pdf" download>CV in English</a></li>
-          <li><a href="/Franklin_Osuji_Lebenslauf_DE.pdf" download>Lebenslauf auf Deutsch</a></li>
+          <li><a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a href={site.github} target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><a href={site.cvEn} download>CV in English</a></li>
+          <li><a href={site.cvDe} download>Lebenslauf auf Deutsch</a></li>
         </ul>
       </div>
     </section>

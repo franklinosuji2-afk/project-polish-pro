@@ -1,4 +1,5 @@
 import { getBuildInfo } from "./buildInfo"
+import { site } from "./site"
 
 const facts = [
   { label: "Based in", value: "Berlin, Germany" },
@@ -9,9 +10,9 @@ const facts = [
 ]
 
 const stages = [
-  { name: "Type-check", detail: "tsc --noEmit" },
+  { name: "Lint and type-check", detail: "eslint, tsc" },
   { name: "Build", detail: "next build" },
-  { name: "Security scan", detail: "Trivy" },
+  { name: "Security scan", detail: "Trivy, npm audit" },
 ]
 
 export default function Hero() {
@@ -21,7 +22,7 @@ export default function Hero() {
     <section id="top" className="hero">
       <div className="container hero-grid">
         <div className="hero-main">
-          <p className="hero-name">Franklin Osuji, Cloud &amp; DevOps engineer in Berlin</p>
+          <p className="hero-name">{site.name}, Cloud &amp; DevOps engineer in Berlin</p>
           <h1>I work on the infrastructure behind reliable software: repeatable deployments, monitoring and troubleshooting.</h1>
           <div className="hero-copy">
             <p>
@@ -41,19 +42,19 @@ export default function Hero() {
           </dl>
 
           <div className="hero-actions">
-            <a className="btn" href="/Franklin_Osuji_Resume.pdf" download>Download CV (English)</a>
-            <a className="btn btn-quiet" href="/Franklin_Osuji_Lebenslauf_DE.pdf" download>Lebenslauf (Deutsch)</a>
-            <a className="text-link" href="https://github.com/franklinosuji2-afk" target="_blank" rel="noreferrer">GitHub</a>
-            <a className="text-link" href="https://www.linkedin.com/in/cfo-dev/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a className="text-link" href="mailto:franklin.osuji2@gmail.com">Email</a>
+            <a className="btn" href={site.cvEn} download>Download CV (English)</a>
+            <a className="btn btn-quiet" href={site.cvDe} download>Lebenslauf (Deutsch)</a>
+            <a className="text-link" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a className="text-link" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a className="text-link" href={`mailto:${site.email}`}>Email</a>
           </div>
         </div>
 
         <aside className="build-panel" aria-label="Latest build of this site">
           <h2>Latest build of this site</h2>
           <ol className="stages">
-            {stages.map((stage, index) => (
-              <li key={stage.name} style={{ animationDelay: `${0.35 + index * 0.45}s` }}>
+            {stages.map((stage) => (
+              <li key={stage.name}>
                 <span className="stage-name">{stage.name}</span>
                 <code>{stage.detail}</code>
               </li>
@@ -80,7 +81,7 @@ export default function Hero() {
             </div>
           </dl>
           <div className="build-status">
-            <img src={build.badge} alt="Status of the latest CI run" width={96} height={20} />
+            <img src={build.badge} alt="Status of the latest CI run" width={96} height={20} decoding="async" />
             <a className="text-link" href={build.workflow} target="_blank" rel="noreferrer">View the workflow</a>
           </div>
         </aside>

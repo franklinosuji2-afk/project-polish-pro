@@ -3,6 +3,8 @@
   "name": "cfo-dev",
   "compatibility_date": "2026-10-01",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    // Serve dist/404.html (the styled not-found page) with a 404 status for unknown URLs.
+    "not_found_handling": "404-page"
   }
 }

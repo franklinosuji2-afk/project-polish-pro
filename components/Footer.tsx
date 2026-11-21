@@ -1,11 +1,15 @@
+import { site } from "./site"
+
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <p>Franklin Osuji, Cloud &amp; DevOps engineer in Berlin.</p>
+        <p>{site.name}, Cloud &amp; DevOps engineer in Berlin.</p>
         <p>
           Built with Next.js and hosted on Cloudflare Pages.{" "}
-          <a href="https://github.com/franklinosuji2-afk/project-polish-pro" target="_blank" rel="noreferrer">Source on GitHub</a>
+          <a href={site.repo} target="_blank" rel="noreferrer">Source on GitHub</a>
+          {" "}
+          <a href="#top">Back to top</a>
         </p>
       </div>
     </footer>

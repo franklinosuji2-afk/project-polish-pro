@@ -2,16 +2,16 @@ import { getBuildInfo } from "./buildInfo"
 
 const steps = [
   {
-    name: "Type-check",
-    text: "tsc --noEmit catches type errors before anything is built.",
+    name: "Lint and type-check",
+    text: "ESLint and tsc --noEmit catch mistakes and type errors before anything is built.",
   },
   {
     name: "Build",
-    text: "next build produces the production site. A failed build stops the run.",
+    text: "next build produces the production site, then a script checks the export: every link and image resolves, images have alt text, and the Content-Security-Policy covers every inline script. A failed check stops the run.",
   },
   {
     name: "Security scan",
-    text: "Trivy scans the repository and its dependencies for known vulnerabilities and reports high and critical findings.",
+    text: "npm audit fails the run on high or critical advisories in production dependencies. Trivy scans the repository and reports high and critical findings.",
   },
 ]
 
