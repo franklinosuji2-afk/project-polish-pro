@@ -4,11 +4,28 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    open-pull-requests-limit: 3
     groups:
       minor-and-patch:
         update-types: [minor, patch]
-    open-pull-requests-limit: 5
+    ignore:
+      # Majors that are known not to fit this stack yet. Remove an entry to start
+      # receiving that major again once the surrounding toolchain supports it.
+      #
+      # TypeScript 7: typescript-eslint (used by eslint-config-next) rejects it.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      # ESLint 10: the Next.js ESLint config and its plugins only declare support for 9.
+      - dependency-name: eslint
+        update-types: ["version-update:semver-major"]
+      # Keep the Node typings on the same major as the runtime (.nvmrc = 22).
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    open-pull-requests-limit: 3
+    groups:
+      actions:
+        patterns: ["*"]
