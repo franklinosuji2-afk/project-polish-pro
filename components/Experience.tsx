@@ -6,10 +6,10 @@ const roles = [
     when: "Apr 2026 – present",
     type: "Contract",
     bullets: [
-      "Design and deploy cloud infrastructure across AWS and Azure with an emphasis on reliability, scalability, security and operational efficiency.",
-      "Automate infrastructure provisioning and deployment workflows using Terraform and CI/CD practices.",
-      "Build and support containerized workloads with Docker and cloud-native services across multiple environments.",
-      "Diagnose and resolve infrastructure and deployment issues, contributing to platform reliability and delivery efficiency.",
+      "Design and deploy cloud infrastructure on AWS and Azure.",
+      "Automate provisioning and deployments with Terraform and CI/CD pipelines.",
+      "Build and support Docker-based workloads across several environments.",
+      "Diagnose and fix infrastructure and deployment problems.",
     ],
   },
   {

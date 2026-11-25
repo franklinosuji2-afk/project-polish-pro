@@ -9,6 +9,8 @@ export default function Footer() {
           Built with Next.js and hosted on Cloudflare Pages.{" "}
           <a href={site.repo} target="_blank" rel="noreferrer">Source on GitHub</a>
           {" "}
+          <a href="#pipeline">How this site is built</a>
+          {" "}
           <a href="#top">Back to top</a>
         </p>
       </div>

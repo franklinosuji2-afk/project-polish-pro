@@ -6,7 +6,6 @@ import { site } from "./site"
 
 const links = [
   { href: "#projects", label: "Projects" },
-  { href: "#pipeline", label: "How this site is built" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
   { href: "#credentials", label: "Credentials" },
@@ -59,7 +58,7 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a className="nav-brand" href="#top" aria-label={`cfo, ${site.name}, back to top`}>cfo</a>
+        <a className="nav-brand" href="#top" aria-label={`${site.name}, back to top`}>{site.name}</a>
         <button
           ref={menuButton}
           className="nav-menu"

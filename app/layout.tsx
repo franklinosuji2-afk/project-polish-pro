@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, Plus_Jakarta_Sans, IBM_Plex_Mono } from "next/font/google"
+import { Inter, Source_Serif_4, IBM_Plex_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "../components/ThemeContext"
 import { site } from "../components/site"
 
 // Fonts are downloaded at build time and served from this site, so the CSP needs no third-party font hosts.
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" })
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["600", "700", "800"], display: "swap", variable: "--font-jakarta" })
+const serif = Source_Serif_4({ subsets: ["latin"], weight: ["600", "700"], display: "swap", variable: "--font-serif" })
 const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], display: "swap", variable: "--font-plex-mono" })
 
 const pageTitle = `${site.name} | ${site.title}`
 const description =
-  "Cloud & DevOps engineer in Berlin delivering AWS and Azure infrastructure as code, containerized workloads, and CI/CD pipelines with Terraform, Kubernetes, Docker, and ECS/Fargate."
+  "Cloud & DevOps engineer in Berlin. I make AWS environments reproducible with Terraform and GitHub Actions, and most of my projects have public source that says what I have and have not tested."
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -44,8 +44,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   colorScheme: "dark light",
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-    { media: "(prefers-color-scheme: light)", color: "#f3f7fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f1113" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f6f7" },
   ],
 }
 
@@ -68,7 +68,7 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" className={`${inter.variable} ${jakarta.variable} ${plexMono.variable}`} suppressHydrationWarning>
+    <html lang="en" data-theme="dark" className={`${inter.variable} ${serif.variable} ${plexMono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />

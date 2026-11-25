@@ -2,15 +2,22 @@ import FloatingFigure from "./FloatingFigure"
 import { site } from "./site"
 
 type Project = {
+  id: string
   title: string
   lead: string
-  shows: string[]
+  built: string[]
+  // What was tested and what was not. Taken from each repository's own README.
+  limits: string
+  // A real problem met along the way, only where the README records one.
+  problem?: string
   stack: string
   image: string
   width: number
   height: number
-  github: string
-  // Optional. They only render when you fill them in, so the page never shows empty placeholders.
+  // Omitted for a private repository, so the page never links to a 404.
+  github?: string
+  // Replaces the default diagram caption when the diagram shows something the copy says is not built.
+  diagramNote?: string
   result?: string
   demo?: string
   proof?: { image: string; alt: string; caption: string; width: number; height: number }[]
@@ -18,15 +25,20 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: "aws-terraform-platform",
     title: "AWS Terraform Platform",
-    lead: "A Terraform platform on AWS that is planned, reviewed and deployed from GitHub Actions without any stored AWS keys.",
-    shows: [
-      "Reusable modules for a VPC, a Lambda service with a function URL and an optional ECS Fargate service behind an ALB.",
-      "Remote state in S3 with native locking, and separate plan and apply IAM roles.",
-      "GitHub Actions that authenticate through OIDC. Pull requests run fmt, validate, TFLint, Trivy and a plan that is posted as a comment.",
-      "Manual apply and destroy workflows that need a reviewer approval in a protected environment.",
-      "Deployed end to end: the Lambda page it created is served from AWS. The ECS and ALB option is not deployed yet.",
+    lead: "A small AWS platform in Terraform, planned, reviewed and deployed from GitHub Actions without any stored AWS keys.",
+    built: [
+      "Modules for a VPC, a Lambda service behind a function URL, and an optional ECS Fargate service behind an ALB.",
+      "Remote state in S3 with native locking, and two IAM roles: a read-only one for plans and a scoped one for apply.",
+      "GitHub Actions that sign in through OIDC. Pull requests run fmt, validate, TFLint and Trivy, then post the plan as a comment.",
+      "Apply and destroy run by hand, only from main, and only after a reviewer approves them in a protected environment.",
+      "Defaults are cost-aware: no NAT gateway, and the ALB and Fargate stack sits behind a switch.",
     ],
+    limits:
+      "Applied end to end on a real AWS account, and the Lambda page it created is served from AWS. Not yet tested: the destroy workflow and the ECS and ALB stack. Trivy reports findings without failing the build, and the apply role is limited by service, not by individual resource.",
+    problem:
+      "GitHub now puts the owner and repository IDs into the OIDC token subject for newer repositories. Without both IDs in the bootstrap, the IAM trust policies never match and every workflow run is rejected.",
     stack: "Terraform, AWS (IAM, S3, VPC, Lambda), GitHub Actions, OIDC, TFLint, Trivy",
     image: "/projects/aws-terraform-platform-v2.png",
     width: 1800,
@@ -34,14 +46,17 @@ const projects: Project[] = [
     github: "https://github.com/franklinosuji2-afk/aws-terraform-platform",
   },
   {
+    id: "platformops-lab",
     title: "PlatformOps-Lab",
     lead: "A local Kubernetes platform for practising infrastructure, deployment and observability without paid cloud resources.",
-    shows: [
+    built: [
       "A Kind cluster with Kustomize base and overlay manifests, plus a Terraform example for the namespace.",
       "Argo CD syncing the overlay from this repository, so the app deploys and stays healthy from Git.",
-      "A Docker Compose observability stack: Prometheus scraping the API, a Grafana dashboard and Loki logs through promtail.",
+      "A Docker Compose observability stack: Prometheus scraping the API, a Grafana dashboard, and Loki logs through promtail.",
       "GitHub Actions that validate Compose, Kustomize and Terraform, build the images and report Trivy findings.",
     ],
+    limits:
+      "Argo CD has run on a local Kind cluster; the Flux manifests have not been run. Prometheus, Grafana and Loki run in Docker Compose, not inside the cluster yet. The Terraform example deploys stock nginx, Trivy reports without failing the build, and there is no Helm chart yet.",
     stack: "Terraform, Kind, Kubernetes, Kustomize, Argo CD, Docker Compose, GitHub Actions, Prometheus, Grafana, Loki, promtail, Trivy",
     image: "/projects/platformops-lab-v2.png",
     width: 1800,
@@ -53,14 +68,18 @@ const projects: Project[] = [
     ],
   },
   {
+    id: "kubesentinel",
     title: "KubeSentinel",
-    lead: "A local Kubernetes security lab that checks manifests and images in CI and uses admission policies to reject insecure workloads.",
-    shows: [
-      "GitHub Actions gates: yamllint and kubeconform validation, an image build, and Trivy image and config scans that fail the build on HIGH or CRITICAL findings.",
-      "Four OPA Gatekeeper policies for root containers, privileged containers, the latest tag and missing resource limits, tested on a local kind cluster, where Gatekeeper rejected all four deliberately insecure example manifests.",
-      "Scripts that stand up a local kind cluster with Argo CD, Gatekeeper, Prometheus and Grafana, and Falco for runtime alerts.",
-      "Fixed a real finding the scan raised: three HIGH CVEs in Starlette, resolved by upgrading FastAPI.",
+    lead: "A local Kubernetes security lab. CI checks manifests and images, and admission policies reject insecure workloads.",
+    built: [
+      "GitHub Actions gates: yamllint and kubeconform, an image build, and Trivy image and config scans for HIGH and CRITICAL findings.",
+      "Four OPA Gatekeeper policies: no root containers, no privileged containers, no latest tag, and resource limits required.",
+      "Scripts that set up a kind cluster with Argo CD, Gatekeeper, Prometheus, Grafana and Falco.",
     ],
+    limits:
+      "A learning lab, not a production setup. On a local kind cluster, Gatekeeper rejected all four deliberately insecure example manifests. The Argo CD, Prometheus, Grafana and Falco bootstrap is scripted but not yet run end to end. Not built yet: conftest policies in CI, SBOMs, image signing and alert rules for Falco and Gatekeeper.",
+    problem:
+      "The Trivy image scan found three HIGH CVEs in Starlette, pulled in by FastAPI 0.115.0. I fixed them by upgrading FastAPI and requiring Starlette 1.3.1 or later, and the scan now passes.",
     stack: "Kubernetes, kind, Argo CD, OPA Gatekeeper, Trivy, Falco, Prometheus, Grafana, GitHub Actions, Python, FastAPI",
     image: "/projects/kubesentinel-v2.png",
     width: 1800,
@@ -68,70 +87,60 @@ const projects: Project[] = [
     github: "https://github.com/franklinosuji2-afk/kubesentinel",
   },
   {
-    title: "SecureScope",
-    lead: "A multi-tenant web security scanner with a React dashboard and a FastAPI backend. It runs passive checks only, and only against domains the organization has proven it controls.",
-    shows: [
-      "Accounts, organizations and five roles, with server-side authorization and tenant isolation tested across accounts.",
-      "Domain ownership verification by DNS TXT record or a file on the website, with expiring challenges. Scans of unverified domains are refused.",
-      "A fetcher that blocks private addresses, pins DNS, revalidates every redirect and limits time and size, covered by SSRF regression tests.",
-      "GitHub Actions runs 217 backend tests on PostgreSQL, Vitest, Playwright browser tests with axe accessibility checks, Bandit, Semgrep, pip-audit, npm audit and Trivy.",
-      "Ran end to end against my own site and produced a report. Still in development: no real email delivery, no PDF reports, and the DNS verification path is tested with mocks only.",
-    ],
-    stack: "Python, FastAPI, PostgreSQL, Alembic, React, TypeScript, Docker Compose, GitHub Actions, Playwright, Bandit, Semgrep, Trivy",
-    image: "/projects/securescope-v2.png",
-    width: 1800,
-    height: 1000,
-    github: "https://github.com/franklinosuji2-afk/securescope",
-  },
-  {
+    id: "chaosforge",
     title: "ChaosForge",
-    lead: "A local reliability lab that injects controlled failures into containerized workloads and measures detection, recovery, MTTR and SLO impact.",
-    shows: [
-      "Failure experiments run from PowerShell against Docker workloads.",
-      "Detection and recovery tracked with Prometheus and Grafana.",
-      "MTTR measurement and SLO evaluation built into the workflow.",
+    lead: "A local reliability lab. It breaks its own Docker containers on purpose, then measures how long recovery takes and checks it against an SLO.",
+    built: [
+      "A PowerShell command line, forge.ps1, that starts the stack and runs CPU, memory and container-kill experiments.",
+      "A full experiment records the incident, injects a failure into the API, restarts the service, waits for health to recover and calculates MTTR.",
+      "Incident history, a reliability report and an SLO and error-budget check come from the same command line.",
+      "Prometheus and Grafana show the API and exporter metrics.",
     ],
-    stack: "Python, FastAPI, Docker, PowerShell, Prometheus, Grafana",
+    limits:
+      "This is a lab, not a production chaos platform. Experiments only run against the project's own containers on one machine. CI checks Python syntax, the Compose file and PowerShell syntax; it does not run the experiments.",
+    stack: "PowerShell, Python, FastAPI, Docker Compose, Prometheus, Grafana",
     image: "/projects/chaosforge-v2.png",
     width: 1800,
     height: 1000,
     github: "https://github.com/franklinosuji2-afk/chaosforge",
   },
   {
-    title: "CloudPulse",
-    lead: "A cloud operations project that ingests metrics, detects anomalies and exposes health information through a REST API.",
-    shows: [
-      "Containerized FastAPI services that ingest and process operational metrics.",
-      "Anomaly detection and health signals persisted in PostgreSQL.",
-      "A reusable REST API for dashboards and alerting integrations.",
+    id: "securescope",
+    title: "SecureScope",
+    lead: "A multi-tenant web security scanner with a React dashboard and a FastAPI backend. It runs passive checks only, and only against domains the organization has proven it controls.",
+    built: [
+      "Accounts, organizations and five roles, with server-side authorization and tenant isolation tested across accounts.",
+      "Domain ownership verification by DNS TXT record or a file on the website, with expiring challenges. Scans of unverified domains are refused.",
+      "A fetcher that blocks private addresses, pins DNS, revalidates every redirect and limits time and size, covered by SSRF regression tests.",
+      "GitHub Actions runs 217 backend tests on PostgreSQL, Vitest, Playwright browser tests with axe accessibility checks, Bandit, Semgrep, pip-audit, npm audit and Trivy.",
     ],
-    stack: "Python, FastAPI, PostgreSQL, Docker, REST API",
+    limits:
+      "Still in development. It has run end to end against my own site and produced a report. There is no real email delivery and no PDF reports yet, and the DNS verification path is tested with mocks only. The repository is private.",
+    stack: "Python, FastAPI, PostgreSQL, Alembic, React, TypeScript, Docker Compose, GitHub Actions, Playwright, Bandit, Semgrep, Trivy",
+    image: "/projects/securescope-v2.png",
+    width: 1800,
+    height: 1000,
+  },
+  {
+    id: "cloudpulse",
+    title: "CloudPulse",
+    lead: "A local-first observability and FinOps platform. Containerized Python services collect infrastructure metrics, flag anomalies and expose operational metrics.",
+    built: [
+      "Six FastAPI services behind an API gateway: ingestion, anomaly detection, root-cause analysis, FinOps cost analysis and AI-assisted analysis.",
+      "Anomaly detection scores each reading with a z-score against the historical mean and standard deviation.",
+      "REST endpoints to collect telemetry, run detection, submit events, run analysis and expose Prometheus-compatible metrics.",
+      "Docker Compose runs the services together with PostgreSQL. GitHub Actions compiles the Python services and validates the Compose file.",
+    ],
+    limits:
+      "An early MVP. Alerting, Prometheus alert rules, Grafana dashboards, SLO tracking and distributed tracing are listed as future work in the README.",
+    stack: "Python, FastAPI, PostgreSQL, Docker Compose, GitHub Actions",
     image: "/projects/cloudpulse-v2.png",
     width: 1800,
     height: 1000,
+    diagramNote: "Architecture of CloudPulse. The dashboards and alerts box is planned and not built yet. Select to open full size.",
     github: "https://github.com/franklinosuji2-afk/cloudpulse",
   },
 ]
-
-// "Terraform, AWS (IAM, S3, VPC, Lambda), GitHub Actions" -> ["Terraform", "AWS (IAM, S3, VPC, Lambda)", "GitHub Actions"]
-// Commas inside parentheses stay with their item.
-function splitStack(stack: string): string[] {
-  const items: string[] = []
-  let depth = 0
-  let current = ""
-  for (const char of stack) {
-    if (char === "(") depth++
-    if (char === ")") depth--
-    if (char === "," && depth === 0) {
-      items.push(current.trim())
-      current = ""
-    } else {
-      current += char
-    }
-  }
-  if (current.trim()) items.push(current.trim())
-  return items
-}
 
 const webp = (png: string) => png.replace(/\.png$/, ".webp")
 
@@ -161,26 +170,39 @@ export default function Projects() {
       <div className="container">
         <h2 id="projects-title">Projects</h2>
         <p className="section-intro">
-          Six projects I would walk you through. Each one links to its source and shows its architecture.
+          Six projects, all built by me. Each one says what it does, what I tested and what I did not. Five link to
+          public source on GitHub.
         </p>
 
         {projects.map((project) => (
-          <article className="project" key={project.title}>
+          <article className="project" id={project.id} key={project.id} aria-labelledby={`${project.id}-title`}>
             <div className="project-text">
-              <h3>
-                <a href={project.github} target="_blank" rel="noreferrer">{project.title}</a>
+              <h3 id={`${project.id}-title`}>
+                {project.github ? (
+                  <a href={project.github} target="_blank" rel="noreferrer">{project.title}</a>
+                ) : (
+                  project.title
+                )}
               </h3>
               <p className="project-lead">{project.lead}</p>
 
-              <h4>What it shows</h4>
+              <h4>What I built</h4>
               <ul className="plain-list">
-                {project.shows.map((item) => <li key={item}>{item}</li>)}
+                {project.built.map((item) => <li key={item}>{item}</li>)}
               </ul>
 
+              <h4>Status and limits</h4>
+              <p>{project.limits}</p>
+
+              {project.problem && (
+                <>
+                  <h4>A problem I hit</h4>
+                  <p>{project.problem}</p>
+                </>
+              )}
+
               <h4>Built with</h4>
-              <ul className="chips" aria-label={`${project.title} technologies`}>
-                {splitStack(project.stack).map((tech) => <li key={tech}>{tech}</li>)}
-              </ul>
+              <p className="stack">{project.stack}</p>
 
               {project.result && (
                 <>
@@ -191,9 +213,11 @@ export default function Projects() {
               {project.demo && (
                 <p><a className="text-link" href={project.demo} target="_blank" rel="noreferrer">Watch the demo</a></p>
               )}
-              <p>
-                <a className="text-link" href={project.github} target="_blank" rel="noreferrer">View source on GitHub</a>
-              </p>
+              {project.github && (
+                <p>
+                  <a className="text-link" href={project.github} target="_blank" rel="noreferrer">View source on GitHub</a>
+                </p>
+              )}
             </div>
             <div className="project-visuals">
               <Figure
@@ -203,7 +227,7 @@ export default function Projects() {
                 alt={`${project.title} architecture diagram`}
                 width={project.width}
                 height={project.height}
-                caption={`Architecture of ${project.title}. Select to open full size.`}
+                caption={project.diagramNote ?? `Architecture of ${project.title}. Select to open full size.`}
                 label={`Open the ${project.title} architecture diagram full size`}
               />
               {project.proof?.map((shot) => (

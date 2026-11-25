@@ -36,11 +36,33 @@ export default function Pipeline() {
           ))}
         </ol>
 
-        <p>
-          The workflow file is part of the repository, so you can read exactly what runs.
-        </p>
+        <h3 className="build-title">Latest build</h3>
+        <dl className="build-meta">
+          <div>
+            <dt>Commit</dt>
+            <dd>
+              {build.short ? (
+                <a href={`${build.repo}/commit/${build.sha}`} target="_blank" rel="noreferrer"><code>{build.short}</code></a>
+              ) : (
+                <code>local build</code>
+              )}
+            </dd>
+          </div>
+          <div>
+            <dt>Branch</dt>
+            <dd><code>{build.branch || "local"}</code></dd>
+          </div>
+          <div>
+            <dt>Built</dt>
+            <dd><code>{build.builtAt}</code></dd>
+          </div>
+        </dl>
+        <div className="build-status">
+          <img src={build.badge} alt="Status of the latest CI run" width={96} height={20} decoding="async" />
+        </div>
+
         <p className="link-row">
-          <a className="text-link" href={build.workflow} target="_blank" rel="noreferrer">View the workflow</a>
+          <a className="text-link" href={build.workflow} target="_blank" rel="noreferrer">Read the workflow file</a>
           <a className="text-link" href={build.repo} target="_blank" rel="noreferrer">View the source</a>
         </p>
       </div>
