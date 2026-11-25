@@ -52,7 +52,7 @@ const roles = [
     when: "Mar 2019 – Aug 2021",
     type: "Apprenticeship",
     bullets: [
-      "Supported cloud infrastructure, containers, networking and CI/CD in a hands-on role; handled technical troubleshooting.",
+      "Hands-on technical support for cloud and networking environments, including troubleshooting.",
     ],
   },
 ]
