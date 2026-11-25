@@ -32,7 +32,9 @@
     --text: light-dark(#3a434d, #b4bac2);
     --text-strong: light-dark(#14181c, #f1f3f5);
     --text-3: light-dark(#5a6571, #8b939d);
-    --heading: light-dark(#14181c, #f1f3f5);
+    --heading: var(--accent);
+    --ok: light-dark(#0f6b3a, #6ee7a8);
+    --warn: light-dark(#8a4b00, #f5b84a);
     --accent: light-dark(#1d4f91, #8dbbf0);
     --accent-ink: light-dark(#ffffff, #0f1113);
     --focus: light-dark(#1d4f91, #8dbbf0);
@@ -267,8 +269,10 @@
   .credentials li:last-child { border-bottom: 1px solid var(--border); }
   .credentials h3 { font-size: 1.1rem; font-weight: 600; }
   .issuer { margin-top: 2px; font-size: 0.92rem; }
-  .credential-side { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
-  .status { color: var(--text-strong); font-size: 0.92rem; }
+  .credential-side { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; text-align: right; }
+  .status { padding: 4px 13px; border: 1px solid; border-radius: 18px; font-size: 0.88rem; line-height: 1.4; }
+  .status-done { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 55%, transparent); background: color-mix(in srgb, var(--ok) 12%, transparent); }
+  .status-progress { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 55%, transparent); background: color-mix(in srgb, var(--warn) 12%, transparent); }
   @media (max-width: 560px) {
     .credentials li { flex-direction: column; align-items: flex-start; gap: 8px; }
     .credential-side { align-items: flex-start; text-align: left; }
