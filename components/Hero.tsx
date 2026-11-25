@@ -1,4 +1,3 @@
-import { getBuildInfo } from "./buildInfo"
 import { site } from "./site"
 
 const facts = [
@@ -9,26 +8,41 @@ const facts = [
   { label: "Looking for", value: "Cloud, DevOps, Platform and SRE roles in Berlin, the EU or remote" },
 ]
 
-const stages = [
-  { name: "Lint and type-check", detail: "eslint, tsc" },
-  { name: "Build", detail: "next build" },
-  { name: "Security scan", detail: "Trivy, npm audit" },
+// Each entry points at a project below and says what to check there.
+const start = [
+  {
+    id: "aws-terraform-platform",
+    name: "AWS Terraform Platform",
+    text: "Plans run on pull requests, changes apply only after an approval, and no AWS keys are stored anywhere.",
+  },
+  {
+    id: "platformops-lab",
+    name: "PlatformOps-Lab",
+    text: "Argo CD keeps a local Kubernetes cluster in sync with Git, with metrics and logs in Grafana.",
+  },
+  {
+    id: "kubesentinel",
+    name: "KubeSentinel",
+    text: "Trivy scans run in CI, and Gatekeeper rejects insecure manifests before they reach the cluster.",
+  },
 ]
 
 export default function Hero() {
-  const build = getBuildInfo()
-
   return (
     <section id="top" className="hero">
       <div className="container hero-grid">
         <div className="hero-main">
           <p className="hero-name">{site.name}, Cloud &amp; DevOps engineer in Berlin</p>
-          <h1>I work on the infrastructure behind reliable software: repeatable deployments, monitoring and troubleshooting.</h1>
+          <h1>I make AWS environments reproducible and deployments boring.</h1>
           <div className="hero-copy">
             <p>
-              My day-to-day work covers AWS and Azure infrastructure, Terraform automation, containerized workloads and
-              CI/CD pipelines. Outside work I build lab projects to practise Kubernetes, failure testing and observability,
-              and publish the source so you can review my approach.
+              I take infrastructure that was clicked together or handled by hand and make it repeatable: Terraform with
+              remote state, pipelines that behave the same way on every run, and checks before anything changes.
+            </p>
+            <p>
+              My strongest areas are AWS, Terraform and delivery automation. My Kubernetes experience is GitOps and
+              platform-lab work, not multi-tenant production clusters. Each project below says what I tested and what
+              I did not.
             </p>
           </div>
 
@@ -50,40 +64,16 @@ export default function Hero() {
           </div>
         </div>
 
-        <aside className="build-panel" aria-label="Latest build of this site">
-          <h2>Latest build of this site</h2>
-          <ol className="stages">
-            {stages.map((stage) => (
-              <li key={stage.name}>
-                <span className="stage-name">{stage.name}</span>
-                <code>{stage.detail}</code>
+        <aside className="start" aria-labelledby="start-title">
+          <h2 id="start-title">Three places to start</h2>
+          <ul>
+            {start.map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`}>{item.name}</a>
+                <p>{item.text}</p>
               </li>
             ))}
-          </ol>
-          <dl className="build-meta">
-            <div>
-              <dt>Commit</dt>
-              <dd>
-                {build.short ? (
-                  <a href={`${build.repo}/commit/${build.sha}`} target="_blank" rel="noreferrer"><code>{build.short}</code></a>
-                ) : (
-                  <code>local build</code>
-                )}
-              </dd>
-            </div>
-            <div>
-              <dt>Branch</dt>
-              <dd><code>{build.branch || "local"}</code></dd>
-            </div>
-            <div>
-              <dt>Built</dt>
-              <dd><code>{build.builtAt}</code></dd>
-            </div>
-          </dl>
-          <div className="build-status">
-            <img src={build.badge} alt="Status of the latest CI run" width={96} height={20} decoding="async" />
-            <a className="text-link" href={build.workflow} target="_blank" rel="noreferrer">View the workflow</a>
-          </div>
+          </ul>
         </aside>
       </div>
     </section>
